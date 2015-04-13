@@ -1,0 +1,237 @@
+% This file was created with JabRef 2.10.
+% Encoding: Cp1252
+
+
+@Article{Agarwal2014,
+  Title                    = {{Quality assurance for Product development using Agile}},
+  Author                   = {Agarwal, Anil and Garg, N K and Jain, Avirag},
+  Journal                  = {2014 International Conference on Reliability Optimization and Information Technology (ICROIT)},
+  Year                     = {2014},
+  Pages                    = {44--47},
+
+  Abstract                 = {Achieving the highest level of quality for the software product being delivered is the goal of any IT organization. Every organization wants to implement processes and practices that would help achieving this goal of increasing the quality of a software product. There are so many models available today that an organization can use for developing a software but considering the dynamics of today s world where technology is changing at a fast pace and innovative products are hitting the market at great speed, these organizations do not want a software development model that consume lot of time and efforts, and hence most of the business houses are moving towards Agile approach for software development. With this change in approach for software development, the big question is that how to ensure Quality of product developed using Agile model. The traditional approach has a separate phase for testing a software product which ensures that an independent team has validated the product per specified requirements. However, with Agile way of software development, this leverage of involvement of independent test teams and test levels has taken a back. This paper, will highlight broadly the role of QA within Agile development model, with focus on fresh thoughts and approaches to improve the overall quality of product developed using Agile methodology. The use and importance of Metrics for accessing the Quality within Agile model will also be discussed.},
+  Doi                      = {10.1109/ICROIT.2014.6798281},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Agarwal, Garg, Jain/2014 International Conference on Reliability Optimization and Information Technology (ICROIT)/Agarwal, Garg, Jain - 2014 - Quality assurance for Product development using Agile.pdf:pdf},
+  ISBN                     = {978-1-4799-2995-5},
+  Url                      = {http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6798281$\backslash$nhttp://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6798281}
+}
+
+@Article{Bhasin2012,
+  Title                    = {{Quality assurance in agile: A study towards achieving excellence}},
+  Author                   = {Bhasin, Sonali},
+  Journal                  = {Proceedings - Agile India 2012, AgileIndia 2012},
+  Year                     = {2012},
+  Pages                    = {64--67},
+
+  Abstract                 = {Agile Methods are known to have built-in quality management system, however there are still challenges seen in the real life scenarios within the software organizations that are transitioning from traditional method to Agile development methods. Traditional Quality Assurance techniques are reporting based and rely on heavy weight inspection methods whereas Agile Quality Assurance techniques are built-in daily activities by teams. Research proposal here aims to study various challenges faced in terms of assuring quality in Agile, what are the key drivers or indicators of Quality in agile and proposing the framework to evaluate what aspects of Agile improve the quality of the product in terms of bug rates, development time and costs. Through this study we aim to provide some suggestions to help organizations overcome obstacles expected in adopting the agile method as software development tool and ensuring quality.},
+  Doi                      = {10.1109/AgileIndia.2012.18},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Bhasin/Proceedings - Agile India 2012, AgileIndia 2012/Bhasin - 2012 - Quality assurance in agile A study towards achieving excellence.pdf:pdf},
+  ISBN                     = {9780769546575},
+  Keywords                 = {agile,agile software development,quality,quality assurance (QA),scrum},
+  Mendeley-tags            = {agile,quality,scrum}
+}
+
+@Book{BOEHM1978,
+  Title                    = {Characteristics of software quality},
+  Author                   = {Boehm, B.W.},
+  Publisher                = {North-Holland Pub. Co.},
+  Year                     = {1978},
+  Series                   = {TRW series of software technology},
+
+  Lccn                     = {78319591}
+}
+
+@InProceedings{Broek2014,
+  Title                    = {{Integrating Testing into Agile Software Development Processes}},
+  Author                   = {Broek, R Van Den and Bonsangue, M M and Chaudron, M and Merode, H Van},
+  Booktitle                = {2014 2nd International Conference on Model-Driven Engineering and Software Development (MODELSWARD)},
+  Year                     = {2014},
+  Pages                    = {561 -- 574},
+  Publisher                = {IEEE},
+
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Broek et al/2014 2nd International Conference on Model-Driven Engineering and Software Development (MODELSWARD)/Broek et al. - 2014 - Integrating Testing into Agile Software Development Processes.pdf:pdf},
+  Keywords                 = {Agile Development,Agile Testing,Organizations,Planning,Product design,Quality assessment,Scrum,Software,Software Processes,Testing},
+  Url                      = {http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=\&arnumber=7018519\&isnumber=7018411}
+}
+
+@Book{CHEMUTURI2011,
+  Title                    = {{Mastering Software Quality Assurance: Best Practices, Tools and Techniques for Software Developers}},
+  Author                   = {Chemuturi, Murali},
+  Publisher                = {J. Ross},
+  Year                     = {2011}
+}
+
+@Book{general1977factors,
+  Title                    = {Factors in Software Quality},
+  Author                   = {General Electric Company and McCall, J.A. and Richards, P.K. and Walters, G.F. and Rome Air Development Center and United States. Air Force. Systems Command. Electronic Systems Division},
+  Publisher                = {Rome Air Development Center, Air Force Systems Command},
+  Year                     = {1977},
+  Series                   = {RADC-TR-77-369},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.12}
+}
+
+@Article{Dings2012,
+  Title                    = {{A decade of agile methodologies: Towards explaining agile software development}},
+  Author                   = {Dings\o yr, Torgeir and Nerur, Sridhar and Balijepally, VenuGopal and Moe, Nils Brede},
+  Journal                  = {Journal of Systems and Software},
+  Year                     = {2012},
+
+  Month                    = jun,
+  Number                   = {6},
+  Pages                    = {1213--1221},
+  Volume                   = {85},
+
+  Abstract                 = {Ever since the agile manifesto was created in 2001, the research community has devoted a great deal of attention to agile software development. This article examines publications and citations to illustrate how the research on agile has progressed in the 10 years following the articulation of the manifesto. Specifically, we delineate the conceptual structure underlying agile scholarship by performing an analysis of authors who have made notable contributions to the field. Further, we summarize prior research and introduce contributions in this special issue on agile software development. We conclude by discussing directions for future research and urging agile researchers to embrace a theory-based approach in their scholarship.},
+  Doi                      = {10.1016/j.jss.2012.02.033},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Dings\o yr et al/Journal of Systems and Software/Dings\o yr et al. - 2012 - A decade of agile methodologies Towards explaining agile software development.pdf:pdf},
+  ISSN                     = {01641212},
+  Keywords                 = {Agile software development,Crystal method,Feature-driven development,Information systems,Lean software development,Scrum,Software engineering,Theory,agile,eXtreme programming, XP,quality,software development},
+  Mendeley-tags            = {agile,quality,software development},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0164121212000532}
+}
+
+@Article{GARVIN1987,
+  Title                    = {Competing on the Eight Dimensions of Quality},
+  Author                   = {Garvin, D.},
+  Journal                  = {Harvard Business Review},
+  Year                     = {1987},
+
+  Month                    = {November},
+  Pages                    = {101-109},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.12},
+  Url                      = {https://hbr.org/1987/11/competing-on-the-eight-dimensions-of-quality}
+}
+
+@Book{HIRAMA2011,
+  Title                    = {{Engenharia De Software: Qualidade e Produtividade com Tecnologia}},
+  Author                   = {Hirama, Kechi},
+  Publisher                = {Elsevier},
+  Year                     = {2011}
+}
+
+@Article{Huo2004,
+  Title                    = {{Software quality and agile methods}},
+  Author                   = {Huo, Ming and Verner, J and Zhu, Liming and Babar, M a},
+  Journal                  = {Computer Software and Applications Conference, 2004. COMPSAC 2004. Proceedings of the 28th Annual International},
+  Year                     = {2004},
+  Pages                    = {520--525 vol.1},
+
+  Abstract                 = {Agile methods may produce software faster but we also need to know how they meet our quality requirements. In this paper we compare the waterfall model with agile processes to show how agile methods achieve software quality under time pressure and in an unstable requirements environment, i.e. we analyze agile software quality assurance. We present a detailed waterfall model showing its software quality support processes. We then show the quality practices that agile methods have integrated into their processes. This allows us to answer the question "can agile methods ensure quality even though they develop software faster and can handle unstable requirements?".},
+  Doi                      = {10.1109/CMPSAC.2004.1342889},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Huo et al/Computer Software and Applications Conference, 2004. COMPSAC 2004. Proceedings of the 28th Annual International/Huo et al. - 2004 - Software quality and agile methods.pdf:pdf},
+  ISBN                     = {0-7695-2209-2},
+  ISSN                     = {0730-3157},
+  Keywords                 = {Application software,Australia,Collaboration,Computer applications,Continuous improvement,Programming,Quality assurance,Software engineering,Software quality,agile methods,agile software quality assurance,software quality support processes,unstable requirements environment,waterfall model}
+}
+
+@Article{IEEE1990,
+  Title                    = {{IEEE Standard Glossary of Software Engineering Terminology}},
+  Author                   = {IEEE},
+  Journal                  = {IEEE Std 610.12-1990},
+  Year                     = {1990},
+  Number                   = {1},
+  Pages                    = {1--84},
+  Volume                   = {12-1990},
+
+  Abstract                 = {Describes the IEEE Std 610.12-1990, IEEE standard glossary of software engineering terminology, which identifies terms currently in use in the field of software engineering. Standard definitions for those terms are established.},
+  Doi                      = {10.1109/IEEESTD.1990.101064},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/IEEE/IEEE Std 610.12-1990/IEEE - 1990 - IEEE Standard Glossary of Software Engineering Terminology.pdf:pdf},
+  ISBN                     = {155937067X},
+  Keywords                 = {definitions,dictionary,glossary,software engineering,terminology},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=159342}
+}
+
+@InProceedings{Jinzenji2012,
+  Title                    = {{Metric-Based Quality Evaluations for Iterative Software Development Approaches Like Agile}},
+  Author                   = {Jinzenji, Kumi and Hoshino, Takashi and Williams, Laurie and Takahashi, Kenji},
+  Booktitle                = {2012 IEEE 23rd International Symposium on Software Reliability Engineering Workshops},
+  Year                     = {2012},
+  Month                    = nov,
+  Pages                    = {54--63},
+  Publisher                = {IEEE},
+
+  Doi                      = {10.1109/ISSREW.2012.40},
+  ISBN                     = {978-1-4673-5048-8},
+  Keywords                 = {Agile,Iterative software development,Quality,Reliability,agile,quality,software development},
+  Mendeley-tags            = {agile,quality,software development},
+  Url                      = {http://dl.acm.org/citation.cfm?id=2473498.2474030}
+}
+
+@Book{PFLEEGER2010,
+  Title                    = {{Software Engineering: Theory and Practice}},
+  Author                   = {Pfleeger, Shari Lawrence and Atlee, Joanne M.},
+  Publisher                = {Pearson},
+  Year                     = {2010}
+}
+
+@Book{PRESSMAN2010,
+  Title                    = {{Software Engineering: A practicioner's approach}},
+  Author                   = {Pressman, Roger S.},
+  Publisher                = {McGraw-Hill},
+  Year                     = {2010}
+}
+
+@Article{Silva2014b,
+  Title                    = {{A Reference Model for Agile Quality Assurance: Combining Agile Methodologies and Maturity Models}},
+  Author                   = {Silva, Fernando Selleri and Soares, Felipe Santana Furtado and Peres, Angela Lima and Azevedo, Ivanildo Monteiro De and Pinto, Pietro Pereira and Meira, Silvio Romero De Lemos},
+  Journal                  = {2014 9th International Conference on the Quality of Information and Communications Technology},
+  Year                     = {2014},
+  Pages                    = {139--144},
+
+  Doi                      = {10.1109/QUATIC.2014.25},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Silva et al/2014 9th International Conference on the Quality of Information and Communications Technology/Silva et al. - 2014 - A Reference Model for Agile Quality Assurance Combining Agile Methodologies and.pdf:pdf},
+  ISBN                     = {978-1-4799-6133-7},
+  Keywords                 = {agile methodologies,maturity,quality assurance},
+  Url                      = {http://ieeexplore.ieee.org/lpdocs/epic03/wrapper.htm?arnumber=6984105}
+}
+
+@Book{SOMMERVILLE2011,
+  Title                    = {{Software engineering}},
+  Author                   = {Sommerville, Ian},
+  Publisher                = {Pearson},
+  Year                     = {2011}
+}
+
+@Book{SURYN2014,
+  Title                    = {{Software Quality Engineering: A practicioner's approach}},
+  Author                   = {Suryn, Witold},
+  Publisher                = {Wiley},
+  Year                     = {2014}
+}
+
+@Article{Turk2014,
+  Title                    = {{Limitations of Agile Software Processes}},
+  Author                   = {Turk, Dan and France, Robert and Rumpe, Bernhard},
+  Year                     = {2014},
+
+  Month                    = sep,
+  Pages                    = {4},
+
+  Abstract                 = {Software developers and project managers are struggling to assess the appropriateness of agile processes to their development environments. This paper identifies limitations that apply to many of the published agile processes in terms of the types of projects in which their application may be problematic.},
+  Archiveprefix            = {arXiv},
+  Arxivid                  = {1409.6600},
+  Eprint                   = {1409.6600},
+  File                     = {:C$\backslash$:/Users/Andrei/Documents/Mendeley Desktop/Turk, France, Rumpe/Unknown/Turk, France, Rumpe - 2014 - Limitations of Agile Software Processes.pdf:pdf},
+  Keywords                 = {agile,quality},
+  Mendeley-tags            = {agile,quality},
+  Url                      = {http://arxiv.org/abs/1409.6600}
+}
+
+@Book{VANCE2014,
+  Title                    = {{Quality Code: Software Testing Principles, Practices, and Patterns}},
+  Author                   = {Vance, Stephen},
+  Publisher                = {Addison-Wesley},
+  Year                     = {2014}
+}
+
+@Book{WAZLAWICK2013,
+  Title                    = {{Engenharia de Software: Conceitos e Pr\'{a}ticas}},
+  Author                   = {Wazlawick, Raul Sidnei},
+  Publisher                = {Elsevier},
+  Year                     = {2013}
+}
+

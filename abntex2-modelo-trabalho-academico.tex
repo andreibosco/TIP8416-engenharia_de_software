@@ -231,7 +231,9 @@
   \item[Fig.] Area of the $i^{th}$ component
   \item[456] Isto é um número
   \item[123] Isto é outro número
-  \item[lauro cesar] este é o meu nome
+  \item[IEEE] \emph{Institute of Electrical and Electronics Engineers} - Instituto de Engenheiros Eletricistas e Eletrônicos
+  \item[ISO] \emph{International Organization for Standardization} - Organização Internacional para Padronização
+  \item[QA] \emph{Quality Assurance} - Garantia de Qualidade
 \end{siglas}
 % ---
 
@@ -276,7 +278,7 @@ gênero) produzido conforme a ABNT NBR 14724:2011 \emph{Informação e documenta
 A expressão ``Modelo Canônico'' é utilizada para indicar que \abnTeX\ não é
 modelo específico de nenhuma universidade ou instituição, mas que implementa tão
 somente os requisitos das normas da ABNT. Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em \citeonline{abntex2classe}.
+observadas pelo \abnTeX\ é apresentada em %\citeonline{abntex2classe}.
 
 Sinta-se convidado a participar do projeto \abnTeX! Acesse o site do projeto em
 \url{http://abntex2.googlecode.com/}. Também fique livre para conhecer,
@@ -291,11 +293,11 @@ Porém, recomendamos que ao invés de se alterar diretamente os arquivos do
 \abnTeX, distribua-se arquivos com as respectivas customizações.
 Isso permite que futuras versões do \abnTeX~não se tornem automaticamente
 incompatíveis com as customizações promovidas. Consulte
-\citeonline{abntex2-wiki-como-customizar} par mais informações.
+%\citeonline{abntex2-wiki-como-customizar} par mais informações.
 
 Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
-\cite{memoir}. 
+%\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
+%\cite{memoir}. 
 
 Esperamos, sinceramente, que o \abnTeX\ aprimore a qualidade do trabalho que
 você produzirá, de modo que o principal esforço seja concentrado no principal:
@@ -314,39 +316,193 @@ Lauro César Araujo
 % ----------------------------------------------------------
 % Capitulo
 % ----------------------------------------------------------
+\chapter{Qualidade de Software}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Definição}
+
+Definir \emph{qualidade} não é tão simples como parece. Você sabe identificar quando um produto é de qualidade mas normalmente não é fácil indicar o que lhe dá essa característica. No caso de qualidade para Engenharia de Software vários autores trazem suas definições e existem vários modelos e organizações que almejam criar uma estrutura para a criação de softwares de qualidade.
+
+\begin{description}
+  \item[Definição da \citeonline{IEEE1990} para Qualidade:] \hfill \\
+  \begin{itemize}
+    \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados.
+    \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário.
+  \end{itemize}
+  \item[Definição da \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill \\
+  \begin{itemize}
+    \item Um padrão planejado e sistemático de todas as ações necessárias para garantir uma confiança adequada de que um item ou produto está em conformidade com os requisitos técnicos estabelecidos.
+    \item Um conjunto de atividades destinadas a avaliar o processo pelo qual os produtos são desenvolvidos ou produzidos.  
+  \end{itemize}
+  \item[Definição de \citeonline{PRESSMAN2010} para Qualidade de Software:] \hfill \\
+  Um processo de software eficaz aplicada de uma maneira que cria um produto útil que oferece valor mensurável para quem produz e para quem usá-lo.
+\end{description}
+
+Mas por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}. Devido à esses questionamentos, cabe à equipe de gerenciamento de qualidade julgar se um nível de qualidade foi alcançado. \citeonline{SOMMERVILLE2011} exemplifica algumas questões que auxiliam a validar a qualidade de um sistema:
+\begin{enumerate}
+  \item Os padrões de programação e documentação foram seguidos durante o processo de desenvolvimento?
+  \item O software foi testado adequadamente?
+  \item O software é suficientemente confiável para ser posto em produção?
+  \item A performance do software é aceitável para uso normal?
+  \item O software é utilizável?
+  \item O software é bem estruturado e compreensível?
+\end{enumerate}
+
+\subsection{Fatores de Qualidade}
+
+%(FIXME: página 673 de Software Engineering (9th Edition) - rever este parágrafo)
+Note que a qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende dos requisitos não-funcionais. \citeonline{BOEHM1978} sugere 15 atributos impostantes para a qualidade de software (ver Tabela~\ref{tab:atributos_qualidade} na página~\pageref{tab:atributos_qualidade}). Para \citeonline{SOMMERVILLE2011} estes atributos estão relacionados às seguintes características: dependability, usability, efficiency e maintainability, e lembra que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas.
+
+% dicas de posicionamento de floats:
+% http://www.andy-roberts.net/writing/latex/floats_figures_captions
+\begin{table}[h]
+    \centering
+    \caption{Atributos de qualidade de software}
+    \label{tab:atributos_qualidade}
+    \begin{tabular}{c|c|c}
+        Safety & Understandability & Portability \\ \hline
+        Security & Testability & Usability \\ \hline
+        Reliability & Adaptability & Reusability \\ \hline
+        Resilience & Modularity & Efficiency \\ \hline
+        Robustness & Complexity & Learnability
+    \end{tabular}
+    \legend{Fonte: \citeonline{BOEHM1978}}
+\end{table}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Importância}
+
+% FIXME: continuar
+E vale a pena investir recursos em busca de um conceito tão difícil de se definir?
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Tipos de Qualidade}
+
+
+\subsection{Qualidade de Projeto}
+
+
+\subsection{Qualidade de Conformação}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelos de Qualidade}
+
+% FIXME: rever e complementar este trecho
+Já \citeonline{PRESSMAN2010} apresenta diversas visões sobre como analisar a qualidade de um software (ver Tabelas \ref{tab:qualidade_garvin}, tal e tal):
+
+\subsection{Modelo de Garvin}
+
+% FIXME: rever e complementar este trecho
+% ver página 430 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
+
+\begin{table}[h]
+    \caption{Dimensões de qualidade de \citeonline{GARVIN1987}}
+    \label{tab:qualidade_garvin}
+    \begin{tabular}{p{3.7cm}|p{11cm}}
+        \textbf{Performance} & o software entrega todo o conteúdo/funções/característica especificadas nos requerimentos e de maneira que agregue valor ao usuário? \\ \hline
+        \textbf{Característica} & o software possui alguma característica que surpreenderá e agradará usuários finais novatos? \\ \hline
+        \textbf{Confiabilidade} & o software disponibiliza suas funções sem falhas? \\ \hline
+        \textbf{Conformidade} & o software está em conformidade com padrões locais e externos que são relevantes à aplicação? Ele segue convenções de código e de design? \\ \hline
+        \textbf{Durabilidade} & O software pode ser mantido (alterado) e corrigido (debugado) sem efeitos colaterais indesejáveis? \\ \hline
+        \textbf{Manutenibilidade} & o software pode ser mantido (alterado) e corrigido (debugado) em um espaço de tempo aceitável? \\ \hline
+        \textbf{Estética} & o valor estético, elegância, a \emph{presença} do software.\\ \hline
+        \textbf{Percepção} & Preconceitos (positivos ou negativos) que influenciam a percepção de qualidade. Um software anteriormente produzido por um desenvolvedor que produziu algo de baixa qualidade causará uma influência negativa na nova versão.\\
+  \end{tabular}
+  \legend{Fonte: \citeonline{PRESSMAN2010}}
+\end{table}
+
+\subsection{Modelo McCall}
+
+% FIXME: tabela com conteúdo errado, apenas título certo
+% ver página 431 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
+
+\begin{table}[h]
+    \caption{Fatores de qualidade de \citeonline{general1977factors}}
+    \label{tab:qualidade_mccal}
+    \begin{tabular}{p{3.7cm}|p{11cm}}
+        \textbf{Performance} & o software entrega todo o conteúdo/funções/característica especificadas nos requerimentos e de maneira que agregue valor ao usuário? \\ \hline
+        \textbf{Característica} & o software possui alguma característica que surpreenderá e agradará usuários finais novatos? \\ \hline
+        \textbf{Confiabilidade} & o software disponibiliza suas funções sem falhas? \\ \hline
+        \textbf{Conformidade} & o software está em conformidade com padrões locais e externos que são relevantes à aplicação? Ele segue convenções de código e de design? \\ \hline
+        \textbf{Durabilidade} & O software pode ser mantido (alterado) e corrigido (debugado) sem efeitos colaterais indesejáveis? \\ \hline
+        \textbf{Manutenibilidade} & o software pode ser mantido (alterado) e corrigido (debugado) em um espaço de tempo aceitável? \\ \hline
+        \textbf{Estética} & o valor estético, elegância, a \emph{presença} do software.\\ \hline
+        \textbf{Percepção} & Preconceitos (positivos ou negativos) que influenciam a percepção de qualidade. Um software anteriormente produzido por um desenvolvedor que produziu algo de baixa qualidade causará uma influência negativa na nova versão.\\
+  \end{tabular}
+  \legend{Fonte: \citeonline{PRESSMAN2010}}
+\end{table}
+
+
+\subsection{Modelo Boehm}
+
+
+\subsection{Modelo FURPS (\emph{Functionality, Usability, Reliability, Performance,
+Supportability})}
+
+
+\subsection{Modelo Dromey}
+
+
+\subsection{SquaRE - ISO/IEC 25010:2011 (\emph{Systems and software Quality Requirements
+and Evaluation})}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Gestão da Qualidade}
+
+
+\subsection{\emph{Walkthrough}}
+
+
+\subsection{Inspeções Fagan}
+
+
+\subsection{Método \emph{Cleanroom}}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Medição da Qualidade}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Padrões / Certificações}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Qualidade de Software e Métodos Ágeis}
+
+% ----------------------------------------------------------
+% Capitulo
+% ----------------------------------------------------------
 
 \chapter{Testes}
 
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Definição}
 
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+\begin{citacao}
+Por melhores que sejam as técnicas de modelagem e especificação de software, por mais disciplinada e experiente que seja a equipe de desenvolvimento, sempre haverá um fator que faz que o teste de software seja necessário: o erro humano. É um mito pensar que bons desenvolvedores, bem concentrados e com boas ferramentas serão capazes de desenvolver software sem erros (Beizer, 1990) **INSERIR NAS REFERÊNCIAS BIBLIOGRAFICAS.
+\end{citacao}
 
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Mesmo que 
 
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Verificação e Validação}
 
 Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -375,7 +531,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Caso de teste}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Tipos de Problemas}
 
 
@@ -387,7 +545,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Erro (\emph{Error / mistake})}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Categorias}
 
 
@@ -396,7 +556,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Funcional}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Técnicas}
 
 
@@ -408,7 +570,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Grey-box}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Níveis}
 
 
@@ -423,7 +587,9 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Sistema}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Foco do teste}
 
 
@@ -453,10 +619,14 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Internacionalização}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Ferramentas}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Fluxo de Teste em Diferentes Metodologias}
 
 % ----------------------------------------------------------
@@ -464,73 +634,21 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % ----------------------------------------------------------
 \chapter{Inspeção}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Definição e Importância}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Processo de Inspeção (método Fagan)}
 
-
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 \section{Funções de Inspeção}
 
-
-% ----------------------------------------------------------
-% Capitulo
-% ----------------------------------------------------------
-\chapter{Qualidade}
-
-
-\section{Definição e Importância}
-
-
-\section{Tipos de Qualidade}
-
-
-\subsection{Qualidade de Projeto}
-
-
-\subsection{Qualidade de Conformação}
-
-
-\section{Modelos de Qualidade}
-
-
-\subsection{Modelo McCall}
-
-
-\subsection{Modelo Boehm}
-
-
-\subsection{Modelo FURPS (\emph{Functionality, Usability, Reliability, Performance,
-Supportability})}
-
-
-\subsection{Modelo Dromey}
-
-
-\subsection{SquaRE - ISO/IEC 25010:2011 (\emph{Systems and software Quality Requirements
-and Evaluation})}
-
-
-\section{Gestão da Qualidade}
-
-
-\subsection{\emph{Walkthrough}}
-
-
-\subsection{Inspeções Fagan}
-
-
-\subsection{Método \emph{Cleanroom}}
-
-
-\section{Medição da Qualidade}
-
-
-\section{Padrões / Certificações}
-
-
-\section{Qualidade de Software e Métodos Ágeis}
 
 % ----------------------------------------------------------
 % Resultados
@@ -582,7 +700,8 @@ elementum}
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{abntex2-modelo-references}
+%\bibliography{abntex2-modelo-references}
+\bibliography{andrei-bibtex}
 
 % ----------------------------------------------------------
 % Glossário
