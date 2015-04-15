@@ -326,12 +326,21 @@ Lauro César Araujo
 Definir \emph{qualidade} não é tão simples como parece. Você sabe identificar quando um produto é de qualidade mas normalmente não é fácil indicar o que lhe dá essa característica. No caso de qualidade para Engenharia de Software vários autores trazem suas definições e existem vários modelos e organizações que almejam criar uma estrutura para a criação de softwares de qualidade.
 
 \begin{description}
-    \item[Definição da \citeonline{IEEE1990} para Qualidade:] \hfill \\
+    \item[Definição \citeonline{IEEE1990} para Qualidade:] \hfill \\
         \begin{itemize}
-            \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados.
-            \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário.
+            \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados
+            \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
         \end{itemize}
-    \item[Definição da \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill \\
+    \item[Definição \citeonline{IEEEvocabulary2010} para Qualidade:] \hfill \\
+        \begin{itemize}
+            \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados
+            \item A habilidade de um produto, serviço, sistema, componente ou processo em atender as necessidades, expectativas ou requisitos do cliente ou usuário
+            \item A totalidade das características de uma entidade que afetam sua capacidade de satisfazer necessidades explícitas e implícitas
+            \item A conformidade com as expectativas dos usuários, a conformidade com os requisitos do usuário, a satisfação do cliente, confiabilidade e nível de defeitos presentes
+            \item O grau em que um conjunto de características inerentes satisfaz os requisitos
+            \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
+        \end{itemize}
+    \item[Definição \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill \\
         \begin{itemize}
             \item Um padrão planejado e sistemático de todas as ações necessárias para garantir uma confiança adequada de que um item ou produto está em conformidade com os requisitos técnicos estabelecidos.
             \item Um conjunto de atividades destinadas a avaliar o processo pelo qual os produtos são desenvolvidos ou produzidos.
@@ -342,7 +351,11 @@ Definir \emph{qualidade} não é tão simples como parece. Você sabe identifica
         \end{itemize}
 \end{description}
 
-Mas por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}. Devido à esses questionamentos, cabe à equipe de gerenciamento de qualidade julgar se um nível de qualidade foi alcançado. \citeonline{SOMMERVILLE2011} exemplifica algumas questões que auxiliam a validar a qualidade de um sistema:
+Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}. Então em que se deve pensar para chegar à um produto com qualidade?
+
+\subsection{Fatores de Qualidade}
+
+Devido aos questionamentos levantados anteriormente, cabe à equipe de gerenciamento de qualidade julgar se um nível de qualidade foi alcançado. \citeonline{SOMMERVILLE2011} exemplifica algumas questões que auxiliam a validar a qualidade de um sistema:
 \begin{enumerate}
   \item Os padrões de programação e documentação foram seguidos durante o processo de desenvolvimento?
   \item O software foi testado adequadamente?
@@ -352,7 +365,6 @@ Mas por que é tão difícil chegar a uma definição objetiva? Basicamente porq
   \item O software é bem estruturado e compreensível?
 \end{enumerate}
 
-\subsection{Fatores de Qualidade}
 
 %(FIXME: página 673 de Software Engineering (9th Edition) - rever este parágrafo)
 Note que a qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende dos requisitos não-funcionais. \citeonline{BOEHM1978} sugere 15 atributos impostantes para a qualidade de software (ver Tabela~\ref{tab:atributos_qualidade} na página~\pageref{tab:atributos_qualidade}). Para \citeonline{SOMMERVILLE2011} estes atributos estão relacionados às seguintes características: dependability, usability, efficiency e maintainability, e lembra que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas.
