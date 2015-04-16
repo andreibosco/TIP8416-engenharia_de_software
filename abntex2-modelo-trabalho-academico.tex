@@ -228,12 +228,12 @@
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-  \item[Fig.] Area of the $i^{th}$ component
-  \item[456] Isto é um número
-  \item[123] Isto é outro número
-  \item[IEEE] \emph{Institute of Electrical and Electronics Engineers} - Instituto de Engenheiros Eletricistas e Eletrônicos
-  \item[ISO] \emph{International Organization for Standardization} - Organização Internacional para Padronização
-  \item[QA] \emph{Quality Assurance} - Garantia de Qualidade
+    \item[Fig.] Area of the $i^{th}$ component
+    \item[456] Isto é um número
+    \item[123] Isto é outro número
+    \item[IEEE] \emph{Institute of Electrical and Electronics Engineers} - Instituto de Engenheiros Eletricistas e Eletrônicos
+    \item[ISO] \emph{International Organization for Standardization} - Organização Internacional para Padronização
+    \item[QA] \emph{Quality Assurance} - Garantia de Qualidade
 \end{siglas}
 % ---
 
@@ -266,57 +266,9 @@
 % ----------------------------------------------------------
 % Introdução
 % ----------------------------------------------------------
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
+\chapter[Introdução]{Introdução}
 
-Este documento e seu código-fonte são exemplos de referência de uso da classe
-\textsf{abntex2} e do pacote \textsf{abntex2cite}. O documento 
-exemplifica a elaboração de trabalho acadêmico (tese, dissertação e outros do
-gênero) produzido conforme a ABNT NBR 14724:2011 \emph{Informação e documentação
-- Trabalhos acadêmicos - Apresentação}.
-
-A expressão ``Modelo Canônico'' é utilizada para indicar que \abnTeX\ não é
-modelo específico de nenhuma universidade ou instituição, mas que implementa tão
-somente os requisitos das normas da ABNT. Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em %\citeonline{abntex2classe}.
-
-Sinta-se convidado a participar do projeto \abnTeX! Acesse o site do projeto em
-\url{http://abntex2.googlecode.com/}. Também fique livre para conhecer,
-estudar, alterar e redistribuir o trabalho do \abnTeX, desde que os arquivos
-modificados tenham seus nomes alterados e que os créditos sejam dados aos
-autores originais, nos termos da ``The \LaTeX\ Project Public
-License''\footnote{\url{http://www.latex-project.org/lppl.txt}}.
-
-Encorajamos que sejam realizadas customizações específicas deste exemplo para
-universidades e outras instituições --- como capas, folha de aprovação, etc.
-Porém, recomendamos que ao invés de se alterar diretamente os arquivos do
-\abnTeX, distribua-se arquivos com as respectivas customizações.
-Isso permite que futuras versões do \abnTeX~não se tornem automaticamente
-incompatíveis com as customizações promovidas. Consulte
-%\citeonline{abntex2-wiki-como-customizar} par mais informações.
-
-Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-%\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
-%\cite{memoir}. 
-
-Esperamos, sinceramente, que o \abnTeX\ aprimore a qualidade do trabalho que
-você produzirá, de modo que o principal esforço seja concentrado no principal:
-na contribuição científica.
-
-Equipe \abnTeX 
-
-Lauro César Araujo
-
-
-% ----------------------------------------------------------
-% PARTE
-% ----------------------------------------------------------
-\part{Teoria}
-
-% ----------------------------------------------------------
-% Capitulo
-% ----------------------------------------------------------
-\chapter{Qualidade de Software}
+Este trabalho abordará blablablabla %FIXME continuar
 
 % ----------------------------------------------------------
 % Seção
@@ -353,16 +305,16 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
 
 Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}. Então em que se deve pensar para chegar à um produto com qualidade?
 
-\subsection{Fatores de Qualidade}
+\section{Fatores de Qualidade}
 
 Devido aos questionamentos levantados anteriormente, cabe à equipe de gerenciamento de qualidade julgar se um nível de qualidade foi alcançado. \citeonline{SOMMERVILLE2011} exemplifica algumas questões que auxiliam a validar a qualidade de um sistema:
 \begin{enumerate}
-  \item Os padrões de programação e documentação foram seguidos durante o processo de desenvolvimento?
-  \item O software foi testado adequadamente?
-  \item O software é suficientemente confiável para ser posto em produção?
-  \item A performance do software é aceitável para uso normal?
-  \item O software é utilizável?
-  \item O software é bem estruturado e compreensível?
+    \item Os padrões de programação e documentação foram seguidos durante o processo de desenvolvimento?
+    \item O software foi testado adequadamente?
+    \item O software é suficientemente confiável para ser posto em produção?
+    \item A performance do software é aceitável para uso normal?
+    \item O software é utilizável?
+    \item O software é bem estruturado e compreensível?
 \end{enumerate}
 
 
@@ -408,15 +360,7 @@ Na visão de \citeonline{GARVIN1987} a qualidade deve ser analisada de um ponto 
   \legend{Fonte: \citeonline{PRESSMAN2010}}
 \end{table}
 
-Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados nas seções seguintes. %FIXME: parei aqui
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-%\section{Importância}
-
-% FIXME: decidir se mantenho esta seção
-%E vale a pena investir recursos em busca de um conceito tão difícil de se definir?
+Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados nas seções seguintes.
 
 % ----------------------------------------------------------
 % Seção
@@ -426,8 +370,18 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 
 \subsection{Qualidade do Produto}
 
-
 \subsection{Qualidade do Processo}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Custo da qualidade}
+
+
+% ----------------------------------------------------------
+% Capitulo
+% ----------------------------------------------------------
+\chapter{Qualidade de Software}
 
 % ----------------------------------------------------------
 % Seção
@@ -440,7 +394,7 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 % ver página 431 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
 
 \begin{table}[h]
-    \caption{Fatores de qualidade de \citeonline{general1977factors}}
+    \caption{Fatores de qualidade de McCall}
     \label{tab:qualidade_mccal}
     \begin{tabular}{p{3.7cm}|p{11cm}}
         \textbf{Performance} & o software entrega todo o conteúdo/funções/característica especificadas nos requerimentos e de maneira que agregue valor ao usuário? \\ \hline
@@ -452,7 +406,7 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
         \textbf{Estética} & o valor estético, elegância, a \emph{presença} do software.\\ \hline
         \textbf{Percepção} & Preconceitos (positivos ou negativos) que influenciam a percepção de qualidade. Um software anteriormente produzido por um desenvolvedor que produziu algo de baixa qualidade causará uma influência negativa na nova versão.\\
   \end{tabular}
-  \legend{Fonte: \citeonline{PRESSMAN2010}}
+  \legend{Fonte: \apud{general1977factors}{PRESSMAN2010}}
 \end{table}
 
 
@@ -510,10 +464,9 @@ and Evaluation})}
 \section{Definição}
 
 \begin{citacao}
-Por melhores que sejam as técnicas de modelagem e especificação de software, por mais disciplinada e experiente que seja a equipe de desenvolvimento, sempre haverá um fator que faz que o teste de software seja necessário: o erro humano. É um mito pensar que bons desenvolvedores, bem concentrados e com boas ferramentas serão capazes de desenvolver software sem erros (Beizer, 1990) **INSERIR NAS REFERÊNCIAS BIBLIOGRAFICAS.
+Por melhores que sejam as técnicas de modelagem e especificação de software, por mais disciplinada e experiente que seja a equipe de desenvolvimento, sempre haverá um fator que faz que o teste de software seja necessário: o erro humano. É um mito pensar que bons desenvolvedores, bem concentrados e com boas ferramentas serão capazes de desenvolver software sem erros \apud{beizer1990}{WAZLAWICK2013}. % origem: página 287 do pdf
 \end{citacao}
 
-Mesmo que 
 
 % ----------------------------------------------------------
 % Seção
@@ -551,14 +504,20 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % ----------------------------------------------------------
 \section{Tipos de Problemas}
 
+\begin{itemize}
+    \item Falha (\emph{Failure / problem})
+    \item Defeito (\emph{Fault / defect / bug})
+    \item Erro (\emph{Error / mistake})
+\end{itemize}
 
-\subsection{Falha (\emph{Failure / problem})}
-
-
-\subsection{Defeito (\emph{Fault / defect / bug})}
-
-
-\subsection{Erro (\emph{Error / mistake})}
+\begin{figure}[h]
+    \centering
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.8]{defeito_falha_erro}
+    \caption{Visão geral de tipos de problemas}
+    \label{fig:tipos_problemas}
+    \legend{Fonte: \citeonline{wagner2013}}
+\end{figure}
 
 % ----------------------------------------------------------
 % Seção
@@ -666,9 +625,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 % ----------------------------------------------------------
-% Resultados
+% Capítulo
 % ----------------------------------------------------------
-\part{Exemplo (caso de uso?)}
 
 % ---
 % primeiro capitulo de Resultados
