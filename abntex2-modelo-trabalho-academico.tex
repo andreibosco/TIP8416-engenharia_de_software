@@ -278,12 +278,12 @@ Este trabalho abordará blablablabla %FIXME continuar
 Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão simples como parece. O conceito de qualidade está sob discussão por filósofos a mais de 2 mil anos, desde Platão. Você sabe identificar quando um produto é de qualidade mas normalmente não é fácil indicar o que lhe dá essa característica. No caso de qualidade para Engenharia de Software vários autores trazem suas definições e existem vários modelos e organizações que almejam criar uma estrutura para a criação de softwares de qualidade.
 
 \begin{description}
-    \item[Definição \citeonline{IEEE1990} para Qualidade:] \hfill \\
+    \item[Definição \citeonline{IEEE1990} para Qualidade:] \hfill
         \begin{itemize}
             \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados
             \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
         \end{itemize}
-    \item[Definição \citeonline{IEEEvocabulary2010} para Qualidade:] \hfill \\
+    \item[Definição \citeonline{IEEEvocabulary2010} para Qualidade:] \hfill
         \begin{itemize}
             \item O grau em que um sistema, componente ou processo alcança os requerimentos especificados
             \item A habilidade de um produto, serviço, sistema, componente ou processo em atender as necessidades, expectativas ou requisitos do cliente ou usuário
@@ -292,12 +292,16 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
             \item O grau em que um conjunto de características inerentes satisfaz os requisitos
             \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
         \end{itemize}
-    \item[Definição \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill \\
+    \item[Definição NBR ISO/IEC 9126-2003\protect\footnote{Disponível em http://www.abntcatalogo.com.br/norma.aspx?ID=2815. Substituída pela nova família de Normas ISO/IEC 25000} para Qualidade:] \hfill % FIXME: rodapé não está aparecendo, e adicionar estilo para url
+        \begin{itemize}
+            \item  Totalidade de características de uma entidade que lhe confere a capacidade de satisfazer as necessidades explícitas e implícitas.
+        \end{itemize}
+    \item[Definição \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill
         \begin{itemize}
             \item Um padrão planejado e sistemático de todas as ações necessárias para garantir uma confiança adequada de que um item ou produto está em conformidade com os requisitos técnicos estabelecidos.
             \item Um conjunto de atividades destinadas a avaliar o processo pelo qual os produtos são desenvolvidos ou produzidos.
         \end{itemize}
-    \item[Definição de \citeonline{PRESSMAN2010} para Qualidade de Software:] \hfill \\
+    \item[Definição de \citeonline{PRESSMAN2010} para Qualidade de Software:] \hfill
         \begin{itemize}
             \item Um processo de software eficaz aplicada de uma maneira que cria um produto útil que oferece valor mensurável para quem produz e para quem usá-lo.
         \end{itemize}
@@ -367,10 +371,19 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 % ----------------------------------------------------------
 \section{Tipos de Qualidade}
 % FIXME: página 21 do livro Software Product Quality Control
-
 \subsection{Qualidade do Produto}
 
+
 \subsection{Qualidade do Processo}
+
+% FIXME: página 228 de Engenharia de Software - conceitos e práticas
+% FIXME: trecho quase copiado do livro, alterar
+Pode-se falar de dois aspectos da qualidade: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. Apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum. Pressman (2005) define dois tipos de qualidade para o produto de software: % FIXME: conferir com a minha edição de 2010
+
+\begin{itemize}
+    \item Qualidade de projeto: avalia quão bem o produto foi projetado
+    \item Qualidade de conformação: avalia quão bem o produto atende aos requisitos
+\end{itemize}
 
 % ----------------------------------------------------------
 % Seção
@@ -382,18 +395,31 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 % Capitulo
 % ----------------------------------------------------------
 \chapter{Qualidade de Software}
+Este capítulo fará uma abordagem sobre diversos tipos de modelos de qualidade existente, incluindo uma breve contextualização histórica de cada, e contará também com seções introdutórias sobre gestão da qualidade, medição e padrões/certificações. E como fechamento será apresentado como a qualidade de software pode ser inserido em projetos que implementam metodologias ágeis.
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Modelos de Qualidade}
 
+Um \emph{Modelo de Qualidade} é um modelo cujo objetivo é descrever, avaliar e/ou prever qualidade. Muitos modelos de qualidade fazem uma decomposição da qualidade geral de um produto em sub-qualidades para que se torne mais fácil de compreender e gerenciar \cite{wagner2013}.
+
+Este tópico vem sendo pesquisado à décadas e existe um grande número de modelos \cite{Klas2009} e seria inviável analisar todas, então focaremos nos modelos mais famosos e mais utilizados. \citeonline{wagner2013} propôs uma extensão da classificação de modelos DAP (\emph{definition, assessment, prediction}) de \citeonline{Deissenboeck2009}:
+% FIXME: dividir os modelos nas categorias ou apresentar as categorias e depois os modelos?
+% página 45 de Software Product Quality
+\begin{itemize}
+    \item Modelos de Definição (ex.: FURPS);
+    \item Modelos de Avaliação (ex.: EMISQ);
+    \item Modelos de Previsão;
+    \item Modelos Polivantes\footnote{\emph{Multi-purpose}} (ex.: COQUAMO).
+\end{itemize}
+
 \subsection{Modelo McCall}
 
 % FIXME: tabela com conteúdo errado, apenas título certo
 % ver página 431 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
 
-\begin{table}[h]
+\begin{table}[H]
     \caption{Fatores de qualidade de McCall}
     \label{tab:qualidade_mccal}
     \begin{tabular}{p{3.7cm}|p{11cm}}
@@ -422,6 +448,7 @@ Supportability})}
 
 \subsection{SquaRE - ISO/IEC 25010:2011 (\emph{Systems and software Quality Requirements
 and Evaluation})}
+
 
 % ----------------------------------------------------------
 % Seção
@@ -503,6 +530,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Tipos de Problemas}
+
+% FIXME: página 32 de Software Product Quality Control
 
 \begin{itemize}
     \item Falha (\emph{Failure / problem})

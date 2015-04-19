@@ -180,6 +180,23 @@
   Url                      = {http://dl.acm.org/citation.cfm?id=2473498.2474030}
 }
 
+@InProceedings{Klas2009,
+  Title                    = {CQML Scheme: A Classification Scheme for Comprehensive Quality Model Landscapes},
+  Author                   = {Klas, M. and Heidrich, J. and Munch, J. and Trendowicz, A.},
+  Booktitle                = {Software Engineering and Advanced Applications, 2009. SEAA '09. 35th Euromicro Conference on},
+  Year                     = {2009},
+  Month                    = {Aug},
+  Pages                    = {243-250},
+
+  __markedentry            = {[Andrei:6]},
+  Abstract                 = {Managing quality during the development, operation, and maintenance of software(-intensive) systems and services is a challenging task. Although many organizations need to define, control, measure, and improve various quality aspects of their development artifacts and processes, nearly no guidance is available on how to select, adapt, define, combine, use, and evolve quality models. Catalogs of models as well as selection and tailoring processes are widely missing. A first step towards better support for selecting and adapting quality models can be seen in a classification of existing quality models, especially with respect to their suitability for different purposes and contexts. This article presents so-called comprehensive quality model landscapes (CQMLs), which provide such a classification scheme and help to get an overview of existing models and their relationships. The article focuses on the description and justification of essential concepts needed to define quality models and landscapes. In addition, the article describes typical usage scenarios, illustrates the concept with examples, and sketches open questions and future work.},
+  Doi                      = {10.1109/SEAA.2009.88},
+  ISSN                     = {1089-6503},
+  Keywords                 = {software maintenance;software management;software quality;CQML scheme;classification scheme;comprehensive quality model landscape;quality assurance;quality improvement;software maintenance;software quality management;software-intensive system;Application software;Catalogs;Context modeling;Decision making;Measurement standards;Project management;Quality assurance;Quality management;Software engineering;Software maintenance;Software quality management;classification sheme;quality assurance;quality improvement},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.18}
+}
+
 @Book{general1977factors,
   Title                    = {Factors in Software Quality},
   Author                   = {McCall, J.A. and General Electric Company and Richards, P.K. and Walters, G.F. and Rome Air Development Center and United States. Air Force. Systems Command. Electronic Systems Division},
@@ -266,7 +283,7 @@
   Series                   = {SpringerLink : B{\"u}cher},
 
   Owner                    = {Andrei},
-  Timestamp                = {2015.04.15}
+  Timestamp                = {2015.04.16}
 }
 
 @Book{WAZLAWICK2013,
