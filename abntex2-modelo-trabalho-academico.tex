@@ -292,7 +292,7 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
             \item O grau em que um conjunto de características inerentes satisfaz os requisitos
             \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
         \end{itemize}
-    \item[Definição NBR ISO/IEC 9126-2003\protect\footnote{Disponível em http://www.abntcatalogo.com.br/norma.aspx?ID=2815. Substituída pela nova família de Normas ISO/IEC 25000} para Qualidade:] \hfill % FIXME: rodapé não está aparecendo, e adicionar estilo para url
+    \item[Definição NBR ISO/IEC 9126-2003 para Qualidade:]\footnote{Disponível em \url{http://www.abntcatalogo.com.br/norma.aspx?ID=2815}. Substituída pela nova família de Normas ISO/IEC 25000} % FIXME: rodapé não está aparecendo, e adicionar estilo para url
         \begin{itemize}
             \item  Totalidade de características de uma entidade que lhe confere a capacidade de satisfazer as necessidades explícitas e implícitas.
         \end{itemize}
@@ -371,19 +371,18 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 % ----------------------------------------------------------
 \section{Tipos de Qualidade}
 % FIXME: página 21 do livro Software Product Quality Control
-\subsection{Qualidade do Produto}
+%\subsection{Qualidade do Produto}
 
-
-\subsection{Qualidade do Processo}
+%\subsection{Qualidade do Processo}
 
 % FIXME: página 228 de Engenharia de Software - conceitos e práticas
 % FIXME: trecho quase copiado do livro, alterar
 Pode-se falar de dois aspectos da qualidade: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. Apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum. Pressman (2005) define dois tipos de qualidade para o produto de software: % FIXME: conferir com a minha edição de 2010
 
-\begin{itemize}
-    \item Qualidade de projeto: avalia quão bem o produto foi projetado
-    \item Qualidade de conformação: avalia quão bem o produto atende aos requisitos
-\end{itemize}
+\begin{description}
+    \item [Qualidade de projeto (atender as necessidades do cliente):] qualidade identificável através de características não mesuráveis objetivamente, a qualidade do produto em atender as expectativas do cliente, explícitas ou não.
+    \item [Qualidade de conformação (conformidade com as especificações):] avalia quão bem o produto atende aos requisitos, em conformidade com as especificações definidas, através de características mesuráveis.
+\end{description}
 
 % ----------------------------------------------------------
 % Seção
@@ -448,7 +447,30 @@ Supportability})}
 
 \subsection{SquaRE - ISO/IEC 25010:2011 (\emph{Systems and software Quality Requirements
 and Evaluation})}
+% FONTE: página 230 de Engenharia de Software - Conceitos e Práticas
+Em 2011 a família de normas ISO/IEC 25000 substituiram a norma NBR ISO/IEC 9126-1:2003, sendo um dos fatores que a antiga norma aplicava-se apenas no processo de desenvolvimento e uso do produto de software, e não se preocupava quanto à definição do produto em si.
 
+Para facilitar a compreensão das fases do modelo SquaRE, veja a tabela \ref{tab:fases_square}, que apresenta sua aplicação no ciclo de vida da normal ISO/IEC 15288 e nos modelos A, B e C. % FIXME: corrigir referência da tabela e inserir os outros modelos de projeto (RUP talvez?)
+
+\begin{table}[H]
+    \caption{Fases do modelo SQuaRE e sua aplicação no ciclo de vida de um projeto}
+    \label{tab:fases_square}
+    \begin{tabular}{p{4.9cm}|p{4.9cm}|p{4.9cm}}
+        \textbf{Fases da 15288} & \textbf{Fases de RUP} & \textbf{Fases de SQuaRE} \\ \hline
+        Definição de requisitos dos interessados & Blabla & Requisitos de qualidade do produto de software\\ \hline
+        Análise dos requisitos & Blabla & Desenvolvimento do produto \\
+        \emph{Design} arquitetural & Blabla & \\
+        Implementação & Blabla & \\
+        Integração & Blabla & \\
+        Verificação & Blabla & \\
+        Transição & Blabla & \\
+        Validação & Blabla & \\ \hline
+        Operação & Blabla & Uso do produto \\
+        Manutenção & Blabla & \\ \hline
+        Aposentadoria & Blabla & -
+  \end{tabular}
+  \legend{Fonte: \citeonline{WAZLAWICK2013}}
+\end{table}
 
 % ----------------------------------------------------------
 % Seção
@@ -651,33 +673,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Funções de Inspeção}
-
-
-% ----------------------------------------------------------
-% Capítulo
-% ----------------------------------------------------------
-
-% ---
-% primeiro capitulo de Resultados
-% ---
-\chapter{Lectus lobortis condimentum}
-
-% ---
-\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae}
-% ---
-
-\lipsum[21-22]
-
-% ---
-% segundo capitulo de Resultados
-% ---
-\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
-elementum}
-
-\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
-
-\lipsum[24]
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
