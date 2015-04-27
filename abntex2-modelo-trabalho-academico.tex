@@ -391,6 +391,11 @@ Pode-se falar de dois aspectos da qualidade: a \emph{qualidade do produto} em si
 % Seção
 % ----------------------------------------------------------
 \section{Custo da qualidade}
+\begin{citacao} % pagina 435 - pressman
+Se você produzir um sistema de software de péssima qualidade, então você perderá pois ninguém irá comprá-lo. Por outro lado, se você gastar tempo infinito, extremo esforço e grandes quantidades de dinheiro para produzir um software absolutamente perfeito então você demorará tanto para concluí-lo e será tão dispendioso que você acabará fora do mercado do mesmo jeito. Ou você terá perdido a janela de oportunidade ou terá exaurido sua verba. Então as pessoas da indústria tentam encontrar o posicionamento mágico onde o produto é bom o suficiente para não ser rejeitado de cara, como durante a avaliação, e sem ser preso a um perfeccionismo e excesso de trabalho que faça com ele acabe demorando ou saindo caro demais. (MEYER, Bertrand apud \citeauthoronline{PRESSMAN2010})
+\end{citacao}
+
+% FIXME: continuar - pressman, 436
 
 
 % ----------------------------------------------------------
@@ -576,109 +581,6 @@ Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta
 
 % ================================
 % =========== SUBSEÇÃO ===========
-\subsection{Análise dos modelos hierárquicos}
-
-Os modelos apresentados são úteis para auxiliar na análise da qualidade do software desenvolvido, porém nenhum dos modelos explica a lógica de porque algumas características foram consideradas e outras não, porque um atributo está em uma posição da hierarquia, porque nenhum dos modelos aborda segurança, dentre outras questões \cite{PFLEEGER2010}.
-
-\citeonline{wagner2013} também critica a ambiguidade das características de qualidade e a dificuldade da realização de uma medição adequada. Uma pesquisa realizada por \citeonline{wagner2012} apontou que menos de 28\% das empresas pesquisadas implementam tais modelos hierárquicos, e que 71\% delas desenvolveram uma variante própria, o que demonstra uma necessidade de customização.
-
-\citeonline{PRESSMAN2010} concorda com estas críticas, mas lembra que esses modelos proveem uma boa base para medições indiretas e como um checklist para avaliar a qualidade de um sistema.
-
-\begin{table}[H]
-\centering
-    \caption{Comparação entre critérios/objetivos dos modelos de qualidade de McCall, Boehm e ISO 9126}
-    \label{tab:modelos_comparacao}
-    \begin{tabular}{@{}lllll@{}}
-        \toprule
-        \textbf{Critérios/Objetivos} & \multicolumn{1}{c}{McCall} & Bohem & ISO 9126 & ISO 25010\\ \midrule
-        Exatidão & * & * & funcionalidade & funcionalidade \\
-        \rowcolor[HTML]{EFEFEF} 
-        Confiabilidade & * & * & * & * \\
-        Integridade & * & * &  \\
-        \rowcolor[HTML]{EFEFEF} 
-        Usabilidade & * & * & * & * \\
-        Eficiência & * & * & * & * \\
-        \rowcolor[HTML]{EFEFEF} 
-        Manutibilidade & * & * & * & * \\
-        Testabilidade & * &  & manutibilidade & manutibilidade \\
-        \rowcolor[HTML]{EFEFEF} 
-        Interoperabilidade & * &  &  & compatibilidade \\
-        Flexibilidade & * & * &  & \\
-        \rowcolor[HTML]{EFEFEF} 
-        Reusabilidade & * & * &  & \\
-        Portabilidade & * & * & * & * \\
-        \rowcolor[HTML]{EFEFEF} 
-        Clareza &  & * &  & \\
-        Modificabilidade &  & * & manutibilidade & manutibilidade \\
-        \rowcolor[HTML]{EFEFEF} 
-        Documentação &  & * &  & \\
-        Resiliência &  & * &  & confiabilidade \\
-        \rowcolor[HTML]{EFEFEF} 
-        Compreensibilidade &  & * &  & usabilidade \\
-        Validez &  & * & funcionalidade & funcionalidade \\
-        \rowcolor[HTML]{EFEFEF} 
-        Funcionalidade &  &  & * & * \\
-        Generalidade &  & * &  \\
-        \rowcolor[HTML]{EFEFEF} 
-        Economia &  & * & eficiência & eficiência \\
-        Segurança & & & funcionalidade & * \\ \bottomrule
-    \end{tabular}
-    \legend{Fonte: [Tradução do autor] \citeonline{berander2005}}
-\end{table}
-
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Modelo Dromey (1995)}
-% três princípios fundamentais: atributos de qualidade, propriedades do produto, e as ligações entre eles
-O modelo de \citeonline{Dromey1995} traz uma diferente abordagem de McCall e Boehms, pois propõe que o modelo de qualidade seja baseado na perspectiva do produto, onde a avaliação e características de qualidade irão variar para cada produto \cite{SURYN2014}:
-\begin{citacao}
-
-O que deve ser compreendido em qualquer tentativa de criar um modelo de qualidade é que um software não manifesta diretamente os atributos de qualidade. No entanto, ele exibe características de produto que implicam ou contribuem para atributos de qualidade ou outras características (defeitos do produto) que detraem dos atributos de qualidade do produto. A maioria dos modelos de qualidade de software falham em lidar adequadamente com a faceta de problema nas características do produto, e eles também falham em relacionar diretamente os atributos de qualidade e as características correspondentes no produto. [Tradução do autor] \cite{Dromey1995}
-\end{citacao}
-
-Seguindo esta lógica Dromey criou um framework de avaliação de qualidade que analisa a qualidade de componentes através de propriedade tangíveis. Cada artefato produzido durante a criação do software (ex.: código, documentação, guia de uso, etc) pode ser associado a um modelo de qualidade diferente (uma váriavel pode ser um componente do modelo de implementação, e um módulo pode ser um componente do modelo de projeto, por exemplo) \cite{SURYN2014}. E as propriedades tangíveis são divididas em quatro tipo de propriedades (ver \autoref{fig:dromey-estrutura_modelo}):
-
-\begin{itemize}
-    \item exatidão: verifica se algum princípio básico foi violado
-    \item interna: quão bem um componente foi implementado de acordo com o seu uso pretendido
-    \item contextual: liga com influências externas e o uso do componente
-    \item descritiva: quão bem descrito é o componente
-\end{itemize}
-
-Essas propriedades são utilizadas para a avaliar qualidade dos componentes, e para Dromey, um software de alta qualidade é o resultado do somatório de componentes de alta qualidade, desde os requerimentos individuais até a nomenclatura das variáveis do código. O modelo de exemplo ilustrado na \autoref{fig:dromey-estrutura_modelo_exemplo} foi criado seguindo os seguintes passos \cite{PFLEEGER2010}:
-
-\begin{enumerate}
-    \item identificar os atributos de qualidade de alto nível
-    \item identificar os componentes do produto
-    \item identificar e classificar as propriedades mais significantes e tangíveis para cada componente
-    \item propor um conjunto de axiomas conectando as propriedades do produto com os atributos de qualidade
-    \item avaliar o modelo, identificando suas fraquezas, refinando-o e recriando-o
-\end{enumerate}
-
-Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha, maçã e canela de alta qualidade resultará uma torta de maçã de alta qualdiade? Óbvio que não, outros elementos são necessários: uma receita (arquitetura e processo de execução), as preferências do usuário (fator totalmente ignorado por Dromey) e pessoas com as qualificações e ferramentas para executar a receita apropriadamente. Certamente este modelo pode ser classificado como uma abordagem \emph{bottom-to-top} de qualidade de software.
-
-% FIXME: fazer versão própria, cuidado com o tamanho
-\begin{figure}[H]
-    \centering
-    \caption{Estrutura do Modelo de Qualidade de Dromey}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.63]{dromey-estrutura_modelo}
-    \label{fig:dromey-estrutura_modelo}
-    \legend{Fonte: Adaptação de \citeonline{Deissenboeck2009}}
-\end{figure}
-
-% FIXME: fazer versão própria
-\begin{figure}[H]
-    \centering
-    \caption{Avaliação de qualidade de um componente de variável}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.74]{dromey-estrutura_modelo_exemplo}
-    \label{fig:dromey-estrutura_modelo_exemplo}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
-\end{figure}
-
-% ================================
-% =========== SUBSEÇÃO ===========
 \subsection{SquaRE - ISO/IEC 25010 (\emph{Systems and software Quality Requirements
 and Evaluation})}
 % FONTE: página 230 de Engenharia de Software - Conceitos e Práticas
@@ -735,19 +637,131 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
 %   \legend{Fonte: \citeonline{WAZLAWICK2013}}
 % \end{table}
 
+% ================================
+% =========== SUBSEÇÃO ===========
+\subsection{Análise dos modelos hierárquicos}
+
+Os modelos apresentados são úteis para auxiliar na análise da qualidade do software desenvolvido, porém nenhum dos modelos explica a lógica de porque algumas características foram consideradas e outras não, porque um atributo está em uma posição da hierarquia, porque nenhum dos modelos aborda segurança, dentre outras questões \cite{PFLEEGER2010}.
+
+\citeonline{wagner2013} também critica a ambiguidade das características de qualidade e a dificuldade da realização de uma medição adequada. Uma pesquisa realizada por \citeonline{wagner2012} apontou que menos de 28\% das empresas pesquisadas implementam tais modelos hierárquicos, e que 71\% delas desenvolveram uma variante própria, o que demonstra uma necessidade de customização.
+
+\citeonline{PRESSMAN2010} concorda com estas críticas, mas lembra que esses modelos proveem uma boa base para medições indiretas e como um checklist para avaliar a qualidade de um sistema.
+
+\begin{table}[H]
+\centering
+    \caption{Comparação entre critérios/objetivos dos modelos de qualidade de McCall, Boehm e ISO 9126}
+    \label{tab:modelos_comparacao}
+    \begin{tabular}{@{}lllll@{}}
+        \toprule
+        \textbf{Critérios/Objetivos} & \multicolumn{1}{c}{McCall} & Bohem & ISO 9126 & ISO 25010\\ \midrule
+        Exatidão & * & confiabilidade & funcionalidade & funcionalidade \\
+        \rowcolor[HTML]{EFEFEF} 
+        Confiabilidade & * & * & * & * \\
+        Integridade & * &  &  & segurança? \\
+        \rowcolor[HTML]{EFEFEF} 
+        Usabilidade & * & compreensibilidade & * & * \\
+        Eficiência & * & * & * & * \\
+        \rowcolor[HTML]{EFEFEF} 
+        Manutibilidade & * & * & * & * \\
+        Testabilidade & * &  & manutibilidade & manutibilidade \\
+        \rowcolor[HTML]{EFEFEF} 
+        Interoperabilidade & * &  &  & compatibilidade \\
+        Flexibilidade & * &  &  & manutibilidade \\
+        \rowcolor[HTML]{EFEFEF} 
+        Reusabilidade & * &  &  & \\
+        Portabilidade & * & * & * & * \\
+        \rowcolor[HTML]{EFEFEF} 
+        Clareza &  & * &  & \\
+        Modificabilidade &  & * & manutibilidade & manutibilidade \\
+        \rowcolor[HTML]{EFEFEF} 
+        Documentação &  & * &  & \\
+        Resiliência &  & * &  & confiabilidade \\
+        \rowcolor[HTML]{EFEFEF} 
+        %Compreensibilidade &  & * &  & usabilidade \\ % remover?
+        Validez &  & * & funcionalidade & funcionalidade \\
+        Funcionalidade &  &  & * & * \\
+        \rowcolor[HTML]{EFEFEF} 
+        Generalidade &  & * &  & \\
+        Segurança & & & funcionalidade & * \\ \bottomrule
+    \end{tabular}
+    \legend{Fonte: [Modificado pelo autor] \citeonline{berander2005}}
+\end{table}
+
+% ================================
+% =========== SUBSEÇÃO ===========
+\subsection{Modelo Dromey (1995)}
+% três princípios fundamentais: atributos de qualidade, propriedades do produto, e as ligações entre eles
+O modelo de \citeonline{Dromey1995} traz uma diferente abordagem de McCall e Boehms, pois propõe que o modelo de qualidade seja baseado na perspectiva do produto, onde a avaliação e características de qualidade irão variar para cada produto \cite{SURYN2014}:
+
+\begin{citacao}
+O que deve ser compreendido em qualquer tentativa de criar um modelo de qualidade é que um software não manifesta diretamente os atributos de qualidade. No entanto, ele exibe características de produto que implicam ou contribuem para atributos de qualidade ou outras características (defeitos do produto) que detraem dos atributos de qualidade do produto. A maioria dos modelos de qualidade de software falham em lidar adequadamente com a faceta de problema nas características do produto, e eles também falham em relacionar diretamente os atributos de qualidade e as características correspondentes no produto. [Tradução do autor] \cite{Dromey1995}
+\end{citacao}
+
+Seguindo esta lógica Dromey criou um framework de avaliação de qualidade que analisa a qualidade de componentes através de propriedade tangíveis. Cada artefato produzido durante a criação do software (ex.: código, documentação, guia de uso, etc) pode ser associado a um modelo de qualidade diferente (uma váriavel pode ser um componente do modelo de implementação, e um módulo pode ser um componente do modelo de projeto, por exemplo) \cite{SURYN2014}. E as propriedades tangíveis são divididas em quatro tipo de propriedades (ver \autoref{fig:dromey-estrutura_modelo}):
+
+\begin{itemize}
+    \item exatidão: verifica se algum princípio básico foi violado
+    \item interna: quão bem um componente foi implementado de acordo com o seu uso pretendido
+    \item contextual: liga com influências externas e o uso do componente
+    \item descritiva: quão bem descrito é o componente
+\end{itemize}
+
+Essas propriedades são utilizadas para a avaliar qualidade dos componentes, e para Dromey, um software de alta qualidade é o resultado do somatório de componentes de alta qualidade, desde os requerimentos individuais até a nomenclatura das variáveis do código. O modelo de exemplo ilustrado na \autoref{fig:dromey-estrutura_modelo_exemplo} foi criado seguindo os seguintes passos \cite{PFLEEGER2010}:
+
+\begin{enumerate}
+    \item identificar os atributos de qualidade de alto nível
+    \item identificar os componentes do produto
+    \item identificar e classificar as propriedades mais significantes e tangíveis para cada componente
+    \item propor um conjunto de axiomas conectando as propriedades do produto com os atributos de qualidade
+    \item avaliar o modelo, identificando suas fraquezas, refinando-o e recriando-o
+\end{enumerate}
+
+Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha, maçã e canela de alta qualidade resultará uma torta de maçã de alta qualdiade? Óbvio que não, outros elementos são necessários: uma receita (arquitetura e processo de execução), as preferências do usuário (fator totalmente ignorado por Dromey) e pessoas com as qualificações e ferramentas para executar a receita apropriadamente. Certamente este modelo pode ser classificado como uma abordagem \emph{bottom-to-top} de qualidade de software.
+
+% FIXME: fazer versão própria, cuidado com o tamanho
+\begin{figure}[H]
+    \centering
+    \caption{Estrutura do Modelo de Qualidade de Dromey}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.63]{dromey-estrutura_modelo}
+    \label{fig:dromey-estrutura_modelo}
+    \legend{Fonte: Adaptação de \citeonline{Deissenboeck2009}}
+\end{figure}
+
+% FIXME: fazer versão própria
+\begin{figure}[H]
+    \centering
+    \caption{Avaliação de qualidade de um componente de variável}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.74]{dromey-estrutura_modelo_exemplo}
+    \label{fig:dromey-estrutura_modelo_exemplo}
+    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+\end{figure}
+
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Gestão da Qualidade}
+A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}. Ele pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. % FIXME: como isso funcionaria em uma metodologia ágil, com pequenas equipes?
+
+\citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional\footnote{Definição: FIXME} em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
+\begin{enumerate}
+    \item \emph{Desconhecimento:} quando a empresa sequer sabe que tem problemas com qualidade. Não há compreensão de que a qualidade seja um objetivo, ferramentas não são usadas ou conhecidas, e inspeções de qualidade não são realizadas.
+    \item \emph{Despertar:} a empresa reconhece que tem problemas com a qualidade e que precisa começar a lidar com eles, mas ainda vê isso como um mal necessário, não como fonte de lucro.
+    \item \emph{Alinhamento:} o gerenciamento de qualidade se torna uma ferramente institucional e os problemas vão sendo priorizados e resolvidos à medida que surgem.
+    \item \emph{Sabedoria:} a prevenção de problemas, e não apenas sua correção, torna-se rotina na empresa. Problemas são identificados antes que surjam, e todos os processos e rotinas estão abertos a mudanças visando à melhoria da qualidade.
+    \item \emph{Certeza:} a gestão da qualidade é uma constante e parte essencial do funcionamento da empresa. Quase todos os problemas são prevenidos e eliminados antes de surgirem.
+\end{enumerate}
+
+Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A equipe responsável de QA deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
+
+%\subsection{\emph{Walkthrough}}
 
 
-\subsection{\emph{Walkthrough}}
+%\subsection{Inspeções Fagan}
 
 
-\subsection{Inspeções Fagan}
-
-
-\subsection{Método \emph{Cleanroom}}
+%\subsection{Método \emph{Cleanroom}}
 
 % ----------------------------------------------------------
 % Seção
@@ -757,7 +771,7 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Padrões / Certificações}
+%\section{Padrões / Certificações}
 
 % ----------------------------------------------------------
 % Seção
