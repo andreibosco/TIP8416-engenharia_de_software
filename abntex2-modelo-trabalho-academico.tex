@@ -153,7 +153,8 @@
 \setlength{\parindent}{1.3cm}
 
 % Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% \setlength{\parskip}{0.2cm}  % tente também \onelineskip
+\setlength{\onelineskip}{0.2cm}
 
 % ---
 % compila o indice
@@ -587,39 +588,40 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
 \centering
     \caption{Comparação entre critérios/objetivos dos modelos de qualidade de McCall, Boehm e ISO 9126}
     \label{tab:modelos_comparacao}
-    \begin{tabular}{@{}llll@{}}
+    \begin{tabular}{@{}lllll@{}}
         \toprule
-        \textbf{Critérios/Objetivos} & \multicolumn{1}{c}{McCall} & Bohem & ISO 9126 \\ \midrule
-        Exatidão & * & * & manutibilidade \\
+        \textbf{Critérios/Objetivos} & \multicolumn{1}{c}{McCall} & Bohem & ISO 9126 & ISO 25010\\ \midrule
+        Exatidão & * & * & funcionalidade & funcionalidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Confiabilidade & * & * & * \\
+        Confiabilidade & * & * & * & * \\
         Integridade & * & * &  \\
         \rowcolor[HTML]{EFEFEF} 
-        Usabilidade & * & * & * \\
-        Eficiência & * & * & * \\
+        Usabilidade & * & * & * & * \\
+        Eficiência & * & * & * & * \\
         \rowcolor[HTML]{EFEFEF} 
-        Manutibilidade & * & * & * \\
-        Testabilidade & * &  & manutibilidade \\
+        Manutibilidade & * & * & * & * \\
+        Testabilidade & * &  & manutibilidade & manutibilidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Interoperabilidade & * &  &  \\
-        Flexibilidade & * & * &  \\
+        Interoperabilidade & * &  &  & compatibilidade \\
+        Flexibilidade & * & * &  & \\
         \rowcolor[HTML]{EFEFEF} 
-        Reusabilidade & * & * &  \\
-        Portabilidade & * & * & * \\
+        Reusabilidade & * & * &  & \\
+        Portabilidade & * & * & * & * \\
         \rowcolor[HTML]{EFEFEF} 
-        Clareza &  & * &  \\
-        Modificabilidade &  & * & manutibilidade \\
+        Clareza &  & * &  & \\
+        Modificabilidade &  & * & manutibilidade & manutibilidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Documentação &  & * &  \\
-        Resiliência &  & * &  \\
+        Documentação &  & * &  & \\
+        Resiliência &  & * &  & confiabilidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Compreensibilidade &  & * &  \\
-        Validez &  & * & manutibilidade \\
+        Compreensibilidade &  & * &  & usabilidade \\
+        Validez &  & * & funcionalidade & funcionalidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Funcionalidade &  &  & * \\
+        Funcionalidade &  &  & * & * \\
         Generalidade &  & * &  \\
         \rowcolor[HTML]{EFEFEF} 
-        Economia &  & * &  \\ \bottomrule
+        Economia &  & * & eficiência & eficiência \\
+        Segurança & & & funcionalidade & * \\ \bottomrule
     \end{tabular}
     \legend{Fonte: [Tradução do autor] \citeonline{berander2005}}
 \end{table}
