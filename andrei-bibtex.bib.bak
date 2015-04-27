@@ -30,7 +30,7 @@
 
 @Book{berander2005,
   Title                    = {Software quality attributes and trade-offs},
-  Author                   = {Berander, Patrik and Damm, Lars-Ola and Eriksson, Jeanette and Gorschek, Tony and Henningsson, Kennet and Jönsson, Per and Kågström, Simon and Milicic, Drazen and Mårtensson, Frans and Rönkkö, Kari and Tomaszewski, Piotr},
+  Author                   = {Berander, Patrik and Damm, Lars-Ola and Eriksson, Jeanette and Gorschek, Tony and Henningsson, Kennet and Jï¿½nsson, Per and Kï¿½gstrï¿½m, Simon and Milicic, Drazen and Mï¿½rtensson, Frans and Rï¿½nkkï¿½, Kari and Tomaszewski, Piotr},
   Editor                   = {Lundberg, Lars and Mattsson, Michael and Wohlin, Claes},
   Publisher                = {Blekinge Institute of Technology},
   Year                     = {2005},
@@ -93,7 +93,7 @@
   Month                    = {May},
   Pages                    = {9-14},
 
-  __markedentry            = {[Andrei:6]},
+  __markedentry            = {[Andrei:]},
   Abstract                 = {Software quality models are a well-accepted means to support quality management of software systems. Over the last 30 years, a multitude of quality models have been proposed and applied with varying degrees of success. Despite successes and standardisation efforts, quality models are still being criticised, as their application in practice exhibits various problems. To some extent, this criticism is caused by an unclear definition of what quality models are and which purposes they serve. Beyond this, there is a lack of explicitly stated requirements for quality models with respect to their intended mode of application. To remedy this, this paper describes purposes and usage scenarios of quality models and, based on the literature and experiences from the authors, collects critique of existing models. From this, general requirements for quality models are derived. The requirements can be used to support the evaluation of existing quality models for a given context or to guide further quality model development.},
   Doi                      = {10.1109/WOSQ.2009.5071551},
   Keywords                 = {software development management;software quality;quality management;quality model development;software quality model;Application software;Context modeling;ISO standards;Maintenance;Predictive models;Quality management;Software quality;Software systems;Stochastic processes;Terminology},
@@ -119,6 +119,26 @@
   Keywords                 = {Agile software development,Crystal method,Feature-driven development,Information systems,Lean software development,Scrum,Software engineering,Theory,agile,eXtreme programming, XP,quality,software development},
   Mendeley-tags            = {agile,quality,software development},
   Url                      = {http://www.sciencedirect.com/science/article/pii/S0164121212000532}
+}
+
+@Article{Dromey1995,
+  Title                    = {A model for software product quality},
+  Author                   = {Dromey, R.G.},
+  Journal                  = {Software Engineering, IEEE Transactions on},
+  Year                     = {1995},
+
+  Month                    = {Feb},
+  Number                   = {2},
+  Pages                    = {146-162},
+  Volume                   = {21},
+
+  __markedentry            = {[Andrei:6]},
+  Abstract                 = {A model for software product quality is defined, it has been formulated by associating a set of quality-carrying properties with each of the structural forms that are used to define the statements and statement components of a programming language. These quality-carrying properties are in turn linked to the high-level quality attributes of the International Standard for Software Product Evaluation ISO-9126. The model supports building quality into software, definition of language-specific coding standards, systematically classifying quality defects, and the development of automated code auditors for detecting defects in software},
+  Doi                      = {10.1109/32.345830},
+  ISSN                     = {0098-5589},
+  Keywords                 = {ISO standards;program debugging;software quality;software standards;software tools;ISO-9126;International Standard for Software Product Evaluation;automated code auditors;high-level quality attributes;language-specific coding standards;programming language;quality defects;quality-carrying properties;software defect detection;software product quality;structural forms;Australia;Buildings;Code standards;Computer languages;Knowledge management;Refining;Software maintenance;Software quality;Software standards;Standards development},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.26}
 }
 
 @Article{GARVIN1987,
@@ -215,8 +235,6 @@
   Year                     = {2009},
   Month                    = {Aug},
   Pages                    = {243-250},
-
-  __markedentry            = {[Andrei:]},
   Abstract                 = {Managing quality during the development, operation, and maintenance of software(-intensive) systems and services is a challenging task. Although many organizations need to define, control, measure, and improve various quality aspects of their development artifacts and processes, nearly no guidance is available on how to select, adapt, define, combine, use, and evolve quality models. Catalogs of models as well as selection and tailoring processes are widely missing. A first step towards better support for selecting and adapting quality models can be seen in a classification of existing quality models, especially with respect to their suitability for different purposes and contexts. This article presents so-called comprehensive quality model landscapes (CQMLs), which provide such a classification scheme and help to get an overview of existing models and their relationships. The article focuses on the description and justification of essential concepts needed to define quality models and landscapes. In addition, the article describes typical usage scenarios, illustrates the concept with examples, and sketches open questions and future work.},
   Doi                      = {10.1109/SEAA.2009.88},
   ISSN                     = {1089-6503},
@@ -312,6 +330,16 @@
 
   Owner                    = {Andrei},
   Timestamp                = {2015.04.16}
+}
+
+@TechReport{wagner2012,
+  Title                    = {Software quality in practice. Survey results. Technical Report TUM-I128},
+  Author                   = {Wagner, S. and Lochmann, K. and Winter, Sebastian and Goeb, Andreas and Klas, M. and Nunnenmacher, Sabine},
+  Institution              = {Technische Universitï¿½t Mï¿½nchen},
+  Year                     = {2012},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.26}
 }
 
 @Book{WAZLAWICK2013,
