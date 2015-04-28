@@ -2,6 +2,27 @@
 % Encoding: Cp1252
 
 
+@Book{nbr25000,
+  Title                    = {NBR ISO/IEC 25000: engenharia de software - requisitos e avalia{\c{c}}{\~a}o da qualidade de produtos de software (SQuaRE) - Guia do SQuaRE.},
+  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas - ABNT},
+  Year                     = {2008},
+  Series                   = {Normas SQuaRE},
+
+  __markedentry            = {[Andrei:6]},
+  ISBN                     = {9788507005971},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.28}
+}
+
+@Book{nbr9126,
+  Title                    = {NBR ISO/IEC 9126-1: Engenharia de software - Qualidade de produto},
+  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas - ABNT},
+  Year                     = {2003},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.28}
+}
+
 @Article{Agarwal2014,
   Title                    = {{Quality assurance for Product development using Agile}},
   Author                   = {Agarwal, Anil and Garg, N K and Jain, Avirag},
@@ -303,27 +324,6 @@
   Author                   = {Suryn, Witold},
   Publisher                = {Wiley},
   Year                     = {2014}
-}
-
-@Book{nbr25000,
-  Title                    = {NBR ISO/IEC 25000: engenharia de software - requisitos e avalia{\c{c}}{\~a}o da qualidade de produtos de software (SQuaRE) - Guia do SQuaRE.},
-  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas},
-  Year                     = {2008},
-  Series                   = {Normas SQuaRE},
-
-  __markedentry            = {[Andrei:6]},
-  ISBN                     = {9788507005971},
-  Owner                    = {Andrei},
-  Timestamp                = {2015.04.28}
-}
-
-@Book{nbr9126,
-  Title                    = {NBR ISO/IEC 9126-1: Engenharia de software - Qualidade de produto},
-  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas},
-  Year                     = {2003},
-
-  Owner                    = {Andrei},
-  Timestamp                = {2015.04.28}
 }
 
 @Article{Turk2014,

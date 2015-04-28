@@ -230,12 +230,15 @@
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
-    \item[Fig.] Area of the $i^{th}$ component
-    \item[456] Isto é um número
-    \item[123] Isto é outro número
+    \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[COQUAMO] \emph{Constructive Quality Model} - Modelo de Qualidade Construtivo
+    \item[IEC] \emph{International Electrotechnical Commission} - Comissão Eletrotécnica Internacional
     \item[IEEE] \emph{Institute of Electrical and Electronics Engineers} - Instituto de Engenheiros Eletricistas e Eletrônicos
     \item[ISO] \emph{International Organization for Standardization} - Organização Internacional para Padronização
     \item[QA] \emph{Quality Assurance} - Garantia de Qualidade
+    \item[QMOOD] \emph{Quality Model for Object-Oriented Design} - Modelo de Qualidade
+para Projeto Orientados a Objeto
+    \item[SQUaRE] \emph{Systems and software Quality Requirements and Evaluation} - Avaliação e Requisitos de Qualidade de Sistemas e Software
 \end{siglas}
 % ---
 
@@ -270,7 +273,8 @@
 % ==========================================================
 \chapter[Introdução]{Introdução}
 
-Este trabalho abordará blablablabla %FIXME continuar
+Este trabalho fará uma abordagem sobre qualidade de software, iniciando uma contextualização sobre seus diversos tipos de definição e conceitos básicos, e posteriormente focando nos modelos de qualidade existente, desde os mais relevantes historicamente até o padrão atual ISO/IEC. E como fechamento será apresentada uma análise sobre como os modelos de processo de software abordam (ou não) a qualidade, com foco nas metodologias ágeis.
+%FIXME continuar
 %Este capítulo fará uma abordagem sobre diversos tipos de modelos de qualidade existente, incluindo uma breve contextualização histórica de cada, e contará também com seções introdutórias sobre gestão da qualidade, medição e padrões/certificações. E, como fechamento, será apresentado como a qualidade de software pode ser inserido em projetos que implementam metodologias ágeis.
 
 % ----------------------------------------------------------
@@ -295,7 +299,7 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
             \item O grau em que um conjunto de características inerentes satisfaz os requisitos
             \item O grau em que um sistema, componente ou processo atinge as necessidades ou expectativas de um cliente ou usuário
         \end{itemize}
-    \item[Definição NBR ISO/IEC 9126-2003 para Qualidade:]\footnote{Disponível em \url{http://www.abntcatalogo.com.br/norma.aspx?ID=2815}. Substituída pela nova família de Normas ISO/IEC 25000} % FIXME: rodapé não está aparecendo, e adicionar estilo para url
+    \item[Definição NBR ISO/IEC 9126 (\citeyear{nbr9126}) para Qualidade:]\footnote{Substituída pela nova família de Normas NBR ISO/IEC 25000}
         \begin{itemize}
             \item  Totalidade de características de uma entidade que lhe confere a capacidade de satisfazer as necessidades explícitas e implícitas.
         \end{itemize}
@@ -310,7 +314,7 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
         \end{itemize}
 \end{description}
 
-Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}. Então em que se deve pensar para chegar à um produto com qualidade?
+Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}\footnote{Qualquer pessoa ou organização que tenha interesse, ou seja afetado pelo projeto.}. Então em que se deve pensar para chegar à um produto com qualidade?
 
 \section{Fatores de Qualidade}
 
@@ -325,34 +329,17 @@ Devido aos questionamentos levantados anteriormente, cabe à equipe de gerenciam
 \end{enumerate}
 
 
-%(FIXME: página 673 de Software Engineering (9th Edition) - rever este parágrafo)
-Note que a qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende dos requisitos não-funcionais. \citeonline{BOEHM1978} sugere 15 atributos impostantes para a qualidade de software (ver \autoref{tab:atributos_qualidade}). %(ver Tabela~\ref{tab:atributos_qualidade} na página~\pageref{tab:atributos_qualidade}).
-%Para \citeonline{SOMMERVILLE2011} estes atributos estão relacionados às seguintes características: dependability, usability, efficiency e maintainability, e lembra que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas.
-\citeonline{SOMMERVILLE2011} reforça que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas, por exemplo.
+%REF: página 673 de Software Engineering (9th Edition) - rever este parágrafo
+\citeonline{SOMMERVILLE2011} lembra que a análise da qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende das características não-funcionais. Se uma funcionalidade não funcionar como esperado, o usuário normalmente encontra outras maneiras de realizar o que deseja, porém, se o software for lento ou instável ele será impedido de alcançar seus objetivos.
 
-% dicas de posicionamento de floats:
-% http://www.andy-roberts.net/writing/latex/floats_figures_captions
-\begin{table}[h]
-    \centering
-    \caption{Atributos de qualidade de software}
-    \label{tab:atributos_qualidade}
-    \begin{tabular}{c|c|c}
-        Safety & Understandability & Portability \\ \hline
-        Security & Testability & Usability \\ \hline
-        Reliability & Adaptability & Reusability \\ \hline
-        Resilience & Modularity & Efficiency \\ \hline
-        Robustness & Complexity & Learnability
-    \end{tabular}
-    \legend{Fonte: \citeonline{BOEHM1978}}
-\end{table}
+Ele também reforça que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas, por exemplo.
 
-% FIXME: rever e complementar este trecho
-% ver página 430 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
+% REF: ver página 430 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
 
 Na visão de \citeonline{GARVIN1987} a qualidade deve ser analisada de um ponto de vista multidimensional, desde a conformância com os requisitos até o caráter estético da aplicação (ver \autoref{tab:qualidade_garvin}).
 
 \begin{table}[h]
-    \caption{Dimensões de qualidade de \citeonline{GARVIN1987}}
+    \caption{Dimensões de qualidade de Garvin}
     \label{tab:qualidade_garvin}
     \begin{tabular}{p{3.7cm}|p{11cm}}
         \textbf{Performance} & o software entrega todo o conteúdo/funções/característica especificadas nos requerimentos e de maneira que agregue valor ao usuário? \\ \hline
@@ -367,7 +354,7 @@ Na visão de \citeonline{GARVIN1987} a qualidade deve ser analisada de um ponto 
   \legend{Fonte: \citeonline{PRESSMAN2010}}
 \end{table}
 
-Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados nas seções seguintes.
+Conforme dito anteriormente, a qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados no capítulo \ref{cap:modelos_qualidade}.
 
 % ----------------------------------------------------------
 % Seção
@@ -378,9 +365,21 @@ Pode-se notar que qualidade é um conceito extremamente amplo e abrangente, e ne
 
 %\subsection{Qualidade do Processo}
 
+A qualidade de software é dividida em dois aspectos: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. A qualidade do produto foca no controle de qualidade para gerar um produto final que atenda aos requisitos e traga satisfação do usuário, enquanto a qualidade do processo foca no controle da produção para otimizar o desenvolvimento e o uso otimizado dos recursos disponíveis.
+
+Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, serão abordados de maneira introdutória, tendo este trabalho a \emph{qualidade do produto} e os modelos de qualidade criados para ele como foco principal.
+
+\citeonline{WAZLAWICK2013} indica que apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum \cite{WAZLAWICK2013}.
+
+% fonte: http://www.bayt.com/en/specialties/q/52980/can-you-differentiate-between-product-quality-and-process-quality/
+% Product quality is focusing on meeting tolerances in the end result of the manufacturing activities. The end result is measured on a standard of "good enough".
+% Process quality focuses on each activity and forces the activities to achieve maximum tolerances irrespective of the end result. 
+%For product quality we use quality control to assure product confirm to production standards and tolerance where for process quality we use quality assurance to assure process effectiveness and efficiency 
+
 % FIXME: página 228 de Engenharia de Software - conceitos e práticas
 % FIXME: berander2005, página 3
-Pode-se falar de dois aspectos da qualidade: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. Apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum. Pressman (2005) define dois tipos de qualidade para o produto de software: % FIXME: conferir com a minha edição de 2010
+% REF: pressman2010, página 428, final da página
+E dentro do contexto de qualidade do produto, \citeonline{PRESSMAN2010} define dois tipos de qualidade:
 
 \begin{description}
     \item [Qualidade de projeto (atender as necessidades do cliente):] qualidade identificável através de características não mesuráveis objetivamente, a qualidade do produto em atender as expectativas do cliente, explícitas ou não.
@@ -397,11 +396,14 @@ Se você produzir um sistema de software de péssima qualidade, então você per
 
 % FIXME: continuar - pressman, 436
 
+* em desenvolvimento *
+
 
 % ==========================================================
 % CAPITULO
 % ==========================================================
 \chapter{Modelos de Qualidade}
+\label{cap:modelos_qualidade}
 
 % ----------------------------------------------------------
 % Seção
@@ -410,15 +412,24 @@ Se você produzir um sistema de software de péssima qualidade, então você per
 
 Um \emph{Modelo de Qualidade} é um modelo cujo objetivo é descrever, avaliar e/ou prever qualidade. Muitos modelos de qualidade fazem uma decomposição da qualidade geral de um produto em sub-qualidades para que se torne mais fácil de compreender e gerenciar \cite{wagner2013}.
 
-Este tópico vem sendo pesquisado à décadas e existe um grande número de modelos \cite{Klas2009} e seria inviável analisar todas, então focaremos nos modelos mais famosos e mais utilizados. \citeonline{wagner2013} propôs uma extensão da classificação de modelos DAP (\emph{definition, assessment, prediction}) de \citeonline{Deissenboeck2009}:
+Este tópico vem sendo pesquisado à décadas e existe um grande número de modelos \cite{Klas2009} e seria inviável analisar todas, então focaremos nos modelos mais relevantes, seja por sua importância histórica ou por ser um padrão internacional. \citeonline{wagner2013} propõe uma divisão entre os modelos de qualidade:
+\begin{itemize}
+    \item \emph{Hierárquicos}: Um modelo de decomposição hierárquica dos fatores de qualidade. Ex.: McCall, Boehm, ISO 9126, ISO 25010;
+    \item \emph{Meta-modelos}: Um modelo que define como modelos de qualidade válidos devem ser estruturados, cada um com propriedades e métricas específicas para o projeto. Ex.: Dromey, COQUAMO (\emph{Constructive Quality Model} - Modelo de Qualidade Construtivo), QMOOD (\emph{Quality Model for Object-Oriented Design} - Modelo de Qualidade para Projeto Orientados a Objeto);
+    \item \emph{Estatístico ou implícito}: Um modelo estatístico que busca estimar ou prever os fatores de qualidade, através de ferramentas de análise ou de testes. Ex.: Modelo de confiabilidade de crescimento (\emph{ reliability growth model}).
+\end{itemize}
+
+%\citeonline{wagner2013} propôs uma extensão da classificação de modelos DAP (\emph{definition, assessment, prediction}) de \citeonline{Deissenboeck2009}:
+
+
 % FIXME: dividir os modelos nas categorias ou apresentar as categorias e depois os modelos?
 % página 45 de Software Product Quality
-\begin{itemize}
-    \item Modelos de Definição (ex.: FURPS);
-    \item Modelos de Avaliação (ex.: EMISQ);
-    \item Modelos de Previsão;
-    \item Modelos Polivantes\footnote{\emph{Multi-purpose}} (ex.: COQUAMO).
-\end{itemize}
+% \begin{itemize}
+%     \item Modelos de Definição (ex.: FURPS);
+%     \item Modelos de Avaliação (ex.: EMISQ);
+%     \item Modelos de Previsão;
+%     \item Modelos Polivantes\footnote{\emph{Multi-purpose}} (ex.: COQUAMO).
+% \end{itemize}
 
 % FIXME: seguir essa divisão acima ou utilizar a categorização de software product control ?
 % modelos: hierárquicos (mcCall, Boehm, ISO 9126), meta-modelos (Dromey), estatística ou implícita
