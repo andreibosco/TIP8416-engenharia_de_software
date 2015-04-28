@@ -207,8 +207,7 @@
  \vspace{\onelineskip}
     
  \noindent
- \textbf{Palavras-chaves}: testes. validação. verificação.
- qualidade de software. métodos ágeis.
+ \textbf{Palavras-chaves}: modelos de qualidade, qualidade de software, inspeção, testes, validação, verificação, métodos ágeis.
 \end{resumo}
 
 % ---
@@ -266,12 +265,13 @@
 % ----------------------------------------------------------
 \textual
 
-% ----------------------------------------------------------
-% Introdução
-% ----------------------------------------------------------
+% ==========================================================
+% CAPITULO
+% ==========================================================
 \chapter[Introdução]{Introdução}
 
 Este trabalho abordará blablablabla %FIXME continuar
+%Este capítulo fará uma abordagem sobre diversos tipos de modelos de qualidade existente, incluindo uma breve contextualização histórica de cada, e contará também com seções introdutórias sobre gestão da qualidade, medição e padrões/certificações. E, como fechamento, será apresentado como a qualidade de software pode ser inserido em projetos que implementam metodologias ágeis.
 
 % ----------------------------------------------------------
 % Seção
@@ -398,16 +398,15 @@ Se você produzir um sistema de software de péssima qualidade, então você per
 % FIXME: continuar - pressman, 436
 
 
-% ----------------------------------------------------------
-% Capitulo
-% ----------------------------------------------------------
-\chapter{Qualidade de Software}
-Este capítulo fará uma abordagem sobre diversos tipos de modelos de qualidade existente, incluindo uma breve contextualização histórica de cada, e contará também com seções introdutórias sobre gestão da qualidade, medição e padrões/certificações. E, como fechamento, será apresentado como a qualidade de software pode ser inserido em projetos que implementam metodologias ágeis.
+% ==========================================================
+% CAPITULO
+% ==========================================================
+\chapter{Modelos de Qualidade}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Modelos de Qualidade}
+\section{Definição}
 
 Um \emph{Modelo de Qualidade} é um modelo cujo objetivo é descrever, avaliar e/ou prever qualidade. Muitos modelos de qualidade fazem uma decomposição da qualidade geral de um produto em sub-qualidades para que se torne mais fácil de compreender e gerenciar \cite{wagner2013}.
 
@@ -424,9 +423,10 @@ Este tópico vem sendo pesquisado à décadas e existe um grande número de mode
 % FIXME: seguir essa divisão acima ou utilizar a categorização de software product control ?
 % modelos: hierárquicos (mcCall, Boehm, ISO 9126), meta-modelos (Dromey), estatística ou implícita
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Modelo McCall (1977)}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelo McCall (1977)}
 % foco na qualidade do produto, dividido em visão externa (fatores de qualidade a especificar) e visão interna (critérios de qualidade para desenvolver)
 
 Um dos predecessores mais renomado dos modelos de qualidade atuais é o modelo de \citeonline{general1977factors}, criado para o exército dos EUA e focado nos desenvolvedores de sistema e no processo de desenvolvimento. Este modelo define fatores de qualidade que tentam aproximar o ponto de vista do usuário e as prioridades dos desenvolvedores. Estes fatores são divididos em três perspectivas (ver \autoref{fig:mcCall-fatores_qualidade}):
@@ -447,23 +447,12 @@ Um dos predecessores mais renomado dos modelos de qualidade atuais é o modelo d
 \end{figure}
 
 % FIXME: continuar - fonte: página 7 de software_quality_atributes
-Hierarquia:
+Hierarquia (\autoref{fig:mcCall-quality_model}):
 \begin{itemize}
     \item 11 fatores (especificação): descrever a visão externa do software, do ponto de vista do usuário;
     \item 23 critérios de qualidade (construção): descrever a visão interna do software, do ponto de vista dos desenvolvedores;
     \item Métricas (controle): definidas e utilizados para prover método de medida
 \end{itemize}
-
-% FIXME: fazer versão própria
-\begin{figure}[h]
-    \centering
-    \caption{Hierarquia de fatores e critérios de McCall}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.85]{mcCall-graph}
-    \label{fig:mcCall-quality_model}
-    \legend{Fonte: Adaptação de \citeonline{Deissenboeck2009}}
-\end{figure}
-
 
 % Eis a descrição de \citeonline{general1977factors} para cada um dos fatores listados na Figura \ref{fig:mcCall-fatores_qualidade}:
 % \begin{itemize}
@@ -472,10 +461,22 @@ Hierarquia:
 
 A ideia do modelo de McCall é que os fatores de qualidade devem prover uma visão geral da qualidade do software, enquanto a métrica real é obtida ao responder \emph{sim} ou \emph{não} ao quanto ao relacionamento entre elas. O ponto negativo desta proposta é a métrica é subjetiva ao julgamento da pessoa respondendo as perguntas \cite{berander2005}.
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Modelo Boehm (1978)}
+\begin{figure}[H]
+    \centering
+    \caption{Hierarquia de fatores e critérios de McCall}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=1.0]{mcCall-graph-andrei}
+    \label{fig:mcCall-quality_model}
+    \legend{Fonte: [Adaptação do autor] \citeonline{Naik2011}}
+\end{figure}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelo Boehm (1978)}
 % três níveis de características: alto nível (usuário), intermediária (software) e primitiva (métricas e avaliação)
+% FIXME: indicar que ele criou o modelo em espiral?
+
 Outro modelo histórico foi criado por \citeonline{BOEHM1978}, que, de maneira similar ao modelo de McCall, apresenta um modelo hierárquico de características, mas dividido em três níveis, onde cada uma contribui para a qualidade geral: alto nível (usuário), intermediário (software) e primitivas (métricas).
 As características de alto nível tem como objetivo responder a três questões quanto ao uso do software pelo usuário, que não é necessariamente o cliente \cite{PFLEEGER2010}:
 
@@ -492,25 +493,25 @@ Ou seja, para Boehm a qualidade do software deve satisfazer tanto as necessidade
 % FIXME: encaixar este parágrafo melhor com o restante do conteúdo
 Porém, segundo \cite{SURYN2014}, apesar deste modelo ser um avanço comparado ao modelo de McCall, as características de utilidade geral (\emph{general utility}) e 'utilitário como está' (\emph{as-is utility}) ainda são conceitos genéricos e imprecisos, resultando em uma aplicabilidade limitada.
 
-
-% FIXME: fazer versão própria
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \caption{Hierarquia do Modelo de Qualidade de Boehm}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.85]{boehm-hierarquia_modelo}
+    \includegraphics[scale=0.9]{boehm-hierarquia_modelo-andrei}
     \label{fig:boehm-hierarquia_modelo}
-    \legend{Fonte: Adaptação de \citeonline{PFLEEGER2010}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{PFLEEGER2010}}
 \end{figure}
 
-% ================================
-% =========== SUBSEÇÃO ===========
-%\subsection{Modelo FURPS (\emph{Functionality, Usability, Reliability, Performance, Supportability})}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+%\section{Modelo FURPS (\emph{Functionality, Usability, Reliability, Performance, Supportability})}
 % FIXME: manter ou apagar?
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Padrão ISO 9126 (1991)}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Padrão ISO 9126 (1991)}
 O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics and Guidelines for their Use} - Avaliação do Produto de Software: Características de Qualidade e Diretrizes para sua Utilização) foi criado com base nos modelos de McCall e Boehm, focando em três aspectos da qualidade de software \cite{SURYN2014}:
 \begin{description}
     \item [Qualidade no uso:] qualidade de uso é o ponto de vista do usuário quanto a qualidade do software ao ser utilizado em um ambiente e contexto específico. Ele avalia se o usuário consegue alcançar seus objetivos, e não as propriedades do software.
@@ -520,14 +521,13 @@ O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics a
 
 Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3 níveis, composto de características de qualidade, subcaracterísticas e medidas (ver \autoref{fig:iso9126-hierarquia_interno_externo} e \autoref{tab:iso9126-caracteristicas}). Mais de 200 medidas foram propostas como parte do padrão e outras medidas podem utilizadas de acordo com a necessidade \cite{SURYN2014}.
 
-% FIXME: fazer versão própria
 \begin{figure}[h]
     \centering
     \caption{Hierarquia de qualidade interna e externa do padrão ISO 9126}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.85]{iso9126-hierarquia_interno_externo-alt}
+    \includegraphics[scale=0.9]{iso9126-hierarquia_interno_externo-andrei}
     \label{fig:iso9126-hierarquia_interno_externo}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
 \end{figure}
 
 \begin{table}[h]
@@ -552,24 +552,13 @@ Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3
 
 Já os fatores de qualidade de uso são organizando em uma hierarquia de 2 níveis, composto das características de qualidade e a medidas (ver \autoref{fig:iso9126-hierarquia_qualidade_uso}). Os três aspectos da qualidade de software do padrão ISO 9126 se relacionam em um modelo preditivo (ver \autoref{fig:iso9126-hierarquia_relacionamento}).
 
-% FIXME: fazer versão própria
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \caption{Hierarquia de qualidade de uso do padrão ISO 9126}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.7]{iso9126-hierarquia_qualidade_uso}
+    \includegraphics[scale=1.0]{iso9126-hierarquia_qualidade_uso-andrei}
     \label{fig:iso9126-hierarquia_qualidade_uso}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
-\end{figure}
-
-% FIXME: fazer versão própria
-\begin{figure}[H]
-    \centering
-    \caption{Relacionamento entre aspectos de qualidade do padrão ISO 9126}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.7]{iso9126-hierarquia_relacionamento}
-    \label{fig:iso9126-hierarquia_relacionamento}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{nbr9126}}
 \end{figure}
 
 Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta as seguintes diferenças:
@@ -579,30 +568,32 @@ Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta
     \item Um fator de alto nível nos Modelos de McCall e de Boehm pode ser um fator de baixo nível no padrão ISO 9126 (ex.: \emph{testabilidade}, que é um fator no modelo de McCall e um critério dentro de \emph{manutibilidade} no padrão ISO 9126).
 \end{itemize}
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{SquaRE - ISO/IEC 25010 (\emph{Systems and software Quality Requirements
+\begin{figure}[h]
+    \centering
+    \caption{Relacionamento entre aspectos de qualidade do padrão ISO 9126}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=1.0]{iso9126-hierarquia_relacionamento-andrei}
+    \label{fig:iso9126-hierarquia_relacionamento}
+    \legend{Fonte: [Adaptação do autor] \citeonline{nbr9126}}
+\end{figure}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{SquaRE - ISO/IEC 25010 (\emph{Systems and software Quality Requirements
 and Evaluation})}
 % FONTE: página 230 de Engenharia de Software - Conceitos e Práticas
 Em 2011, a família de normas ISO/IEC 25000 substituíram a norma ISO 9126, sendo um dos fatores que a antiga norma aplicava-se apenas no processo de desenvolvimento e uso do produto de software, e não se preocupava quanto à definição do produto em si.
 
-O novo modelo propõe duas perspectivas, cada uma com um modelo específico: a primeira perspectiva é relacionada ao uso do software, com um modelo chamado \emph{modelo de qualidade no uso} (ver \autoref{fig:iso25010-hierarquia_qualidade_uso}), e a segunda perspectiva é relacionada ao software em si, com um modelo chamado \emph{modelo de qualidade do produto de sistema/software}. O modelo de qualidade no uso é composto por 5 características e 11 métricas (1 característica e várias métricas a mais do que o padrão ISO 9126). O modelo de qualidade do produto é composto de 8 características, que são divididas em subcaracterísticas que se relacionam com as propriedades estáticas e dinâmicas do software.
+O novo modelo propõe duas perspectivas, cada uma com um modelo específico: a primeira perspectiva é relacionada ao uso do software, com um modelo chamado \emph{modelo de qualidade no uso} (ver \autoref{fig:iso25010-hierarquia_qualidade_uso}), e a segunda perspectiva é relacionada ao software em si, com um modelo chamado \emph{modelo de qualidade do produto de sistema/software}. O modelo de qualidade no uso é composto por 5 características e 11 métricas (1 característica e várias métricas a mais do que o padrão ISO 9126). O modelo de qualidade do produto (ver \autoref{fig:iso25010-hierarquia_qualidade_produto}) é composto de 8 características, que são divididas em subcaracterísticas que se relacionam com as propriedades estáticas e dinâmicas do software.
 
-Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126, o modelo de qualidade do produto do padrão ISO 25010 utiliza terminologias diferentes mas que possuem significados similares \cite{SURYN2014}:
-
-\begin{description}
-    \item [Estática:] corresponde à qualidade interna da ISO 9126, que se aplica ao software sendo desenvolvido;
-    \item [Dinâmico:] corresponde à qualidade externa da ISO 9126, que se aplica ao sistema e software em execução, mas não dentro do contexto operacional (para isto existe o modelo de qualidade no uso).
-\end{description}
-
-% FIXME: fazer versão própria
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \caption{Hierarquia de qualidade de uso do padrão ISO 25010}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.7]{iso25010-hierarquia_qualidade_uso}
+    \includegraphics[scale=0.9]{iso25010-hierarquia_qualidade_uso-andrei}
     \label{fig:iso25010-hierarquia_qualidade_uso}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
 \end{figure}
 
 % FIXME: fazer versão própria
@@ -610,10 +601,17 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
     \centering
     \caption{Hierarquia de qualidade de produto do padrão ISO 25010}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.85]{iso25010-hierarquia_qualidade_produto}
+    \includegraphics[scale=0.9]{iso25010-hierarquia_qualidade_produto}
     \label{fig:iso25010-hierarquia_qualidade_produto}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+    \legend{Fonte: \citeonline{SURYN2014}}
 \end{figure}
+
+Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126, o modelo de qualidade do produto do padrão ISO 25010 utiliza terminologias diferentes mas que possuem significados similares \cite{SURYN2014}:
+
+\begin{description}
+    \item [Estática:] corresponde à qualidade interna da ISO 9126, que se aplica ao software sendo desenvolvido;
+    \item [Dinâmico:] corresponde à qualidade externa da ISO 9126, que se aplica ao sistema e software em execução, mas não dentro do contexto operacional (para isto existe o modelo de qualidade no uso).
+\end{description}
 
 % Para facilitar a compreensão das fases do modelo SquaRE veja a \autoref{tab:fases_square} que apresenta sua aplicação no ciclo de vida da normal ISO/IEC 15288 e nos modelos A, B e C. % FIXME: corrigir referência da tabela e inserir os outros modelos de projeto (RUP talvez?)
 
@@ -637,9 +635,10 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
 %   \legend{Fonte: \citeonline{WAZLAWICK2013}}
 % \end{table}
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Análise dos modelos hierárquicos}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Análise dos modelos hierárquicos}
 
 Os modelos apresentados são úteis para auxiliar na análise da qualidade do software desenvolvido, porém nenhum dos modelos explica a lógica de porque algumas características foram consideradas e outras não, porque um atributo está em uma posição da hierarquia, porque nenhum dos modelos aborda segurança, dentre outras questões \cite{PFLEEGER2010}.
 
@@ -684,12 +683,13 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
         Generalidade &  & * &  & \\
         Segurança & & & funcionalidade & * \\ \bottomrule
     \end{tabular}
-    \legend{Fonte: [Modificado pelo autor] \citeonline{berander2005}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{berander2005}}
 \end{table}
 
-% ================================
-% =========== SUBSEÇÃO ===========
-\subsection{Modelo Dromey (1995)}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelo Dromey (1995)}
 % três princípios fundamentais: atributos de qualidade, propriedades do produto, e as ligações entre eles
 O modelo de \citeonline{Dromey1995} traz uma diferente abordagem de McCall e Boehms, pois propõe que o modelo de qualidade seja baseado na perspectiva do produto, onde a avaliação e características de qualidade irão variar para cada produto \cite{SURYN2014}:
 
@@ -701,8 +701,8 @@ Seguindo esta lógica Dromey criou um framework de avaliação de qualidade que 
 
 \begin{itemize}
     \item exatidão: verifica se algum princípio básico foi violado
-    \item interna: quão bem um componente foi implementado de acordo com o seu uso pretendido
-    \item contextual: liga com influências externas e o uso do componente
+    \item interno: quão bem um componente foi implementado de acordo com o seu uso pretendido
+    \item contextual: lida com influências externas e o uso do componente
     \item descritiva: quão bem descrito é o componente
 \end{itemize}
 
@@ -723,25 +723,29 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
     \centering
     \caption{Estrutura do Modelo de Qualidade de Dromey}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.63]{dromey-estrutura_modelo}
+    \includegraphics[scale=0.9]{dromey-estrutura_modelo-andrei}
     \label{fig:dromey-estrutura_modelo}
-    \legend{Fonte: Adaptação de \citeonline{Deissenboeck2009}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{Deissenboeck2009}}
 \end{figure}
 
-% FIXME: fazer versão própria
 \begin{figure}[H]
     \centering
     \caption{Avaliação de qualidade de um componente de variável}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.74]{dromey-estrutura_modelo_exemplo}
+    \includegraphics[scale=0.9]{dromey-estrutura_modelo_exemplo-andrei}
     \label{fig:dromey-estrutura_modelo_exemplo}
-    \legend{Fonte: Adaptação de \citeonline{SURYN2014}}
+    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
 \end{figure}
+
+% ==========================================================
+% CAPITULO
+% ==========================================================
+\chapter{Gestão da Qualidade}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Gestão da Qualidade}
+\section{Definição}
 A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}. Ele pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. % FIXME: como isso funcionaria em uma metodologia ágil, com pequenas equipes?
 
 \citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional\footnote{Definição: FIXME} em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
@@ -755,13 +759,13 @@ A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram dese
 
 Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A equipe responsável de QA deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
 
-%\subsection{\emph{Walkthrough}}
+\subsection{\emph{Walkthrough}}
 
 
-%\subsection{Inspeções Fagan}
+\subsection{Inspeções Fagan}
 
 
-%\subsection{Método \emph{Cleanroom}}
+\subsection{Método \emph{Cleanroom}}
 
 % ----------------------------------------------------------
 % Seção
@@ -773,15 +777,16 @@ Para realizar a verificação da qualidade são utilizadas técnicas como \emph{
 % ----------------------------------------------------------
 %\section{Padrões / Certificações}
 
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Qualidade de Software e Métodos Ágeis}
+% ==========================================================
+% CAPITULO
+% ==========================================================
+\chapter{Qualidade de Software e Métodos Ágeis}
 
-% ----------------------------------------------------------
-% Capitulo
-% ----------------------------------------------------------
+\section{TDD - Test Driven Development}
 
+% ==========================================================
+% CAPITULO
+% ==========================================================
 \chapter{Testes}
 
 % ----------------------------------------------------------
@@ -794,36 +799,36 @@ Por melhores que sejam as técnicas de modelagem e especificação de software, 
 \end{citacao}
 
 
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Verificação e Validação}
+% % ----------------------------------------------------------
+% % Seção
+% % ----------------------------------------------------------
+% \section{Verificação e Validação}
 
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-\subsection{Análise estática}
-
-Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+% Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+% tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+% quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+% consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+% cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+% proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-\subsection{Inspeções}
+% \subsection{Análise estática}
+
+% Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+% tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+% quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+% consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+% cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+% proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-\subsection{Revisões}
+% \subsection{Inspeções}
 
 
-\subsection{Caso de teste}
+% \subsection{Revisões}
+
+
+% \subsection{Caso de teste}
 
 % ----------------------------------------------------------
 % Seção
@@ -851,24 +856,23 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Categorias}
-
+* em desenvolvimento *
 
 \subsection{Estrutural}
 
-
 \subsection{Funcional}
+
+
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Técnicas}
-
+* em desenvolvimento *
 
 \subsection{White-box}
 
-
 \subsection{Black-box}
-
 
 \subsection{Grey-box}
 
@@ -876,16 +880,13 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Níveis}
-
+* em desenvolvimento *
 
 \subsection{Unitário / componente}
 
-
 \subsection{Integração / operação do sistema / funcional}
 
-
 \subsection{Validação}
-
 
 \subsection{Sistema}
 
@@ -893,31 +894,23 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Foco do teste}
-
+* em desenvolvimento *
 
 \subsection{Conformidade}
 
-
 \subsection{Configuração}
-
 
 \subsection{Recuperação}
 
-
 \subsection{Regressão}
-
 
 \subsection{Estresse}
 
-
 \subsection{Desempenho}
-
 
 \subsection{Usabilidade}
 
-
 \subsection{Acessibilidade}
-
 
 \subsection{Internacionalização}
 
@@ -925,31 +918,13 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 % Seção
 % ----------------------------------------------------------
 \section{Ferramentas}
+* em desenvolvimento *
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Fluxo de Teste em Diferentes Metodologias}
-
-% ----------------------------------------------------------
-% Capitulo
-% ----------------------------------------------------------
-\chapter{Inspeção}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Definição e Importância}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Processo de Inspeção (método Fagan)}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Funções de Inspeção}
+* em desenvolvimento *
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -957,13 +932,15 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \bookmarksetup{startatroot}% 
 % ---
 
-% ---
-% Conclusão
-% ---
+% ==========================================================
+% CAPITULO
+% ==========================================================
 \chapter*[Conclusão]{Conclusão}
 \addcontentsline{toc}{chapter}{Conclusão}
 
-\lipsum[31-33]
+\emph{*em desenvolvimento*}
+
+%\lipsum[31-33]
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS

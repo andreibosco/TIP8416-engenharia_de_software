@@ -92,8 +92,6 @@
   Year                     = {2009},
   Month                    = {May},
   Pages                    = {9-14},
-
-  __markedentry            = {[Andrei:]},
   Abstract                 = {Software quality models are a well-accepted means to support quality management of software systems. Over the last 30 years, a multitude of quality models have been proposed and applied with varying degrees of success. Despite successes and standardisation efforts, quality models are still being criticised, as their application in practice exhibits various problems. To some extent, this criticism is caused by an unclear definition of what quality models are and which purposes they serve. Beyond this, there is a lack of explicitly stated requirements for quality models with respect to their intended mode of application. To remedy this, this paper describes purposes and usage scenarios of quality models and, based on the literature and experiences from the authors, collects critique of existing models. From this, general requirements for quality models are derived. The requirements can be used to support the evaluation of existing quality models for a given context or to guide further quality model development.},
   Doi                      = {10.1109/WOSQ.2009.5071551},
   Keywords                 = {software development management;software quality;quality management;quality model development;software quality model;Application software;Context modeling;ISO standards;Maintenance;Predictive models;Quality management;Software quality;Software systems;Stochastic processes;Terminology},
@@ -131,8 +129,6 @@
   Number                   = {2},
   Pages                    = {146-162},
   Volume                   = {21},
-
-  __markedentry            = {[Andrei:6]},
   Abstract                 = {A model for software product quality is defined, it has been formulated by associating a set of quality-carrying properties with each of the structural forms that are used to define the statements and statement components of a programming language. These quality-carrying properties are in turn linked to the high-level quality attributes of the International Standard for Software Product Evaluation ISO-9126. The model supports building quality into software, definition of language-specific coding standards, systematically classifying quality defects, and the development of automated code auditors for detecting defects in software},
   Doi                      = {10.1109/32.345830},
   ISSN                     = {0098-5589},
@@ -235,6 +231,7 @@
   Year                     = {2009},
   Month                    = {Aug},
   Pages                    = {243-250},
+
   Abstract                 = {Managing quality during the development, operation, and maintenance of software(-intensive) systems and services is a challenging task. Although many organizations need to define, control, measure, and improve various quality aspects of their development artifacts and processes, nearly no guidance is available on how to select, adapt, define, combine, use, and evolve quality models. Catalogs of models as well as selection and tailoring processes are widely missing. A first step towards better support for selecting and adapting quality models can be seen in a classification of existing quality models, especially with respect to their suitability for different purposes and contexts. This article presents so-called comprehensive quality model landscapes (CQMLs), which provide such a classification scheme and help to get an overview of existing models and their relationships. The article focuses on the description and justification of essential concepts needed to define quality models and landscapes. In addition, the article describes typical usage scenarios, illustrates the concept with examples, and sketches open questions and future work.},
   Doi                      = {10.1109/SEAA.2009.88},
   ISSN                     = {1089-6503},
@@ -252,6 +249,18 @@
 
   Owner                    = {Andrei},
   Timestamp                = {2015.04.12}
+}
+
+@Book{Naik2011,
+  Title                    = {Software Testing and Quality Assurance: Theory and Practice},
+  Author                   = {Naik, K. and Tripathy, P.},
+  Publisher                = {Wiley},
+  Year                     = {2011},
+
+  __markedentry            = {[Andrei:]},
+  ISBN                     = {9781118211632},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.28}
 }
 
 @Book{PFLEEGER2010,
@@ -294,6 +303,27 @@
   Author                   = {Suryn, Witold},
   Publisher                = {Wiley},
   Year                     = {2014}
+}
+
+@Book{nbr25000,
+  Title                    = {NBR ISO/IEC 25000: engenharia de software - requisitos e avalia{\c{c}}{\~a}o da qualidade de produtos de software (SQuaRE) - Guia do SQuaRE.},
+  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas},
+  Year                     = {2008},
+  Series                   = {Normas SQuaRE},
+
+  __markedentry            = {[Andrei:6]},
+  ISBN                     = {9788507005971},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.28}
+}
+
+@Book{nbr9126,
+  Title                    = {NBR ISO/IEC 9126-1: Engenharia de software - Qualidade de produto},
+  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas},
+  Year                     = {2003},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.04.28}
 }
 
 @Article{Turk2014,
