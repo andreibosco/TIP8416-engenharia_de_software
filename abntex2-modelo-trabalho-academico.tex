@@ -32,7 +32,7 @@
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -74,7 +74,7 @@
 % ---
 % Pacotes de citações
 % ---
-%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
 \usepackage[alf]{abntex2cite}	% Citações padrão ABNT
 
 % --- 
@@ -84,25 +84,25 @@
 % ---
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 % Texto padrão antes do número das páginas
-%\renewcommand{\backref}{}
+\renewcommand{\backref}{}
 % Define os textos da citação
-% \renewcommand*{\backrefalt}[4]{
-% 	\ifcase #1 %
-% 		Nenhuma citação no texto.%
-% 	\or
-% 		Citado na página #2.%
-% 	\else
-% 		Citado #1 vezes nas páginas #2.%
-% 	\fi}%
+ \renewcommand*{\backrefalt}[4]{
+ 	\ifcase #1 %
+ 		Nenhuma citação no texto.%
+ 	\or
+ 		Citado na página #2.%
+ 	\else
+ 		Citado #1 vezes nas páginas #2.%
+ 	\fi}%
 % ---
 
 
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{AT2 - Mecanismos de implementação da qualidade de software com perspectivas sobre os testes, inspeções e métodos ágeis}
+\titulo{Modelos de qualidade de produto de software com perspectivas sobre métodos ágeis, inspeções e testes}
 \autor{Andrei Bosco Bezerra Torres}
 \local{Fortaleza - CE}
 \data{Abril de 2015}
@@ -116,7 +116,7 @@
 \tipotrabalho{Atividade de mestrado}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
-\preambulo{Trabalho da disciplina de Engenharia de Software apresentado como parte das atividades necessárias.}
+\preambulo{Trabalho da disciplina de Engenharia de Software apresentado como parte das atividades.}
 % ---
 
 
@@ -195,19 +195,12 @@
 
 % resumo em português
 \begin{resumo}
- O foco deste trabalho é abordar sobre qualidade de software
- e todo o processo envolvido no desenvolvimento e entrega de
- um software de alto padrão de qualidade, desde as etapas de
- verificação e validação através de testes e inspeções, até 
- os modelos de qualidade, métricas e gestão. Também será
- abordado a aplicação de modelos de qualidade em projetos 
- que adotam métodos ágeis e como isso pode impactar o resultado
- final do produto.
+ O foco deste trabalho é abordar sobre qualidade de software e todo o processo envolvido no desenvolvimento e entrega de um software de alto padrão de qualidade, abordando os modelos de qualidade de produto, gestão, métricas e inspeção. Também será abordada a aplicação de modelos de qualidade em projetos que adotam métodos ágeis e como isso pode impactar o resultado final do produto.
 
  \vspace{\onelineskip}
     
  \noindent
- \textbf{Palavras-chaves}: modelos de qualidade, qualidade de software, inspeção, testes, validação, verificação, métodos ágeis.
+ \textbf{Palavras-chaves}: modelos de qualidade de produto, qualidade de software, inspeção, testes, validação, verificação, métodos ágeis.
 \end{resumo}
 
 % ---
@@ -238,7 +231,7 @@
     \item[QA] \emph{Quality Assurance} - Garantia de Qualidade
     \item[QMOOD] \emph{Quality Model for Object-Oriented Design} - Modelo de Qualidade
 para Projeto Orientados a Objeto
-    \item[SQUaRE] \emph{Systems and software Quality Requirements and Evaluation} - Avaliação e Requisitos de Qualidade de Sistemas e Software
+    \item[SQuaRE] \emph{Systems and software Quality Requirements and Evaluation} - Avaliação e Requisitos de Qualidade de Sistemas e Software
 \end{siglas}
 % ---
 
@@ -273,7 +266,7 @@ para Projeto Orientados a Objeto
 % ==========================================================
 \chapter[Introdução]{Introdução}
 
-Este trabalho fará uma abordagem sobre qualidade de software, iniciando uma contextualização sobre seus diversos tipos de definição e conceitos básicos, e posteriormente focando nos modelos de qualidade existente, desde os mais relevantes historicamente até o padrão atual ISO/IEC. E como fechamento será apresentada uma análise sobre como os modelos de processo de software abordam (ou não) a qualidade, com foco nas metodologias ágeis.
+Este trabalho fará uma abordagem sobre qualidade de software, iniciando uma contextualização sobre seus diversos tipos de definição e conceitos básicos e, posteriormente, focando nos modelos de qualidade existentes, desde os mais relevantes historicamente até o padrão atual ISO/IEC. Como fechamento será apresentada uma análise sobre como os modelos de processo de software abordam (ou não) a qualidade, com foco nas metodologias ágeis.
 %FIXME continuar
 %Este capítulo fará uma abordagem sobre diversos tipos de modelos de qualidade existente, incluindo uma breve contextualização histórica de cada, e contará também com seções introdutórias sobre gestão da qualidade, medição e padrões/certificações. E, como fechamento, será apresentado como a qualidade de software pode ser inserido em projetos que implementam metodologias ágeis.
 
@@ -310,11 +303,11 @@ Definir \emph{qualidade de software}, ou mesmo \emph{qualidade} não é tão sim
         \end{itemize}
     \item[Definição de \citeonline{PRESSMAN2010} para Qualidade de Software:] \hfill
         \begin{itemize}
-            \item Um processo de software eficaz aplicada de uma maneira que cria um produto útil que oferece valor mensurável para quem produz e para quem usá-lo.
+            \item Um processo de software eficaz aplicado de uma maneira que cria um produto útil, que oferece valor mensurável para quem produz e para quem usa.
         \end{itemize}
 \end{description}
 
-Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente, ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}\footnote{Qualquer pessoa ou organização que tenha interesse, ou seja afetado pelo projeto.}. Então em que se deve pensar para chegar à um produto com qualidade?
+Note a evolução das definições da IEEE entre 1990 e 2010. Por que é tão difícil chegar a uma definição objetiva? Basicamente porque é quase impossível analisar objetivamente se um requisito foi cumprido adequadamente ou não. Pode haver divergências de interpretação de um requisito entre o desenvolvedor e o cliente ou pode haver conflito de expectativas entre diferentes \emph{stakeholders}\footnote{Qualquer pessoa ou organização que tenha interesse, ou seja afetado pelo projeto.}. Então em que se deve pensar para chegar à um produto com qualidade?
 
 \section{Fatores de Qualidade}
 
@@ -329,14 +322,14 @@ Devido aos questionamentos levantados anteriormente, cabe à equipe de gerenciam
 \end{enumerate}
 
 
-%REF: página 673 de Software Engineering (9th Edition) - rever este parágrafo
-\citeonline{SOMMERVILLE2011} lembra que a análise da qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende das características não-funcionais. Se uma funcionalidade não funcionar como esperado, o usuário normalmente encontra outras maneiras de realizar o que deseja, porém, se o software for lento ou instável ele será impedido de alcançar seus objetivos.
+% REF: página 673 de Software Engineering (9th Edition) - rever este parágrafo
+\citeonline{SOMMERVILLE2011} lembra que a análise da qualidade de um software não está sujeita apenas a analisar se uma funcionalidade foi implementada corretamente, mas também depende das características não-funcionais. Se uma funcionalidade não funcionar como esperado, o usuário normalmente encontra outras maneiras de realizar o que deseja, porém, se o software for lento ou instável, ele será impedido de alcançar seus objetivos.
 
-Ele também reforça que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica então as outras características podem ser sacrificadas, por exemplo.
+Ele também reforça que é impossível um sistema ser otimizado em todos estes pontos, portanto é necessário ser analisado e definido quais atributos são vitais para a aplicação. Caso a eficiência seja crítica, então as outras características podem ser sacrificadas, por exemplo.
 
 % REF: ver página 430 de Software Engineering A Practitioner's Approach 7th Edition - Roger Pressman
 
-Na visão de \citeonline{GARVIN1987} a qualidade deve ser analisada de um ponto de vista multidimensional, desde a conformância com os requisitos até o caráter estético da aplicação (ver \autoref{tab:qualidade_garvin}).
+Na visão de \citeonline{GARVIN1987}, a qualidade deve ser analisada de um ponto de vista multidimensional, desde a conformidade com os requisitos até o caráter estético da aplicação (ver \autoref{tab:qualidade_garvin}).
 
 \begin{table}[h]
     \caption{Dimensões de qualidade de Garvin}
@@ -354,20 +347,17 @@ Na visão de \citeonline{GARVIN1987} a qualidade deve ser analisada de um ponto 
   \legend{Fonte: \citeonline{PRESSMAN2010}}
 \end{table}
 
-Conforme dito anteriormente, a qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados no capítulo \ref{cap:modelos_qualidade}.
+Conforme dito anteriormente, a qualidade é um conceito extremamente amplo e abrangente, e nem sempre simples de ser avaliado objetivamente. Com isso, é necessário metas concretas, um modelo com o objetivo de descrever, avaliar e/ou prever qualidade \cite{wagner2013}. Diversos modelos serão descritos e analisados no capítulo \ref{cap:modelos_qualidade}.
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Tipos de Qualidade}
-% FIXME: página 21 do livro Software Product Quality Control
-%\subsection{Qualidade do Produto}
-
-%\subsection{Qualidade do Processo}
+% REF: página 21 do livro Software Product Quality Control
 
 A qualidade de software é dividida em dois aspectos: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. A qualidade do produto foca no controle de qualidade para gerar um produto final que atenda aos requisitos e traga satisfação do usuário, enquanto a qualidade do processo foca no controle da produção para otimizar o desenvolvimento e o uso otimizado dos recursos disponíveis.
 
-Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, serão abordados de maneira introdutória, tendo este trabalho a \emph{qualidade do produto} e os modelos de qualidade criados para ele como foco principal.
+Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, não serão abordados, tendo este trabalho a \emph{qualidade do produto} e os modelos de qualidade criados para ele como foco principal.
 
 \citeonline{WAZLAWICK2013} indica que apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum \cite{WAZLAWICK2013}.
 
@@ -376,8 +366,8 @@ Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, ser�
 % Process quality focuses on each activity and forces the activities to achieve maximum tolerances irrespective of the end result. 
 %For product quality we use quality control to assure product confirm to production standards and tolerance where for process quality we use quality assurance to assure process effectiveness and efficiency 
 
-% FIXME: página 228 de Engenharia de Software - conceitos e práticas
-% FIXME: berander2005, página 3
+% REF: página 228 de Engenharia de Software - conceitos e práticas
+% REF: berander2005, página 3
 % REF: pressman2010, página 428, final da página
 E dentro do contexto de qualidade do produto, \citeonline{PRESSMAN2010} define dois tipos de qualidade:
 
@@ -402,7 +392,7 @@ Se você produzir um sistema de software de péssima qualidade, então você per
 % ==========================================================
 % CAPITULO
 % ==========================================================
-\chapter{Modelos de Qualidade}
+\chapter{Modelos de Qualidade de Produto}
 \label{cap:modelos_qualidade}
 
 % ----------------------------------------------------------
@@ -412,32 +402,18 @@ Se você produzir um sistema de software de péssima qualidade, então você per
 
 Um \emph{Modelo de Qualidade} é um modelo cujo objetivo é descrever, avaliar e/ou prever qualidade. Muitos modelos de qualidade fazem uma decomposição da qualidade geral de um produto em sub-qualidades para que se torne mais fácil de compreender e gerenciar \cite{wagner2013}.
 
-Este tópico vem sendo pesquisado à décadas e existe um grande número de modelos \cite{Klas2009} e seria inviável analisar todas, então focaremos nos modelos mais relevantes, seja por sua importância histórica ou por ser um padrão internacional. \citeonline{wagner2013} propõe uma divisão entre os modelos de qualidade:
+Este tópico vem sendo pesquisado à décadas e existe um grande número de modelos \cite{Klas2009} e seria inviável analisar todas, então este trabalho focará nos modelos mais relevantes, seja por sua importância histórica ou por ser um padrão internacional. \citeonline{wagner2013} propõe uma divisão entre os modelos de qualidade, que será utilizada como referência:
 \begin{itemize}
-    \item \emph{Hierárquicos}: Um modelo de decomposição hierárquica dos fatores de qualidade. Ex.: McCall, Boehm, ISO 9126, ISO 25010;
+    \item \emph{Hierárquicos}: Um modelo de decomposição hierárquica dos fatores de qualidade. Ex.: McCall, Boehm, ISO 9126;
     \item \emph{Meta-modelos}: Um modelo que define como modelos de qualidade válidos devem ser estruturados, cada um com propriedades e métricas específicas para o projeto. Ex.: Dromey, COQUAMO (\emph{Constructive Quality Model} - Modelo de Qualidade Construtivo), QMOOD (\emph{Quality Model for Object-Oriented Design} - Modelo de Qualidade para Projeto Orientados a Objeto);
-    \item \emph{Estatístico ou implícito}: Um modelo estatístico que busca estimar ou prever os fatores de qualidade, através de ferramentas de análise ou de testes. Ex.: Modelo de confiabilidade de crescimento (\emph{ reliability growth model}).
+    \item \emph{Estatístico ou implícito}: Um modelo estatístico que busca estimar ou prever os fatores de qualidade, através de ferramentas de análise ou de testes. Ex.: Modelo de confiabilidade de crescimento (\emph{reliability growth model}).
 \end{itemize}
-
-%\citeonline{wagner2013} propôs uma extensão da classificação de modelos DAP (\emph{definition, assessment, prediction}) de \citeonline{Deissenboeck2009}:
-
-
-% FIXME: dividir os modelos nas categorias ou apresentar as categorias e depois os modelos?
-% página 45 de Software Product Quality
-% \begin{itemize}
-%     \item Modelos de Definição (ex.: FURPS);
-%     \item Modelos de Avaliação (ex.: EMISQ);
-%     \item Modelos de Previsão;
-%     \item Modelos Polivantes\footnote{\emph{Multi-purpose}} (ex.: COQUAMO).
-% \end{itemize}
-
-% FIXME: seguir essa divisão acima ou utilizar a categorização de software product control ?
-% modelos: hierárquicos (mcCall, Boehm, ISO 9126), meta-modelos (Dromey), estatística ou implícita
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Modelo McCall (1977)}
+\section{Modelos Hierárquicos}
+\subsection{Modelo McCall (1977)}
 % foco na qualidade do produto, dividido em visão externa (fatores de qualidade a especificar) e visão interna (critérios de qualidade para desenvolver)
 
 Um dos predecessores mais renomado dos modelos de qualidade atuais é o modelo de \citeonline{general1977factors}, criado para o exército dos EUA e focado nos desenvolvedores de sistema e no processo de desenvolvimento. Este modelo define fatores de qualidade que tentam aproximar o ponto de vista do usuário e as prioridades dos desenvolvedores. Estes fatores são divididos em três perspectivas (ver \autoref{fig:mcCall-fatores_qualidade}):
@@ -452,65 +428,67 @@ Um dos predecessores mais renomado dos modelos de qualidade atuais é o modelo d
     \centering
     \caption{Perspectivas e fatores de qualidade de McCall}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=1.0]{mcCall-fatores_qualidade}
+    \includegraphics[scale=0.8]{mcCall-fatores_qualidade}
     \label{fig:mcCall-fatores_qualidade}
     \legend{Fonte: \citeonline{PRESSMAN2010}}
 \end{figure}
 
-% FIXME: continuar - fonte: página 7 de software_quality_atributes
-Hierarquia (\autoref{fig:mcCall-quality_model}):
+% REF: página 7 de software_quality_atributes
+McCall define uma hierarquia (\autoref{fig:mcCall-quality_model}) relacionando os fatores citados acima com critérios:
 \begin{itemize}
     \item 11 fatores (especificação): descrever a visão externa do software, do ponto de vista do usuário;
     \item 23 critérios de qualidade (construção): descrever a visão interna do software, do ponto de vista dos desenvolvedores;
-    \item Métricas (controle): definidas e utilizados para prover método de medida
+    \item Métricas (controle): definidas e utilizados para prover método de medida.
 \end{itemize}
 
-% Eis a descrição de \citeonline{general1977factors} para cada um dos fatores listados na Figura \ref{fig:mcCall-fatores_qualidade}:
-% \begin{itemize}
-%     \item \emph{Manutenibilidade}
-% \end{itemize}
+Os fatores de qualidade retratam as características comportamentais do sistema, os critérios são atributos para um ou mais fatores, enquanto as métricas buscam capturar os aspectos do critério de qualidade \cite{berander2005}.
 
-A ideia do modelo de McCall é que os fatores de qualidade devem prover uma visão geral da qualidade do software, enquanto a métrica real é obtida ao responder \emph{sim} ou \emph{não} ao quanto ao relacionamento entre elas. O ponto negativo desta proposta é a métrica é subjetiva ao julgamento da pessoa respondendo as perguntas \cite{berander2005}.
+\cite{Naik2011} demonstra como definir as métricas:
+\begin{itemize}
+    \item Formular um conjunto de questões sobre o critério de qualidade que possam ser respondidas com \emph{sim} ou \emph{não};
+    \item Dividir as respostas \emph{sim} pelo número total de questões para obter um valor entre 0 e 1. Esse valor será a métrica do atributo.
+\end{itemize}
+
+O ponto negativo desta proposta é a subjetividade de avaliação da métrica, que cabe ao julgamento da pessoa que respondeu as perguntas \cite{berander2005}, e alguns critérios podem levar a perguntas que não sejam facilmente respondidas apenas com 'sim' ou 'não' \cite{Naik2011}.
 
 \begin{figure}[H]
     \centering
     \caption{Hierarquia de fatores e critérios de McCall}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=1.0]{mcCall-graph-andrei}
+    \includegraphics[scale=0.85]{mcCall-graph-andrei}
     \label{fig:mcCall-quality_model}
-    \legend{Fonte: [Adaptação do autor] \citeonline{Naik2011}}
+    \legend{Fonte: \citeonline{Naik2011} [Adaptação do autor]}
 \end{figure}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Modelo Boehm (1978)}
+\subsection{Modelo Boehm (1978)}
 % três níveis de características: alto nível (usuário), intermediária (software) e primitiva (métricas e avaliação)
 % FIXME: indicar que ele criou o modelo em espiral?
 
-Outro modelo histórico foi criado por \citeonline{BOEHM1978}, que, de maneira similar ao modelo de McCall, apresenta um modelo hierárquico de características, mas dividido em três níveis, onde cada uma contribui para a qualidade geral: alto nível (usuário), intermediário (software) e primitivas (métricas).
-As características de alto nível tem como objetivo responder a três questões quanto ao uso do software pelo usuário, que não é necessariamente o cliente \cite{PFLEEGER2010}:
+Outro modelo histórico foi criado por \citeonline{BOEHM1978}, que, de maneira similar ao modelo de McCall, apresenta um modelo hierárquico de características. Para Boehm, o primeiro pode a ser analisado é a utilidade geral (\emph{General utility}) do software, pois se ele não for útil então todo o projeto é uma perda de tempo e dinheiro \cite{PFLEEGER2010}.
 
+O modelo de Boehm é dividido em três níveis, onde cada uma contribui para a qualidade geral: \emph{alto nível} (usuário), \emph{intermediário} (software) e \emph{primitivas} (métricas). As características de alto nível tem como objetivo responder a três questões quanto ao uso do software pelo usuário, que não é necessariamente o cliente \cite{berander2005}:
+
+% REF: página 614, pfleeger - 'Software Engineering Theory and Practice 4e Shari Pfleeger Joanne Atlee 9780136061694.pdf'
 \begin{itemize}
-    \item Utilitário \emph{as is} (como está) - usuário final: quão fácil (eficiência, confiança, usabilidade) é de utilizá-lo? 
+    \item Utilidade 'como está' (\emph{As is utility}) - usuário final: quão fácil (eficiência, confiança, usabilidade) é de utilizá-lo tal como está? 
     \item Portabilidade - desenvolvedor: posso continuar a utilizá-lo caso altere o meu ambiente? Caso o compilador seja substituído, o programa não deve sofrer degradação de funcionalidades, por exemplo.
-    \item Manutenibilidade - mantenedor: quão fácil é entender, modificar e testar?
+    \item Manutenibilidade - desenvolvedor mantenedor: quão fácil é entender, modificar e testar?
 \end{itemize}
 
-Já as características de nível médio representam as qualidades esperadas pelos desenvolvedores (ver \autoref{fig:boehm-hierarquia_modelo}), enquanto o nível de características primitivas provê as métricas de avaliação do sistema. Uma das principais diferenças deste modelo para o de McCall é que este abrange a performance do hardware como característica relevante à qualidade \cite{PFLEEGER2010}.
+Já as características de nível médio representam os 7 fatores de qualidade esperados pelos desenvolvedores (ver \autoref{fig:boehm-hierarquia_modelo}), enquanto o nível de características primitivas provê as métricas de avaliação do sistema. Uma das principais diferenças deste modelo para o de McCall é que este abrange a performance do hardware como característica relevante à qualidade. Ou seja, para Boehm a qualidade do software deve satisfazer tanto as necessidades do usuário final quanto os desenvolvedores envolvidos, e como reflexo dessa qualidade o software deve: fazer o que o usuário requer; utilizar os recursos computacionais de maneira correta e eficaz; ser fácil de aprender e utilizar; e ser bem projetado, bem programado, facilmente testável e de fácil manutenção \cite{PFLEEGER2010}.
 
-Ou seja, para Boehm a qualidade do software deve satisfazer tanto as necessidades do usuário final quanto os desenvolvedores envolvidos, e como reflexo dessa qualidade o software deve: fazer o que o usuário requer; utilizar os recursos computacionais de maneira correta e eficaz; ser fácil de aprender e utilizar; e ser bem projetado, bem programado, facilmente testável e de fácil manutenção \cite{PFLEEGER2010}.
-
-% FIXME: encaixar este parágrafo melhor com o restante do conteúdo
 Porém, segundo \cite{SURYN2014}, apesar deste modelo ser um avanço comparado ao modelo de McCall, as características de utilidade geral (\emph{general utility}) e 'utilitário como está' (\emph{as-is utility}) ainda são conceitos genéricos e imprecisos, resultando em uma aplicabilidade limitada.
 
 \begin{figure}[H]
     \centering
     \caption{Hierarquia do Modelo de Qualidade de Boehm}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{boehm-hierarquia_modelo-andrei}
+    \includegraphics[scale=0.95]{boehm-hierarquia_modelo-andrei}
     \label{fig:boehm-hierarquia_modelo}
-    \legend{Fonte: [Adaptação do autor] \citeonline{PFLEEGER2010}}
+    \legend{Fonte: \citeonline{PFLEEGER2010} [Adaptação do autor]}
 \end{figure}
 
 % ----------------------------------------------------------
@@ -522,7 +500,7 @@ Porém, segundo \cite{SURYN2014}, apesar deste modelo ser um avanço comparado a
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Padrão ISO 9126 (1991)}
+\subsection{Padrão ISO 9126 (1991)}
 O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics and Guidelines for their Use} - Avaliação do Produto de Software: Características de Qualidade e Diretrizes para sua Utilização) foi criado com base nos modelos de McCall e Boehm, focando em três aspectos da qualidade de software \cite{SURYN2014}:
 \begin{description}
     \item [Qualidade no uso:] qualidade de uso é o ponto de vista do usuário quanto a qualidade do software ao ser utilizado em um ambiente e contexto específico. Ele avalia se o usuário consegue alcançar seus objetivos, e não as propriedades do software.
@@ -530,15 +508,15 @@ O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics a
     \item [Qualidade interna:] a totalidade dos atributos do software que determinam sua habilidade em satisfazer as necessidades implícitas e explícitas do usuário, em condições específicas.
 \end{description}
 
-Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3 níveis, composto de características de qualidade, subcaracterísticas e medidas (ver \autoref{fig:iso9126-hierarquia_interno_externo} e \autoref{tab:iso9126-caracteristicas}). Mais de 200 medidas foram propostas como parte do padrão e outras medidas podem utilizadas de acordo com a necessidade \cite{SURYN2014}.
+Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3 níveis, composto de características de qualidade, sub-características e métricas (ver \autoref{fig:iso9126-hierarquia_interno_externo} e \autoref{tab:iso9126-caracteristicas}). Mais de 200 métricas\footnote{Listagem de métricas do padrão estão disponíveis na ISO/IEC 9126-4} foram propostas como parte do padrão e outras métricas podem ser criadas e utilizadas de acordo com a necessidade \cite{SURYN2014}.
 
 \begin{figure}[h]
     \centering
     \caption{Hierarquia de qualidade interna e externa do padrão ISO 9126}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{iso9126-hierarquia_interno_externo-andrei}
+    \includegraphics[scale=1.0]{iso9126-hierarquia_interno_externo-andrei}
     \label{fig:iso9126-hierarquia_interno_externo}
-    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
+    \legend{Fonte: \citeonline{SURYN2014} [Adaptação do autor]}
 \end{figure}
 
 \begin{table}[h]
@@ -558,10 +536,10 @@ Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3
         \rowcolor[HTML]{EFEFEF}
         Portabilidade & Um conjunto de atributos que afetam a capacidade do software de ser transferido de um ambiente para outro (incluindo ambiente organizacional, hardware ou software). \\ \bottomrule
     \end{tabular}
-    \legend{Fonte: [Tradução do autor] \citeonline{PFLEEGER2010}}
+    \legend{Fonte: \citeonline{PFLEEGER2010} [Tradução do autor]}
 \end{table}
 
-Já os fatores de qualidade de uso são organizando em uma hierarquia de 2 níveis, composto das características de qualidade e a medidas (ver \autoref{fig:iso9126-hierarquia_qualidade_uso}). Os três aspectos da qualidade de software do padrão ISO 9126 se relacionam em um modelo preditivo (ver \autoref{fig:iso9126-hierarquia_relacionamento}).
+Já os fatores de qualidade de uso são organizando em uma hierarquia de 2 níveis, composto das características de qualidade e as métricas (ver \autoref{fig:iso9126-hierarquia_qualidade_uso}). A junção e conexão dos três aspectos da qualidade de software do padrão ISO 9126 formam um modelo preditivo (ver \autoref{fig:iso9126-hierarquia_relacionamento}).
 
 \begin{figure}[h]
     \centering
@@ -569,7 +547,7 @@ Já os fatores de qualidade de uso são organizando em uma hierarquia de 2 níve
     \graphicspath{ {./graphics/} }
     \includegraphics[scale=1.0]{iso9126-hierarquia_qualidade_uso-andrei}
     \label{fig:iso9126-hierarquia_qualidade_uso}
-    \legend{Fonte: [Adaptação do autor] \citeonline{nbr9126}}
+    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
 \end{figure}
 
 Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta as seguintes diferenças:
@@ -585,44 +563,56 @@ Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta
     \graphicspath{ {./graphics/} }
     \includegraphics[scale=1.0]{iso9126-hierarquia_relacionamento-andrei}
     \label{fig:iso9126-hierarquia_relacionamento}
-    \legend{Fonte: [Adaptação do autor] \citeonline{nbr9126}}
+    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
 \end{figure}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{SquaRE - ISO/IEC 25010 (\emph{Systems and software Quality Requirements
-and Evaluation})}
+\subsection{SQuaRE - ISO/IEC 25010 (\emph{Systems and software Quality Requirements
+and Evaluation} - 2011)}
 % FONTE: página 230 de Engenharia de Software - Conceitos e Práticas
+
 Em 2011, a família de normas ISO/IEC 25000 substituíram a norma ISO 9126, sendo um dos fatores que a antiga norma aplicava-se apenas no processo de desenvolvimento e uso do produto de software, e não se preocupava quanto à definição do produto em si.
 
-O novo modelo propõe duas perspectivas, cada uma com um modelo específico: a primeira perspectiva é relacionada ao uso do software, com um modelo chamado \emph{modelo de qualidade no uso} (ver \autoref{fig:iso25010-hierarquia_qualidade_uso}), e a segunda perspectiva é relacionada ao software em si, com um modelo chamado \emph{modelo de qualidade do produto de sistema/software}. O modelo de qualidade no uso é composto por 5 características e 11 métricas (1 característica e várias métricas a mais do que o padrão ISO 9126). O modelo de qualidade do produto (ver \autoref{fig:iso25010-hierarquia_qualidade_produto}) é composto de 8 características, que são divididas em subcaracterísticas que se relacionam com as propriedades estáticas e dinâmicas do software.
-
-\begin{figure}[h]
-    \centering
-    \caption{Hierarquia de qualidade de uso do padrão ISO 25010}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{iso25010-hierarquia_qualidade_uso-andrei}
-    \label{fig:iso25010-hierarquia_qualidade_uso}
-    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
-\end{figure}
-
-% FIXME: fazer versão própria
-\begin{figure}[p]
-    \centering
-    \caption{Hierarquia de qualidade de produto do padrão ISO 25010}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{iso25010-hierarquia_qualidade_produto}
-    \label{fig:iso25010-hierarquia_qualidade_produto}
-    \legend{Fonte: \citeonline{SURYN2014}}
-\end{figure}
+O novo modelo propõe duas perspectivas, cada uma com um modelo específico (ver \autoref{fig:iso25010-hierarquia_qualidade_completa}): a primeira perspectiva é relacionada ao uso do software, com um modelo chamado \emph{modelo de qualidade no uso}, e a segunda perspectiva é relacionada ao software em si, com um modelo chamado \emph{modelo de qualidade do produto de sistema/software}. O modelo de qualidade no uso é composto por 5 características e 11 métricas. O modelo de qualidade do produto é composto de 8 características, que são divididas em sub-características que se relacionam com as propriedades estáticas e dinâmicas do software.
 
 Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126, o modelo de qualidade do produto do padrão ISO 25010 utiliza terminologias diferentes mas que possuem significados similares \cite{SURYN2014}:
 
 \begin{description}
-    \item [Estática:] corresponde à qualidade interna da ISO 9126, que se aplica ao software sendo desenvolvido;
+    \item [Estática:] corresponde à qualidade interna da ISO 9126, que se aplica ao software em desenvolvimento, que não está sendo executado;
     \item [Dinâmico:] corresponde à qualidade externa da ISO 9126, que se aplica ao sistema e software em execução, mas não dentro do contexto operacional (para isto existe o modelo de qualidade no uso).
 \end{description}
+
+\citeonline{wagner2013} critica que o padrão não indica quando utilizar cada modelo, e que aparentemente as empresas adotam o modelo de qualidade em uso apenas quando analisam a usabilidade do software. Ele lembra também que esse modelo é uma taxonomia, e não é a única, e talvez nem a melhor, maneira de estruturar as características de qualidade do software, e que se o modelo for utilizado como algo além de um \emph{checklist} então não será o mais adequado.
+
+\begin{figure}[H]
+    \centering
+    \caption{Hierarquias de qualidade do padrão ISO 25010}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.85]{iso25010-hierarquia_qualidade_completa-andrei}
+    \label{fig:iso25010-hierarquia_qualidade_completa}
+    \legend{Fonte: \citeonline{SURYN2014} [Adaptação do autor]}
+\end{figure}
+
+% \begin{figure}[h]
+%     \centering
+%     \caption{Hierarquia de qualidade de uso do padrão ISO 25010}
+%     \graphicspath{ {./graphics/} }
+%     \includegraphics[scale=0.9]{iso25010-hierarquia_qualidade_uso-andrei}
+%     \label{fig:iso25010-hierarquia_qualidade_uso}
+%     \legend{Fonte: \citeonline{SURYN2014} [Adaptação do autor] }
+% \end{figure}
+
+% % FIXME: fazer versão própria
+% \begin{figure}[H]
+%     \centering
+%     \caption{Hierarquia de qualidade de produto do padrão ISO 25010}
+%     \graphicspath{ {./graphics/} }
+%     \includegraphics[scale=0.8]{iso25010-hierarquia_qualidade_produto}
+%     \label{fig:iso25010-hierarquia_qualidade_produto}
+%     \legend{Fonte: \citeonline{SURYN2014}}
+% \end{figure}
 
 % Para facilitar a compreensão das fases do modelo SquaRE veja a \autoref{tab:fases_square} que apresenta sua aplicação no ciclo de vida da normal ISO/IEC 15288 e nos modelos A, B e C. % FIXME: corrigir referência da tabela e inserir os outros modelos de projeto (RUP talvez?)
 
@@ -649,7 +639,7 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Análise dos modelos hierárquicos}
+\subsection{Análise dos modelos hierárquicos}
 
 Os modelos apresentados são úteis para auxiliar na análise da qualidade do software desenvolvido, porém nenhum dos modelos explica a lógica de porque algumas características foram consideradas e outras não, porque um atributo está em uma posição da hierarquia, porque nenhum dos modelos aborda segurança, dentre outras questões \cite{PFLEEGER2010}.
 
@@ -667,7 +657,7 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
         Exatidão & * & confiabilidade & funcionalidade & funcionalidade \\
         \rowcolor[HTML]{EFEFEF} 
         Confiabilidade & * & * & * & * \\
-        Integridade & * &  &  & segurança? \\
+        Integridade & * &  &  & segurança \\
         \rowcolor[HTML]{EFEFEF} 
         Usabilidade & * & compreensibilidade & * & * \\
         Eficiência & * & * & * & * \\
@@ -678,7 +668,7 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
         Interoperabilidade & * &  &  & compatibilidade \\
         Flexibilidade & * &  &  & manutibilidade \\
         \rowcolor[HTML]{EFEFEF} 
-        Reusabilidade & * &  &  & \\
+        Reusabilidade & * &  &  & manutibilidade\\
         Portabilidade & * & * & * & * \\
         \rowcolor[HTML]{EFEFEF} 
         Clareza &  & * &  & \\
@@ -694,21 +684,23 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
         Generalidade &  & * &  & \\
         Segurança & & & funcionalidade & * \\ \bottomrule
     \end{tabular}
-    \legend{Fonte: [Adaptação do autor] \citeonline{berander2005}}
+    \legend{Fonte: \citeonline{berander2005} [Adaptação do autor]}
 \end{table}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Modelo Dromey (1995)}
+\section{Meta-modelos}
+\subsection{Modelo Dromey (1995)}
 % três princípios fundamentais: atributos de qualidade, propriedades do produto, e as ligações entre eles
-O modelo de \citeonline{Dromey1995} traz uma diferente abordagem de McCall e Boehms, pois propõe que o modelo de qualidade seja baseado na perspectiva do produto, onde a avaliação e características de qualidade irão variar para cada produto \cite{SURYN2014}:
+
+O modelo de \citeonline{Dromey1995} traz uma diferente abordagem de McCall e Boehm, pois propõe que o modelo de qualidade seja baseado na perspectiva do produto, na qual a avaliação e características de qualidade irão variar para cada produto \cite{SURYN2014}:
 
 \begin{citacao}
 O que deve ser compreendido em qualquer tentativa de criar um modelo de qualidade é que um software não manifesta diretamente os atributos de qualidade. No entanto, ele exibe características de produto que implicam ou contribuem para atributos de qualidade ou outras características (defeitos do produto) que detraem dos atributos de qualidade do produto. A maioria dos modelos de qualidade de software falham em lidar adequadamente com a faceta de problema nas características do produto, e eles também falham em relacionar diretamente os atributos de qualidade e as características correspondentes no produto. [Tradução do autor] \cite{Dromey1995}
 \end{citacao}
 
-Seguindo esta lógica Dromey criou um framework de avaliação de qualidade que analisa a qualidade de componentes através de propriedade tangíveis. Cada artefato produzido durante a criação do software (ex.: código, documentação, guia de uso, etc) pode ser associado a um modelo de qualidade diferente (uma váriavel pode ser um componente do modelo de implementação, e um módulo pode ser um componente do modelo de projeto, por exemplo) \cite{SURYN2014}. E as propriedades tangíveis são divididas em quatro tipo de propriedades (ver \autoref{fig:dromey-estrutura_modelo}):
+Seguindo esta lógica, Dromey criou um \emph{framework} de avaliação de qualidade que analisa a qualidade de componentes através de propriedade tangíveis. Cada artefato produzido durante a criação do software (ex.: código, documentação, guia de uso, etc) pode ser associado a um modelo de qualidade diferente (uma variável pode ser um componente do modelo de implementação, e um módulo pode ser um componente do modelo de projeto, por exemplo) \cite{SURYN2014}. E as propriedades tangíveis são divididas em quatro tipo de propriedades (ver \autoref{fig:dromey-estrutura_modelo}):
 
 \begin{itemize}
     \item exatidão: verifica se algum princípio básico foi violado
@@ -729,24 +721,34 @@ Essas propriedades são utilizadas para a avaliar qualidade dos componentes, e p
 
 Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha, maçã e canela de alta qualidade resultará uma torta de maçã de alta qualdiade? Óbvio que não, outros elementos são necessários: uma receita (arquitetura e processo de execução), as preferências do usuário (fator totalmente ignorado por Dromey) e pessoas com as qualificações e ferramentas para executar a receita apropriadamente. Certamente este modelo pode ser classificado como uma abordagem \emph{bottom-to-top} de qualidade de software.
 
-% FIXME: fazer versão própria, cuidado com o tamanho
 \begin{figure}[H]
     \centering
     \caption{Estrutura do Modelo de Qualidade de Dromey}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{dromey-estrutura_modelo-andrei}
+    \includegraphics[scale=0.85]{dromey-estrutura_modelo-andrei}
     \label{fig:dromey-estrutura_modelo}
-    \legend{Fonte: [Adaptação do autor] \citeonline{Deissenboeck2009}}
+    \legend{Fonte: \citeonline{Deissenboeck2009} [Adaptação do autor]}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \caption{Avaliação de qualidade de um componente de variável}
     \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.9]{dromey-estrutura_modelo_exemplo-andrei}
+    \includegraphics[scale=0.85]{dromey-estrutura_modelo_exemplo-andrei}
     \label{fig:dromey-estrutura_modelo_exemplo}
-    \legend{Fonte: [Adaptação do autor] \citeonline{SURYN2014}}
+    \legend{Fonte: \citeonline{SURYN2014} [Adaptação do autor]}
 \end{figure}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\subsection{COQUAMO}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelos estatísticos}
+\subsection{Modelo de confiabilidade de crescimento}
 
 % ==========================================================
 % CAPITULO
@@ -759,7 +761,7 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 \section{Definição}
 A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}. Ele pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. % FIXME: como isso funcionaria em uma metodologia ágil, com pequenas equipes?
 
-\citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional\footnote{Definição: FIXME} em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
+\citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
 \begin{enumerate}
     \item \emph{Desconhecimento:} quando a empresa sequer sabe que tem problemas com qualidade. Não há compreensão de que a qualidade seja um objetivo, ferramentas não são usadas ou conhecidas, e inspeções de qualidade não são realizadas.
     \item \emph{Despertar:} a empresa reconhece que tem problemas com a qualidade e que precisa começar a lidar com eles, mas ainda vê isso como um mal necessário, não como fonte de lucro.
@@ -786,14 +788,23 @@ Para realizar a verificação da qualidade são utilizadas técnicas como \emph{
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
+\section{Avaliação da Qualidade}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
 %\section{Padrões / Certificações}
 
 % ==========================================================
 % CAPITULO
 % ==========================================================
-\chapter{Qualidade de Software e Métodos Ágeis}
+\chapter{Qualidade de Software e Modelos de Processo}
 
-\section{TDD - Test Driven Development}
+% \section{A qualidade nos modelos formais}
+
+% \section{Métodos Ágeis}
+
+% \subsection{TDD - Test Driven Development}
 
 % ==========================================================
 % CAPITULO

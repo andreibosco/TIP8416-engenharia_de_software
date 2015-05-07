@@ -4,7 +4,7 @@
 
 @Book{nbr25000,
   Title                    = {NBR ISO/IEC 25000: engenharia de software - requisitos e avalia{\c{c}}{\~a}o da qualidade de produtos de software (SQuaRE) - Guia do SQuaRE.},
-  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas - ABNT},
+  Author                   = {ABNT},
   Year                     = {2008},
   Series                   = {Normas SQuaRE},
 
@@ -20,7 +20,8 @@
   Year                     = {2003},
 
   Owner                    = {Andrei},
-  Timestamp                = {2015.04.28}
+  Timestamp                = {2015.04.28},
+  Url                      = {http://www.abntcatalogo.com.br/norma.aspx?ID=2815}
 }
 
 @Article{Agarwal2014,
