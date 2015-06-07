@@ -16,7 +16,7 @@
 
 @Book{nbr9126,
   Title                    = {NBR ISO/IEC 9126-1: Engenharia de software - Qualidade de produto},
-  Author                   = {Associa{\c{c}}{\~a}o Brasileira De Normas T{\'e}cnicas - ABNT},
+  Author                   = {ABNT},
   Year                     = {2003},
 
   Owner                    = {Andrei},
@@ -107,6 +107,16 @@
   Year                     = {2011}
 }
 
+@Book{,
+  Title                    = {Agile Testing: A Practical Guide for Testers and Agile Teams},
+  Author                   = {Lisa Crispin and Janet Gregory},
+  Publisher                = {Addison-Wesley Professional},
+  Year                     = {2009},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.05}
+}
+
 @InProceedings{Deissenboeck2009,
   Title                    = {Software quality models: Purposes, usage scenarios and requirements},
   Author                   = {Deissenboeck, F. and Juergens, E. and Lochmann, K. and Wagner, S.},
@@ -114,6 +124,7 @@
   Year                     = {2009},
   Month                    = {May},
   Pages                    = {9-14},
+
   Abstract                 = {Software quality models are a well-accepted means to support quality management of software systems. Over the last 30 years, a multitude of quality models have been proposed and applied with varying degrees of success. Despite successes and standardisation efforts, quality models are still being criticised, as their application in practice exhibits various problems. To some extent, this criticism is caused by an unclear definition of what quality models are and which purposes they serve. Beyond this, there is a lack of explicitly stated requirements for quality models with respect to their intended mode of application. To remedy this, this paper describes purposes and usage scenarios of quality models and, based on the literature and experiences from the authors, collects critique of existing models. From this, general requirements for quality models are derived. The requirements can be used to support the evaluation of existing quality models for a given context or to guide further quality model development.},
   Doi                      = {10.1109/WOSQ.2009.5071551},
   Keywords                 = {software development management;software quality;quality management;quality model development;software quality model;Application software;Context modeling;ISO standards;Maintenance;Predictive models;Quality management;Software quality;Software systems;Stochastic processes;Terminology},
@@ -151,12 +162,23 @@
   Number                   = {2},
   Pages                    = {146-162},
   Volume                   = {21},
+
   Abstract                 = {A model for software product quality is defined, it has been formulated by associating a set of quality-carrying properties with each of the structural forms that are used to define the statements and statement components of a programming language. These quality-carrying properties are in turn linked to the high-level quality attributes of the International Standard for Software Product Evaluation ISO-9126. The model supports building quality into software, definition of language-specific coding standards, systematically classifying quality defects, and the development of automated code auditors for detecting defects in software},
   Doi                      = {10.1109/32.345830},
   ISSN                     = {0098-5589},
   Keywords                 = {ISO standards;program debugging;software quality;software standards;software tools;ISO-9126;International Standard for Software Product Evaluation;automated code auditors;high-level quality attributes;language-specific coding standards;programming language;quality defects;quality-carrying properties;software defect detection;software product quality;structural forms;Australia;Buildings;Code standards;Computer languages;Knowledge management;Refining;Software maintenance;Software quality;Software standards;Standards development},
   Owner                    = {Andrei},
   Timestamp                = {2015.04.26}
+}
+
+@Book{galen2015,
+  Title                    = {Three Pillars of Agile Quality \& Testing: Achieving Balanced Results in your Journey Towards Agile Quality},
+  Author                   = {Robert Galen},
+  Publisher                = {RGCG},
+  Year                     = {2015},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.05}
 }
 
 @Article{GARVIN1987,
@@ -178,6 +200,25 @@
   Author                   = {Hirama, Kechi},
   Publisher                = {Elsevier},
   Year                     = {2011}
+}
+
+@InProceedings{Huo:2004:SQA:1025117.1025549,
+  Title                    = {Software Quality and Agile Methods},
+  Author                   = {Huo, Ming and Verner, June and Zhu, Liming and Babar, Muhammad Ali},
+  Booktitle                = {Proceedings of the 28th Annual International Computer Software and Applications Conference - Volume 01},
+  Year                     = {2004},
+
+  Address                  = {Washington, DC, USA},
+  Pages                    = {520-525},
+  Publisher                = {IEEE Computer Society},
+  Series                   = {COMPSAC '04},
+
+  Acmid                    = {1025549},
+  ISBN                     = {0-7695-2209-2-1},
+  Numpages                 = {6},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.05},
+  Url                      = {http://dl.acm.org/citation.cfm?id=1025117.1025549}
 }
 
 @Article{Huo2004,

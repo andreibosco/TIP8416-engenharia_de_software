@@ -328,7 +328,7 @@ Conforme dito anteriormente, a qualidade é um conceito extremamente amplo e abr
 
 A qualidade de software é dividida em dois aspectos: a \emph{qualidade do produto} em si e a \emph{qualidade do processo}. A qualidade do produto foca no controle de qualidade para gerar um produto final que atenda aos requisitos e traga satisfação do usuário, enquanto a qualidade do processo foca no controle da produção para otimizar o desenvolvimento e o uso otimizado dos recursos disponíveis.
 
-Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, não serão abordados, tendo este trabalho a \emph{qualidade do produto} e os modelos de qualidade criados para ele como foco principal.
+Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, não serão abordados, tendo este trabalho a \emph{qualidade do produto} e os modelos de qualidade criados para ele como foco principal. Para uma abordagem sobre modelos de qualidade de processo recomendo a leitura do capítulo 12 de \citeonline{WAZLAWICK2013}.
 
 \citeonline{WAZLAWICK2013} indica que apesar de não existir garantia que um bom processo vá resultar em um bom produto, em geral admite-se que a mesma equipe com um bom processo vá produzir produtos melhores do que se não tivesse processo algum.
 
@@ -357,10 +357,34 @@ E dentro do contexto de qualidade do produto, \citeonline{PRESSMAN2010} define d
 Se você produzir um sistema de software de péssima qualidade, então você perderá pois ninguém irá comprá-lo. Por outro lado, se você gastar tempo infinito, extremo esforço e grandes quantidades de dinheiro para produzir um software absolutamente perfeito então você demorará tanto para concluí-lo e será tão dispendioso que você acabará fora do mercado do mesmo jeito. Ou você terá perdido a janela de oportunidade ou terá exaurido sua verba. Então as pessoas da indústria tentam encontrar o posicionamento mágico onde o produto é bom o suficiente para não ser rejeitado de cara, como durante a avaliação, e sem ser preso a um perfeccionismo e excesso de trabalho que faça com ele acabe demorando ou saindo caro demais. (MEYER, Bertrand apud \citeauthoronline{PRESSMAN2010}, 2010)
 \end{citacao}
 
-% FIXME: continuar - pressman, 436
+% REF: pressman, 436
 
-* em desenvolvimento *
+A citação acima apresenta o \emph{dilema da qualidade}, explorado por \citeonline{PRESSMAN2010}, que discute que apesar de ser válido que os engenheiros de software busquem a produção de um sistema de alta qualidade, a vida real apresenta limitações na execução de um projeto.
 
+Tomando a citação de Meyer como base, um software "bom o suficiente" seria um software que executa bem suas funções mas que possui limitações/bugs conhecidos, e espera-se que o usuário ignore tais falhas. \citeonline{PRESSMAN2010} alerta que este é um caminho perigoso, pois um produto com bugs pode manchar a reputação de uma empresa (ou até mesmo quebrá-la), e que em alguns mercados tal pensamento pode até mesmo ser ilegal, como na área da medicina ou aviação, quando vidas humanas dependem do funcionamento correto.
+
+Um fator que normalmente pesa contra a implementação de um processo de qualidade é o investimento, de tempo e de dinheiro, existindo uma dificuldade de se ver um retorno justificável. \citeonline{PRESSMAN2010} concorda que gerar um produto de qualidade gera um custo, mas lembra que gerar um produto sem qualidade também. É necessário compreender o custo envolvido e tomar decisões de maneira consciente. O custo da qualidade pode ser dividido em 3 tipos:
+
+\begin{itemize}
+    \item \textbf{Custo de prevenção}: o custo das atividades gerenciais para planejar e coordenar todas as atividades de controle de qualidade, o custo adicional das atividades técnicas, e custo de treinamento associado a essas atividades.
+    \item \textbf{Custo de avaliação}: o custo de conduzir revisões técnicas, coleta de dados, custo de testes e debugs.
+    \item \textbf{Custo de falha}: os custos que sumiriam caso nenhuma falha surgisse antes e após a entrega do produto. Os custos relacionados à falhas podem ser categorizados em:
+    \begin{itemize}
+        \item \textbf{Custo interno de falhas}: custo para reparar um erro, custo de efeitos colaterais causados pelo erro.
+        \item \textbf{Custo externo de falhas}: resolução do problema, devolução do produto, contato p/ suporte, e reputação ruim
+    \end{itemize}
+\end{itemize}
+
+\citeonline{PRESSMAN2010} apresenta um gráfico (ver \autoref{fig:pressman-grafico_custos_qualidade}) baseado em dados de uma pesquisa realizada em 2001, que ilustra que quanto mais tardiamente uma falha é encontrada maior o custo para sua resolução.
+
+\begin{figure}[h]
+    \centering
+    \caption{Custo de um erro em diferentes fases de um projeto}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.8]{pressman-grafico_custos_qualidade}
+    \label{fig:pressman-grafico_custos_qualidade}
+    \legend{Fonte: \citeonline{PRESSMAN2010}}
+\end{figure}
 
 % ==========================================================
 % CAPITULO
@@ -416,6 +440,15 @@ McCall define uma hierarquia (\autoref{fig:mcCall-quality_model}) relacionando o
     \item Métricas (controle): definidas e utilizados para prover método de medida.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \caption{Hierarquia de fatores e critérios de McCall}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.85]{mcCall-graph-andrei}
+    \label{fig:mcCall-quality_model}
+    \legend{Fonte: \citeonline{Naik2011} [Adaptação do autor]}
+\end{figure}
+
 Os fatores de qualidade retratam as características comportamentais do sistema, os critérios são atributos para um ou mais fatores, enquanto as métricas buscam capturar os aspectos do critério de qualidade \cite{berander2005}.
 
 \citeonline{Naik2011} demonstram como definir as métricas:
@@ -429,15 +462,6 @@ O ponto negativo desta proposta é a subjetividade de avaliação da métrica, q
     \item \emph{Toda a documentação está escrita de maneira clara e concisa, de maneira que todos os procedimentos, funções e algoritmos sejam facilmente compreendidos?} - métrica do critério \textbf{auto-descritivo}, possível de se responder com 'sim' ou 'não'.
     \item \emph{O design do software é simples?} - métrica do critério \textbf{operabilidade}, o conceito de "simplicidade" é subjetivo, e uma escala de valores possíveis funcionaria melhor do que resposta 'sim' ou 'não'.
 \end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \caption{Hierarquia de fatores e critérios de McCall}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.85]{mcCall-graph-andrei}
-    \label{fig:mcCall-quality_model}
-    \legend{Fonte: \citeonline{Naik2011} [Adaptação do autor]}
-\end{figure}
 
 % ----------------------------------------------------------
 % Seção
@@ -473,12 +497,6 @@ Porém, segundo \citeonline{SURYN2014}, apesar deste modelo ser um avanço compa
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-%\section{Modelo FURPS (\emph{Functionality, Usability, Reliability, Performance, Supportability})}
-% FIXME: manter ou apagar?
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
 \subsection{Padrão ISO 9126 (1991)}
 O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics and Guidelines for their Use} - Avaliação do Produto de Software: Características de Qualidade e Diretrizes para sua Utilização) foi criado com base nos modelos de McCall e Boehm, focando em três aspectos da qualidade de software \cite{SURYN2014}:
 \begin{description}
@@ -489,7 +507,16 @@ O padrão ISO 9126 (\emph{Software Product Evaluation: Quality Characteristics a
 
 Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3 níveis, composto de características de qualidade, sub-características e métricas (ver \autoref{fig:iso9126-hierarquia_interno_externo} e \autoref{tab:iso9126-caracteristicas}). Mais de 200 métricas\footnote{Listagem de métricas do padrão estão elencados na ISO/IEC 9126-4, disponível para aquisição em: \url{http://www.abntcatalogo.com.br/}} foram propostas como parte do padrão e outras métricas podem ser criadas e utilizadas de acordo com a necessidade \cite{SURYN2014}.
 
-\begin{figure}[h]
+Já os fatores de qualidade de uso são organizados em uma hierarquia de 2 níveis, composto das características e das métricas de qualidade  (ver \autoref{fig:iso9126-hierarquia_qualidade_uso}). A junção e conexão dos três aspectos da qualidade de software do padrão ISO 9126 formam um modelo preditivo (ver \autoref{fig:iso9126-hierarquia_relacionamento}).
+
+Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta as seguintes diferenças:
+\begin{itemize}
+    \item O padrão ISO 9126 e o modelo de Boehm abordam as características visíveis ao usuário, enquanto o modelo de McCall foca nas características internas;
+    \item Um critério de qualidade no padrão ISO 9126 impacta apenas um fator, enquanto nos modelos de McCall e Boehm um critério pode impactar múltiplos fatores;
+    \item Um fator de alto nível nos Modelos de McCall e de Boehm pode ser um fator de baixo nível no padrão ISO 9126 (ex.: \emph{testabilidade}, que é um fator no modelo de McCall e um critério dentro de \emph{manutibilidade} no padrão ISO 9126).
+\end{itemize}
+
+\begin{figure}[H]
     \centering
     \caption{Hierarquia de qualidade interna e externa do padrão ISO 9126}
     \graphicspath{ {./graphics/} }
@@ -498,10 +525,29 @@ Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3
     \legend{Fonte: \citeonline{SURYN2014} [Adaptação do autor]}
 \end{figure}
 
-\begin{table}[h]
+\begin{figure}[h]
+    \centering
+    \caption{Hierarquia de qualidade de uso do padrão ISO 9126}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.95]{iso9126-hierarquia_qualidade_uso-andrei}
+    \label{fig:iso9126-hierarquia_qualidade_uso}
+    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \caption{Relacionamento entre aspectos de qualidade do padrão ISO 9126}
+    \graphicspath{ {./graphics/} }
+    \includegraphics[scale=0.95]{iso9126-hierarquia_relacionamento-andrei}
+    \label{fig:iso9126-hierarquia_relacionamento}
+    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
+\end{figure}
+
+\begin{table}[H]
     \centering
     \caption{Características de qualidade ISO 9126}
     \label{tab:iso9126-caracteristicas}
+    \small % tamanho do texto - ref: http://www.sascha-frank.com/latex-font-size.html
     \begin{tabular}{p{3cm} p{12.0cm}}
         \toprule
         \textbf{Característica} & \textbf{Definição} \\ \midrule
@@ -517,33 +563,6 @@ Os fatores de qualidade interna e externas são divididos em uma hierarquia de 3
     \end{tabular}
     \legend{Fonte: \citeonline{PFLEEGER2010} [Tradução do autor]}
 \end{table}
-
-Já os fatores de qualidade de uso são organizados em uma hierarquia de 2 níveis, composto das características e das métricas de qualidade  (ver \autoref{fig:iso9126-hierarquia_qualidade_uso}). A junção e conexão dos três aspectos da qualidade de software do padrão ISO 9126 formam um modelo preditivo (ver \autoref{fig:iso9126-hierarquia_relacionamento}).
-
-\begin{figure}[h]
-    \centering
-    \caption{Hierarquia de qualidade de uso do padrão ISO 9126}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=1.0]{iso9126-hierarquia_qualidade_uso-andrei}
-    \label{fig:iso9126-hierarquia_qualidade_uso}
-    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
-\end{figure}
-
-Em comparação com os modelo de McCall e de Boehm, o padrão ISO 9126 apresenta as seguintes diferenças:
-\begin{itemize}
-    \item O padrão ISO 9126 e o modelo de Boehm abordam as características visíveis ao usuário, enquanto o modelo de McCall foca nas características internas;
-    \item Um critério de qualidade no padrão ISO 9126 impacta apenas um fator, enquanto nos modelos de McCall e Boehm um critério pode impactar múltiplos fatores;
-    \item Um fator de alto nível nos Modelos de McCall e de Boehm pode ser um fator de baixo nível no padrão ISO 9126 (ex.: \emph{testabilidade}, que é um fator no modelo de McCall e um critério dentro de \emph{manutibilidade} no padrão ISO 9126).
-\end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \caption{Relacionamento entre aspectos de qualidade do padrão ISO 9126}
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=1.0]{iso9126-hierarquia_relacionamento-andrei}
-    \label{fig:iso9126-hierarquia_relacionamento}
-    \legend{Fonte: \citeonline{nbr9126} [Adaptação do autor]}
-\end{figure}
 
 % ----------------------------------------------------------
 % Seção
@@ -584,6 +603,8 @@ Os modelos apresentados são úteis para auxiliar na análise da qualidade do so
 \citeonline{wagner2013} também critica a ambiguidade das características de qualidade e a dificuldade da realização de uma medição adequada. Uma pesquisa realizada por \citeonline{wagner2012} apontou que menos de 28\% das empresas pesquisadas implementam tais modelos hierárquicos, e que 71\% delas desenvolveram uma variante própria, o que demonstra uma necessidade de customização.
 
 \citeonline{PRESSMAN2010} concorda com estas críticas, mas lembra que esses modelos proveem uma boa base para medições indiretas e como um checklist para avaliar a qualidade de um sistema.
+
+A \autoref{tab:modelos_comparacao} apresenta uma comparação entre os modelos hierárquicos apresentados, onde é possível notar o crescimento da abrangência de fatores. Alguns fatores deixaram ser ser primários e passaram a ser secundários, portanto foi indicado na tabela por qual fator primário ele foi englobado.
 
 \begin{table}[H]
 \centering
@@ -680,7 +701,7 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\subsection{COQUAMO}
+% \subsection{COQUAMO}
 % FIXME: página 31, suryn (software product quality model - marcado)
 %  They see the quality factor as central in a quality model and argue that each factor should be evaluated differently throughout different development phases and, therefore, have different metrics. They also differentiate between application-specific and general qualities. For example, they see reliability as important for any software system, but security is application specific. COQUAMO aimed strongly at establishing quantitative relationships between quality drivers measured by metrics and factors
 
@@ -689,6 +710,14 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 % ----------------------------------------------------------
 \section{Modelos estatísticos}
 \subsection{Modelo de confiabilidade de crescimento}
+
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Aplicabilidade}
+Há uma dificuldade de encontrar literatura, seja ela formal (como artigos científicos e livros), ou informal (como artigos online ou blogs), sobre a aplicação dos modelos citados anteriormente em projetos reais. Pode-se inferir que sua \emph{utilidade real} se encontra em projetos de grande porte de grandes corporações e/ou governamentais, onde é necessária uma prestação de contas formal e detalhada sobre o produto de software entregue, e uma certificação de qualidade tem grande peso.
+
+Porém nada impede a utilização dos modelos citados em um processo ágil para validar seus atributos de qualidade, porém o modelo escolhido e os critérios teriam que ser adaptados de acordo com a necessidade e iteração do projeto. No fim das contas o modelo funcionaria como um \emph{checklist} para auxiliar a avaliação do testador.
 
 % ==========================================================
 % CAPITULO
@@ -699,15 +728,19 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 % Seção
 % ----------------------------------------------------------
 \section{Definição}
-A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}. Ela pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. % FIXME: como isso funcionaria em uma metodologia ágil, com pequenas equipes?
+A gestão da qualidade e suas técnicas de garantia de qualidade (\emph{Quality Assurance} - QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}.
 
-\begin{itemize}
+\begin{description}
     \item[Definição \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill
         \begin{itemize}
             \item Um padrão planejado e sistemático de todas as ações necessárias para garantir uma confiança adequada de que um item ou produto está em conformidade com os requisitos técnicos estabelecidos.
             \item Um conjunto de atividades destinadas a avaliar o processo pelo qual os produtos são desenvolvidos ou produzidos.
         \end{itemize}
-\end{itemize}
+\end{description}
+
+A visão formal sobre QA é que ela pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. Porém isso não se aplica nas metodologias ágeis, onde a responsabilidade de QA cai sobre toda a equipe e onde a função do testador (\emph{tester}) é garantir que as técnicas de teste (criação dos testes, automatização, histórias do usuário, etc) estejam sendo seguidas corretamente. Veremos a seguir a visão de qualidade e testes nos processos formais e nos processos ágeis. % FIXME: é bom ter uma referência aqui
+
+\section{QA nos processos Formais}
 
 \citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
 \begin{enumerate}
@@ -718,7 +751,7 @@ A gestão da qualidade e suas técnicas de controle de qualidade (QA) foram dese
     \item \emph{Certeza:} a gestão da qualidade é uma constante e parte essencial do funcionamento da empresa. Quase todos os problemas são prevenidos e eliminados antes de surgirem.
 \end{enumerate}
 
-Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A equipe responsável de QA deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
+Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
 
 \subsection{\emph{Walkthrough}}
 
@@ -731,12 +764,12 @@ Para realizar a verificação da qualidade são utilizadas técnicas como \emph{
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Medição da Qualidade}
+%\section{Medição da Qualidade}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Avaliação da Qualidade}
+%\section{Avaliação da Qualidade}
 
 % ----------------------------------------------------------
 % Seção
@@ -748,9 +781,216 @@ Para realizar a verificação da qualidade são utilizadas técnicas como \emph{
 % ==========================================================
 \chapter{Qualidade de Software e Modelos de Processo}
 
-% \section{A qualidade nos modelos formais}
+\section{A qualidade nos modelos formais}
 
-% \section{Métodos Ágeis}
+% PPT: ooad-final-researchpaper
+% parece ser baseado no artigo 2004_Huo,M
+
+% PPT: ooad-final-researchpaper, slide 12
+Processos mais utilizados para garantia de qualidade de software (Software Quality Assurance - SQA) nos processos formais são os processos de Verificação e Validação (V\&V).
+
+“SQA governs the procedures meant to build the desired quality into the products” and V\&V is aimed
+more directly at product quality including intermediate products [8]. These two supporting processes are normally used to support the waterfall model to provide a complete process model. QA techniques can be categorized into two types, static and dynamic. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
+
+Processos formais utilizam métodos de análise estáticas e dinâmicas, enquanto os métodos ágeis focam mais em análise dinâmicas.
+
+Técnicas de análise estáticas não envolvem a execução de código. Revisão de documentação, de especificação de requisitos e a revisão de código são exemplos de análise estática, enquanto testes e simulações são exemplos de análise dinâmica. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
+
+\section{Métodos Ágeis}
+
+% http://www.infoq.com/news/2014/08/quality-velocity-agile
+
+Curioso notar que vários autores, seja em livro ou em artigos online, indicam que os Métodos Ágeis são mal compreendidos e o foco deles não são em velocidade e aumento de produtividade, mas em aumento de qualidade do projeto, e que caso seja bem aplicado e adotado, ele pode resultar em um aumento de velocidade, porém, caso contrário o uso de um Método Ágil pode resultar em um processo mais lento do que um modelo formal. \cite{galen2015} % http://www.velocitypartners.net/blog/2014/05/06/read-my-lips-agile-isnt-fast/ % Bob Galen é o mesmo que escreve o livro dos tres pilares
+
+% location 863 kindle - more agile testing
+\citeonline{crispin2014} declaram que a pressão para atingir prazos irreais faz com que os desenvolvedores tomem decisões para entregar o produto e não para agradar ao cliente, sacrificando a qualidade final. Tempo é um fator importante, e a equipe precisa de tempo para pensar, para aprender nova técnicas e para realizar pequenos experimentos que podem ser úteis na resolução de problemas.
+% ver se apresento/adoto o termo technical debt - dívida/débito técnico: http://www.infoq.com/br/news/2009/10/dissecting-technical-debt
+% http://www.infoq.com/br/news/2010/12/how-to-pay-down-technical-debt
+% http://en.wikipedia.org/wiki/Technical_debt
+
+% location 280 kindle - three pillars
+Exemplo de problema encontrado por \citeonline{galen2015}: falta de conhecimento ou conhecimento superficial das técnicas. Ex.: empresa adotava a criação de testes automatizados e integração contínua, porém não sabiam criar \emph{user stories} e não sabiam indicar como uma tarefa estava concluída (\emph{Definition of Done - DoD}).
+
+% location 804 kindle - more agile testing
+Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
+
+% location 834 kindle - more agile testing
+\citeonline{crispin2014} indica que métodos ágeis já são adotados por grande empresas, equipes distribuídas e que elas estão encontrando maneiras de gerar Produtos Minimamente Viáveis (\emph{minimum viable products - MVPs}), através de uso de entregas iterativas e rápidos processos de feedback e aprendizado.
+
+% caso spotify, que cresceu entre 2006 à 2014 para mais 1500 funcionários em 30 países, adotavam SCRUMM e passaram a adotar um método ágil proprio pois as regras do SCRUMM foram consideradas limitantes: https://vimeo.com/85490944
+% https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/
+% spotify não possui equipes de testes, pois na cultura de desenvolvimento deles não funcionou/não foi visto vantagem
+
+% anotação minha
+Curioso notar como ainda persiste a separação entre equipe de teste e de desenvolvimento, enquanto a visão difundida sobre a aplicação de metodologias ágeis é a existência de uma pequena equipe.
+
+% location 744 kindle - agile testing
+\citeonline{crispin2009} lembram que todos os membros de uma equipe ágil devem focar em entregar um produto de alta qualidade que provenha valor à um negócio, e a função dos testadores é garantir que o produto entregue tenha a qualidade que o cliente precisa. Todos devem se sentir responsáveis por entregar um produto com a melhor qualidade possível, e desfrutar de suas atividades. Lembrem do Manifesto Ágil\footnote{Manifesto Ágil: http://agilemanifesto.org/iso/ptbr/}, onde o foco nos indivíduos é maior que o foco no processo.% no livro dos pilares também tem algo sobre isso, é bom complementar
+
+% location 792 kindle - agile testing
+Agile principles encourage team members to take on multiple activities; any team member can take on any type of task. Many agile practitioners discourage specialized roles on teams and encourage all team members to transfer their skills to others as much as possible. Nevertheless, each team needs to decide what expertise their projects require. Programmers, system administrators, architects, database administrators, technical writers, security specialists, and people who wear more than one of these hats might be part of the team, physically or virtually. Testers are also on the developer team, because testing is a central component of agile software development. Testers advocate for quality on behalf of the customer and assist the development team in delivering the maximum business value.
+
+% location 812 kindle - agile testing
+Some agile teams don’t have any members who define themselves as “testers.” However, they all need someone to help the customer team write business-facing tests for the iteration’s stories, make sure the tests pass, and make sure that adequate regression tests are automated. Even if a team does have testers, the entire agile team is responsible for these testing tasks. Our experience with agile teams has shown that testing skills and experience are vital to project success and that testers do add value to agile teams.
+
+\subsection{O que diferencia o teste ágil}
+%location 811 kindle - agile testing
+
+\subsubsection{Equipes formais/tradicionais}
+A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possuía controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
+
+Traditional teams are focused on making sure all the specified requirements are delivered in the final product. If everything isn’t ready by the original target release date, the release is usually postponed. The development teams don’t usually have input about what features are in the release, or how they should work. Individual programmers tend to specialize in a particular area of the code. Testers study the requirements documents to write their test plans, and then they wait for work to be delivered to them for testing.
+
+\subsubsection{Equipes ágeis}
+O processo de transição de equipes tradicionais para adotar métodos ágeis normalmente é um choque, principalmente quanto à ideia de gerar código funcional dentro de uma ou duas semanas. Dúvidas comuns são: como programar e testar tão rapidamente? Como ter tempo para automatizar os testes? Como controlar código problemático que será entregue para produção? \cite{crispin2009}.
+
+\citeonline{crispin2009} citam uma experiência própria, onde Lisa teve seu primeiro contato com uma equipe ágil (que adotava \emph{Extreme Programming - XP}), trabalhando como a única testadora em uma equipe de oito programadores, e ficou chocada ao ver que o produto da primeira iteração facilmente travava quando dois usuários logavam ao mesmo tempo. Seu \emph{coach} lhe explicou que naquele momento a necessidade do cliente era exibir o sistema à potenciais compradores, e confiabilidade e robustez não eram o foco. Nesse momento ela percebeu que quem determina os critérios de qualidade são as necessidades do cliente a cada iteração, e sua função seria escrever os testes que garantissem essa qualidade.
+
+Uma outra experiência curiosa é contada por Jonathan Rasmusson \cite{crispin2009}, que trabalhava em uma equipe que adotava XP e um novo membro foi adicionado: uma testadora. Ele não viu sentido nessa contratação, pois por adotarem XP os desenvolvedores escreviam todos os testes, porém dentro de seis meses ele percebeu a importância. Por não ter que focar nos testes de baixo nível, que estavam automatizados, ela pode focar em usabilidade, realizar testes exploratórios ao pensar de maneiras que os desenvolvedores não haviam antecipado, trabalhar em conjunto com o cliente para escrever casos de testes para as próximas funcionalidades, e participar de desenvolvimento em par com os programadores.
+
+Agile teams work closely with the business and have a detailed understanding of the requirements. They’re focused on the value they can deliver, and they might have a great deal of input into prioritizing features. Testers don’t sit and wait for work; they get up and look for ways to contribute throughout the development cycle and beyond.
+
+\subsection{Teste tradicional vs teste ágil}
+%location 894-901 kindle - agile testing
+
+\begin{figure}[H]
+    \centering
+    \caption{Comparativo de fases de um método tradicional (cascata) e método ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{waterfall-vs-agile}
+    \label{fig:waterfall-vs-agile}
+    \legend{Fonte: \citeonline{crispin2009}}
+\end{figure}
+
+In the phased approach diagram, it is clear that testing happens at the end, right before release. The diagram is idealistic, because it gives the impression there is as much time for testing as there is for coding. In many projects, this is not the case. The testing gets “squished” because coding takes longer than expected, and because teams get into a code-and-fix cycle at the end.
+
+Agile is iterative and incremental. This means that the testers test each increment of coding as soon as it is finished. An iteration might be as short as one week, or as long as a month. The team builds and tests a little bit of code, making sure it works correctly, and then moves on to next piece that needs to be built. Programmers never get ahead of the testers, because a story is not “done” until it has been tested. We’ll talk much more about this throughout the book.
+
+Every project, every team, and sometimes every iteration is different. How your team solves problems should depend on the problem, the people, and the tools you have available. As an agile team member, you will need to be adaptive to the team’s needs.
+
+Rather than creating tests from a requirements document that was created by business analysts before anyone ever thought of writing a line of code, someone will need to write tests that illustrate the requirements for each story days or hours before coding begins. This is often a collaborative effort between a business or domain expert and a tester, analyst, or some other development team member. Detailed functional test cases, ideally based on examples provided by business experts, flesh out the requirements. Testers will conduct manual exploratory testing to find important bugs that defined test cases might miss. Testers might pair with other developers to automate and execute test cases as coding on each story proceeds. Automated functional tests are added to the regression test suite. When tests demonstrating minimum functionality are complete, the team can consider the story finished.
+
+Whatever flavor of development you’re using, pretty much the same elements of a software development life cycle need to happen. The difference with agile is that time frames are greatly shortened, and activities happen concurrently. Participants, tests, and tools need to be adaptive.
+
+The most critical difference for testers in an agile project is the quick feedback from testing. It drives the project forward, and there are no gatekeepers ready to block project progress if certain milestones aren’t met.
+
+While some teams do seem to use the “agile” buzzword to justify simply doing whatever they want, true agile teams are all about repeatable quality as well as efficiency. In our experience, an agile team is a wonderful place to be a tester.
+
+\subsection{Abordagem time coeso (\emph{whole-team approach})}
+% isso tambem é explorado no XP: http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_extrema
+% location 934 kindle - agile testing
+
+One of the biggest differences in agile development versus traditional development is the agile “whole-team” approach. With agile, it’s not only the testers or a quality assurance team who feel responsible for quality. We don’t think of “departments,” we just think of the skills and resources we need to deliver the best possible product. The focus of agile development is producing high-quality software in a time frame that maximizes its value to the business. This is the job of the whole team, not just testers or designated quality assurance professionals. Everyone on an agile team gets “test-infected.” Tests, from the unit level on up, drive the coding, help the team learn how the application should work, and let us know when we’re “done” with a task or story.
+
+An agile team must possess all the skills needed to produce quality code that delivers the features required by the organization. While this might mean including specialists on the team, such as expert testers, it doesn’t limit particular tasks to particular team members. Any task might be completed by any team member, or a pair of team members. This means that the team takes responsibility for all kinds of testing tasks, such as automating tests and manual exploratory testing. It also means that the whole team thinks constantly about designing code for testability.
+
+The whole-team approach involves constant collaboration. Testers collaborate with programmers, the customer team, and other team specialists— and not just for testing tasks, but other tasks related to testing, such as building infrastructure and designing for testability.
+
+The whole-team approach means everyone takes responsibility for testing tasks. It means team members have a range of skill sets and experience to employ in attacking challenges such as designing for testability by turning examples into tests and into code to make those tests pass. These diverse viewpoints can only mean better tests and test coverage.
+
+Most importantly, on an agile team, anyone can ask for and receive help. The team commits to providing the highest possible business value as a team, and the team does whatever is needed to deliver it. Some folks who are new to agile perceive it as all about speed. The fact is, it’s all about quality— and if it’s not, we question whether it’s really an “agile” team.
+
+\subsubsection{Risco da falta de coesão}
+% trecho interessante: risco de falta de coesão e importância do tester
+% location 1224 kindle - agile testing
+If you’re a tester, and you’re not invited to attend planning sessions, stand-ups, or design meetings, you might be in a situation where testers are viewed as somehow apart from the development team.
+
+If you are invited to these meetings but you’re not speaking up, then you’re probably creating a perception that you aren’t really part of the team. If business experts are writing stories and defining requirements all by themselves, you aren’t participating as a tester who’s a member of an agile team.
+
+If this is your situation, your team is at risk. Hidden assumptions are likely to go undetected until late in the release cycle. Ripple effects of a story on other parts of the system aren’t identified until it’s too late. The team isn’t making the best use of every team member’s skills, so it’s not going to be able to produce the best possible software. Communication might break down, and it’ll be hard to keep up with what the programmers and customers are doing. The team risks being divided in an unhealthy way between developers and testers, and there’s more potential that the development team will become isolated from the customer team.
+
+How can you avoid this peril? See if you can arrange to be located near the developers. If you can’t, at least come to their area to talk and pair test. Ask them to show you what they’re working on. Ask them to look at the test cases you’ve written. Invite yourself to meetings if nobody else has invited you. Make yourself useful by testing and providing feedback, and become a necessity to the team.
+
+Help customers develop their stories and acceptance tests. Push the “whole team” attitude, and ask the team to work on testing problems. If your team is having trouble adapting to agile development, suggest experimenting with some new ideas for an iteration or two. Propose adopting the “Power of Three” rule to promote good communication. Use the information in this book to show that testers can help agile teams succeed beyond their wildest expectations.
+
+\subsection{Dez princípios para testadores ágeis}
+% location 973 kindle - agile testing
+% location 1239 kindle - more agile testing
+\begin{enumerate}
+    \item Provide continuous feedback.
+    \item Deliver value to the customer.
+    \item Enable face-to-face communication.
+    \item Have courage.
+    \item Keep it simple.
+    \item Practice continuous improvement.
+    \item Respond to change.
+    \item Self-organize.
+    \item Focus on people.
+    \item Enjoy.
+\end{enumerate}
+
+\subsection{Barreiras para adoção de times de teste/QA ágeis}
+% esta seção me parece mais um guia para uma pessoa que vai implementar um método ágil
+% location 1426 kindle - agile testing
+- perda de identidade: onde os testadores desejam manter independencia da equipe de desenvolvimento
+
+- funções adicionais: um novo especialista pode ser necessário para sobrepor um obstáculo, portanto é necessário que todos saibam quais suas funções % achei este item estranho
+
+- falta de treinamento: testadores incorporados em equipes 
+
+- falta de compreensão de conceitos ágeis: nem todas as equipes ágeis são iguais. Existem diversas abordagens (XP, Scrum, Crystal Clear, Feature Driven Development - FDD, etc), abordagens customizadas, normalmente uma mistura das já citadas, ou até mesmo abordagens totalmente novas. O importante é que a equipe chegue a um consenso sobre como proceder e que trabalhe de forma coesa. Mas é importante notar que a simples adoção de iterações e ausência de documentação tradicional não resulta em uma abordagem ágil. % não sei se vou manter este trecho sobre mini-cascata - location 1458 kindle - agile testing
+
+\begin{figure}[H]
+    \centering
+    \caption{Processo mini-cascata}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{mini-waterfall}
+    \label{fig:mini-waterfall}
+    \legend{Fonte: \citeonline{crispin2009}}
+\end{figure}
+
+- experiências passadas negativas: as pessoas podem acabar desistindo de adotar o processo, caso não sejam treinadas, acompanhadas e que tenham tempo para se ajustar
+
+- diferenças culturais entre funções: cada pessoa está acostumada com um método de trabalho próprio, focado apenas em sua atividade.
+
+\subsection{Logística da Equipe}
+% locatlion 1726 kindle - agile testing
+Algumas empresas acreditam ser importante que a equipe de QA seja independente para ter uma visão objetiva sobre a qualidade do produto.
+
+Eis alguns motivos para a separação:
+
+\begin{itemize}
+    \item It is important to have that independent check and audit role.
+    \item The team can provide an unbiased and outside view relating to the quality of the product.
+    \item If testers work too closely with developers, they will start to think like developers and lose their customer viewpoint.
+    \item If the testers and developers report to the same person, there is a danger that the priority becomes delivering any code rather than delivering tested code.
+\end{itemize}
+
+% continuar leitura sobre este tópico
+
+\begin{figure}[H]
+    \centering
+    \caption{Equipe tradicional e equipe ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{functional-and-agile-teams}
+    \label{fig:functional-and-agile-teams}
+    \legend{Fonte: \citeonline{crispin2009}}
+\end{figure}
+
+
+
+
+
+
+
+%%%%%%
+
+\subsection{Pilares da qualidade ágil}
+Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}.
+
+\subsubsection{Automação e Ferramentas de Teste}
+% location 316-318 kindle - three pillars
+This pillar is the technology-side of quality and testing and is not simply focused towards testing and testers. It includes tooling, execution of the Automation Test Pyramid, Continuous Integration, deep use of Extreme Programming technical practices, and support for ALM distributed collaboration tools.
+
+Normalmente é o que mais atrai as empresas/desenvolvedores, devido à atratividade do uso de ferramentas e da tecnologia para a resolução dos problemas.
+
+\subsubsection{Teste de Software}
+% location 327-330 kindle - three pillars
+This pillar is focused towards the profession of testing. Towards solid testing practices, not simply agile testing practices, but leveraging the teams' past testing experience, skills, techniques, and tools. This is the place where agile teams move from a trivial view to software testing, which only looks at TDD, ATDD, and developer-based testing, towards a more holistic view of agile quality and testing.
+
+\subsubsection{Práticas da Equipe}
+% location 337-340 kindle - three pillars
+Finally, this pillar is focused towards cross-team collaboration, team-based standards, quality attitudes, agile mindsets, and, most importantly, towards building things right. Consider this the soft skills area of the Three Pillars, where direction is provided for how each team will operate. You could also consider them "rules of engagement".
 
 % \subsection{TDD - Test Driven Development}
 
