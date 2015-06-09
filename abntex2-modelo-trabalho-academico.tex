@@ -719,7 +719,7 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 \section{Aplicabilidade}
 Há uma dificuldade de encontrar literatura, seja ela formal (como artigos científicos e livros), ou informal (como artigos online ou blogs), sobre a aplicação dos modelos citados anteriormente em projetos reais. Pode-se inferir que sua \emph{utilidade real} se encontra em projetos de grande porte de grandes corporações e/ou governamentais, onde é necessária uma prestação de contas formal e detalhada sobre o produto de software entregue, e uma certificação de qualidade tem grande peso.
 
-Porém nada impede a utilização dos modelos citados em um processo ágil para validar seus atributos de qualidade, porém o modelo escolhido e os critérios teriam que ser adaptados de acordo com a necessidade e iteração do projeto. No fim das contas o modelo funcionaria como um \emph{checklist} para auxiliar a avaliação do testador.
+Porém nada impede a utilização dos modelos de qualidade de produto citados em um processo ágil para validar seus atributos de qualidade, porém o modelo escolhido e os critérios teriam que ser adaptados de acordo com a necessidade e iteração do projeto. No fim das contas o modelo funcionaria como um \emph{checklist} para auxiliar a avaliação do testador.
 
 % ==========================================================
 % CAPITULO
@@ -753,12 +753,21 @@ Conforme vimos na \autoref{tipos_qualidades}, podemos dividir a qualidade em doi
 
 Apesar do teste ser crucial para as atividades de V\&V, \citeonline{PRESSMAN2010} lembra outras atividades de QA também são necessárias: revisões técnicas, auditorias de qualidade e configuração, monitoramento de performance, simulações, revisões de bancos de dados, dentre muitas outras. Outro fator importante: o teste não pode adicionar qualidade onde não existe, ela deve fazer parte de todo o fluxo de desenvolvimento.
 
+As atividades de QA podem ser categorizadas em dois grupos \cite{Huo:2004:SQA:1025117.1025549,Naik2011}\footnote{Para maiores detalhes sobre cada uma das atividades de QA confira o anexo bla}: % FIXME: inserir anexo
+
+% PPT: ooad-final-researchpaper, slide 12
+% parece ser baseado no artigo 2004_Huo,M
+\begin{itemize}
+    \item \textbf{Estáticas}: não envolvem a execução de código, baseia-se na verificação de documentos, requisitos, do código-fonte. Análises estáticas tradicionais incluem revisão, inspeção, \emph{walk-through}, análise do algoritmo, etc.
+    \item \textbf{Dinâmicas}: envolvem a execução do programa para verificar a existência de possíveis falhas e observar o comportamento e performance. Testes (unitários, integração, regressão, etc), verificações automáticas e simulações são exemplos de análises dinâmicas.
+\end{itemize}
+
 % pag 213 - essentials of software engineering, tsui
 % \citeonline{tsui2013} diz que todo software é composto por duas partes: uma estrutura estática (o código fonte) e um comportamento dinâmico (o software em execução). Alguns produtos intermediários do projeto (documentação de requisitos) só possuem uma estrutura estática.
 
-Veremos a seguir a visão de qualidade e testes nos processos formais e nos processos ágeis. % FIXME: é bom ter referências sobre as afirmações de agil
+Modelos de projeto formais utilizam métodos de análise estáticas e dinâmicas, enquanto os métodos ágeis focam mais em análise dinâmicas. Veremos a seguir a visão de qualidade e testes nos modelos formais e nos processos ágeis. % FIXME: é bom ter referências sobre as afirmações de agil
 
-\section{QA nos Modelos Formais}
+\section{QA nos Modelos de Projeto Formais}
 \label{qa-modelos-formais}
 
 % FIXME: os cinco estágios estão muito soltos e falta um início
@@ -771,37 +780,17 @@ Veremos a seguir a visão de qualidade e testes nos processos formais e nos proc
     \item \emph{Certeza:} a gestão da qualidade é uma constante e parte essencial do funcionamento da empresa. Quase todos os problemas são prevenidos e eliminados antes de surgirem.
 \end{enumerate}
 
-Nos modelos formais de desenvolvimento (ex: cascata, espiral, incremental, etc)
+%Nos modelos formais de desenvolvimento (ex: cascata, espiral, incremental, etc)
 
-Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. Revisões e inspeções baseiam-se na revisão sistemática do produto por terceiros, para detectar defeitos, enquanto os testes sistemáticos são testes dinâmicos executados com o código produzido (ex.: testes unitários, testes de integração, testes de regressão, etc). \cite{WAZLAWICK2013}. % FIXME: inserir anexo ou nota de rodapé sobre onde ler mais detalhadamente sobre testes
+% Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. Revisões e inspeções baseiam-se na revisão sistemática do produto por terceiros, para detectar defeitos, enquanto os testes sistemáticos são testes dinâmicos executados com o código produzido (ex.: testes unitários, testes de integração, testes de regressão, etc). \cite{WAZLAWICK2013}. % FIXME: inserir anexo ou nota de rodapé sobre onde ler mais detalhadamente sobre testes
 
 \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
 
-% PPT: ooad-final-researchpaper
-% parece ser baseado no artigo 2004_Huo,M
-
-% PPT: ooad-final-researchpaper, slide 12
-Processos mais utilizados para garantia de qualidade de software (\emph{Software Quality Assurance} - SQA) nos processos formais são os processos de Verificação e Validação (\emph{Verification and Validation} - V\&V).
-
-“SQA governs the procedures meant to build the desired quality into the products” and V\&V is aimed
-more directly at product quality including intermediate products [8]. These two supporting processes are normally used to support the waterfall model to provide a complete process model. QA techniques can be categorized into two types, static and dynamic. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
-
-Processos formais utilizam métodos de análise estáticas e dinâmicas, enquanto os métodos ágeis focam mais em análise dinâmicas.
-
-Técnicas de análise estáticas não envolvem a execução de código. Revisão de documentação, de especificação de requisitos e a revisão de código são exemplos de análise estática, enquanto testes e simulações são exemplos de análise dinâmica. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
-
 \subsection{Equipes formais/tradicionais de testes}
-A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possuía controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
+A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possui controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
 
+% location 832 kindle - agile testing
 Traditional teams are focused on making sure all the specified requirements are delivered in the final product. If everything isn’t ready by the original target release date, the release is usually postponed. The development teams don’t usually have input about what features are in the release, or how they should work. Individual programmers tend to specialize in a particular area of the code. Testers study the requirements documents to write their test plans, and then they wait for work to be delivered to them for testing.
-
-\subsection{\emph{Walkthrough}}
-
-
-\subsection{Inspeções Fagan}
-
-
-\subsection{Método \emph{Cleanroom}}
 
 % ----------------------------------------------------------
 % Seção
