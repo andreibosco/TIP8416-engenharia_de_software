@@ -344,6 +344,8 @@ Os modelos de maturidade, que tem como foco a \emph{qualidade do processo}, não
 % FIXME: vale manter essas definições, já que não são exploradas posteriormente?
 E dentro do contexto de qualidade do produto, \citeonline{PRESSMAN2010} define dois tipos de qualidade:
 
+\label{tipos_qualidades}
+
 \begin{description}
     \item [Qualidade de projeto (atender as necessidades do cliente):] qualidade identificável através de características não mesuráveis objetivamente, a qualidade do produto em atender as expectativas do cliente, explícitas ou não.
     \item [Qualidade de conformação (conformidade com as especificações):] avalia quão \\ bem o produto atende aos requisitos, em conformidade com as especificações definidas, através de características mesuráveis.
@@ -722,13 +724,13 @@ Porém nada impede a utilização dos modelos citados em um processo ágil para 
 % ==========================================================
 % CAPITULO
 % ==========================================================
-\chapter{Gestão da Qualidade}
+\chapter{Garantia de Qualidade e Testes}
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{Definição}
-A gestão da qualidade e suas técnicas de garantia de qualidade (\emph{Quality Assurance} - QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}.
+A gestão da qualidade e suas técnicas de garantia de qualidade (\emph{Quality Assurance} - QA) foram desenvolvidas para, em conjunto com novas tecnologias de desenvolvimento e testes, resolver o problema da baixa qualidade dos software que permeou o séc. XX \cite{SOMMERVILLE2011}. QA se refere à todas as atividades envolvidas na melhoria de qualidade do produto, incluindo o treinamento e preparação de toda a equipe \cite{tsui2013}.
 
 \begin{description}
     \item[Definição \citeonline{IEEE1990} para Garantia de Qualidade (QA):] \hfill
@@ -738,10 +740,28 @@ A gestão da qualidade e suas técnicas de garantia de qualidade (\emph{Quality 
         \end{itemize}
 \end{description}
 
-A visão formal sobre QA é que ela pode ser efetuada pelo gerente do projeto, mas preferencialmente é realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011}. Porém isso não se aplica nas metodologias ágeis, onde a responsabilidade de QA cai sobre toda a equipe e onde a função do testador (\emph{tester}) é garantir que as técnicas de teste (criação dos testes, automatização, histórias do usuário, etc) estejam sendo seguidas corretamente. Veremos a seguir a visão de qualidade e testes nos processos formais e nos processos ágeis. % FIXME: é bom ter uma referência aqui
+A visão formal sobre o processo de QA é que ela pode ser efetuada pelo gerente do projeto, mas preferencialmente deve ser realizada por um gerente e/ou equipe especializada para que possa ter uma visão objetiva e independente da equipe de desenvolvimento \cite{SOMMERVILLE2011,WAZLAWICK2013}, porém devemos lembrar que essa lógica não se aplica nas metodologias ágeis, onde a responsabilidade de QA recai sobre toda a equipe (\emph{whole-team approach} - abordagem de time coeso).
 
-\section{QA nos processos Formais}
+A função de QA é prover a gerência e equipe técnica com dados sobre a qualidade do produto que está sendo gerado \cite{SOMMERVILLE2011}, e no caso de uma equipe ágil o testador (\emph{tester}) deve garantir que as técnicas de teste (criação dos testes, automatização, histórias do usuário, etc) estejam sendo seguidas corretamente.
 
+\subsection{Verificação e Validação (V\&V)}
+Conforme vimos na \autoref{tipos_qualidades}, podemos dividir a qualidade em dois tipos: \textbf{qualidade de conformação} (conformidade com as especificações), e \textbf{qualidade de projeto} (atender as necessidades do cliente), e considerando estas duas noções existem dois tipos de atividades de QA, também conhecidas como V\&V \cite{tsui2013, PRESSMAN2010}:
+\begin{itemize}
+    \item \textbf{Verificação}: o ato de verificar a conformidade com os requisitos e especificações (você está construindo o produto corretamente?);
+    \item \textbf{Validação}: o ato de conferir se o produto concluído atinge os requisitos, especificações e necessidades do usuário (você está construindo o produto correto?).
+\end{itemize}
+
+Apesar do teste ser crucial para as atividades de V\&V, \citeonline{PRESSMAN2010} lembra outras atividades de QA também são necessárias: revisões técnicas, auditorias de qualidade e configuração, monitoramento de performance, simulações, revisões de bancos de dados, dentre muitas outras. Outro fator importante: o teste não pode adicionar qualidade onde não existe, ela deve fazer parte de todo o fluxo de desenvolvimento.
+
+% pag 213 - essentials of software engineering, tsui
+% \citeonline{tsui2013} diz que todo software é composto por duas partes: uma estrutura estática (o código fonte) e um comportamento dinâmico (o software em execução). Alguns produtos intermediários do projeto (documentação de requisitos) só possuem uma estrutura estática.
+
+Veremos a seguir a visão de qualidade e testes nos processos formais e nos processos ágeis. % FIXME: é bom ter referências sobre as afirmações de agil
+
+\section{QA nos Modelos Formais}
+\label{qa-modelos-formais}
+
+% FIXME: os cinco estágios estão muito soltos e falta um início
 \citeonline{WAZLAWICK2013} apresenta um modelo de maturidade organizacional em relação à qualidade, definido por Crosby (1979), baseado em cinco estágios:
 \begin{enumerate}
     \item \emph{Desconhecimento:} quando a empresa sequer sabe que tem problemas com qualidade. Não há compreensão de que a qualidade seja um objetivo, ferramentas não são usadas ou conhecidas, e inspeções de qualidade não são realizadas.
@@ -751,7 +771,29 @@ A visão formal sobre QA é que ela pode ser efetuada pelo gerente do projeto, m
     \item \emph{Certeza:} a gestão da qualidade é uma constante e parte essencial do funcionamento da empresa. Quase todos os problemas são prevenidos e eliminados antes de surgirem.
 \end{enumerate}
 
-Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. \citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
+Nos modelos formais de desenvolvimento (ex: cascata, espiral, incremental, etc)
+
+Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. Revisões e inspeções baseiam-se na revisão sistemática do produto por terceiros, para detectar defeitos, enquanto os testes sistemáticos são testes dinâmicos executados com o código produzido (ex.: testes unitários, testes de integração, testes de regressão, etc). \cite{WAZLAWICK2013}. % FIXME: inserir anexo ou nota de rodapé sobre onde ler mais detalhadamente sobre testes
+
+\citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
+
+% PPT: ooad-final-researchpaper
+% parece ser baseado no artigo 2004_Huo,M
+
+% PPT: ooad-final-researchpaper, slide 12
+Processos mais utilizados para garantia de qualidade de software (\emph{Software Quality Assurance} - SQA) nos processos formais são os processos de Verificação e Validação (\emph{Verification and Validation} - V\&V).
+
+“SQA governs the procedures meant to build the desired quality into the products” and V\&V is aimed
+more directly at product quality including intermediate products [8]. These two supporting processes are normally used to support the waterfall model to provide a complete process model. QA techniques can be categorized into two types, static and dynamic. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
+
+Processos formais utilizam métodos de análise estáticas e dinâmicas, enquanto os métodos ágeis focam mais em análise dinâmicas.
+
+Técnicas de análise estáticas não envolvem a execução de código. Revisão de documentação, de especificação de requisitos e a revisão de código são exemplos de análise estática, enquanto testes e simulações são exemplos de análise dinâmica. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
+
+\subsection{Equipes formais/tradicionais de testes}
+A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possuía controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
+
+Traditional teams are focused on making sure all the specified requirements are delivered in the final product. If everything isn’t ready by the original target release date, the release is usually postponed. The development teams don’t usually have input about what features are in the release, or how they should work. Individual programmers tend to specialize in a particular area of the code. Testers study the requirements documents to write their test plans, and then they wait for work to be delivered to them for testing.
 
 \subsection{\emph{Walkthrough}}
 
@@ -764,39 +806,7 @@ Para realizar a verificação da qualidade são utilizadas técnicas como \emph{
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-%\section{Medição da Qualidade}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-%\section{Avaliação da Qualidade}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-%\section{Padrões / Certificações}
-
-% ==========================================================
-% CAPITULO
-% ==========================================================
-\chapter{Qualidade de Software e Modelos de Processo}
-
-\section{A qualidade nos modelos formais}
-
-% PPT: ooad-final-researchpaper
-% parece ser baseado no artigo 2004_Huo,M
-
-% PPT: ooad-final-researchpaper, slide 12
-Processos mais utilizados para garantia de qualidade de software (Software Quality Assurance - SQA) nos processos formais são os processos de Verificação e Validação (V\&V).
-
-“SQA governs the procedures meant to build the desired quality into the products” and V\&V is aimed
-more directly at product quality including intermediate products [8]. These two supporting processes are normally used to support the waterfall model to provide a complete process model. QA techniques can be categorized into two types, static and dynamic. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
-
-Processos formais utilizam métodos de análise estáticas e dinâmicas, enquanto os métodos ágeis focam mais em análise dinâmicas.
-
-Técnicas de análise estáticas não envolvem a execução de código. Revisão de documentação, de especificação de requisitos e a revisão de código são exemplos de análise estática, enquanto testes e simulações são exemplos de análise dinâmica. \cite{Huo:2004:SQA:1025117.1025549}. % pag 3 do artigo Huo 2004
-
-\section{Métodos Ágeis}
+\section{QA nos Modelos Ágeis}
 
 % http://www.infoq.com/news/2014/08/quality-velocity-agile
 
@@ -807,6 +817,8 @@ Curioso notar que vários autores, seja em livro ou em artigos online, indicam q
 % ver se apresento/adoto o termo technical debt - dívida/débito técnico: http://www.infoq.com/br/news/2009/10/dissecting-technical-debt
 % http://www.infoq.com/br/news/2010/12/how-to-pay-down-technical-debt
 % http://en.wikipedia.org/wiki/Technical_debt
+
+Utilizando os cinco estágios maturidade de Crosby, apresentado na seção \autoref{qa-modelos-formais}, podemos interpretar que os projetos ágeis já iniciam no terceiro estágio, alinhamento, tendo em vista a preocupação constante com os testes e o gerenciamento da qualidade de cada iteração. Mas a simples existência dos testes não garante a qualidade, é necessário que haja consciência da importância de cada etapa do processo e do objetivo a ser alcançado em cada iteração.
 
 % location 280 kindle - three pillars
 Exemplo de problema encontrado por \citeonline{galen2015}: falta de conhecimento ou conhecimento superficial das técnicas. Ex.: empresa adotava a criação de testes automatizados e integração contínua, porém não sabiam criar \emph{user stories} e não sabiam indicar como uma tarefa estava concluída (\emph{Definition of Done - DoD}).
@@ -833,15 +845,9 @@ Agile principles encourage team members to take on multiple activities; any team
 % location 812 kindle - agile testing
 Some agile teams don’t have any members who define themselves as “testers.” However, they all need someone to help the customer team write business-facing tests for the iteration’s stories, make sure the tests pass, and make sure that adequate regression tests are automated. Even if a team does have testers, the entire agile team is responsible for these testing tasks. Our experience with agile teams has shown that testing skills and experience are vital to project success and that testers do add value to agile teams.
 
-\subsection{O que diferencia o teste ágil}
+\subsection{Equipe ágil de teste}
 %location 811 kindle - agile testing
 
-\subsubsection{Equipes formais/tradicionais}
-A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possuía controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
-
-Traditional teams are focused on making sure all the specified requirements are delivered in the final product. If everything isn’t ready by the original target release date, the release is usually postponed. The development teams don’t usually have input about what features are in the release, or how they should work. Individual programmers tend to specialize in a particular area of the code. Testers study the requirements documents to write their test plans, and then they wait for work to be delivered to them for testing.
-
-\subsubsection{Equipes ágeis}
 O processo de transição de equipes tradicionais para adotar métodos ágeis normalmente é um choque, principalmente quanto à ideia de gerar código funcional dentro de uma ou duas semanas. Dúvidas comuns são: como programar e testar tão rapidamente? Como ter tempo para automatizar os testes? Como controlar código problemático que será entregue para produção? \cite{crispin2009}.
 
 \citeonline{crispin2009} citam uma experiência própria, onde Lisa teve seu primeiro contato com uma equipe ágil (que adotava \emph{Extreme Programming - XP}), trabalhando como a única testadora em uma equipe de oito programadores, e ficou chocada ao ver que o produto da primeira iteração facilmente travava quando dois usuários logavam ao mesmo tempo. Seu \emph{coach} lhe explicou que naquele momento a necessidade do cliente era exibir o sistema à potenciais compradores, e confiabilidade e robustez não eram o foco. Nesse momento ela percebeu que quem determina os critérios de qualidade são as necessidades do cliente a cada iteração, e sua função seria escrever os testes que garantissem essa qualidade.
@@ -903,7 +909,7 @@ How can you avoid this peril? See if you can arrange to be located near the deve
 
 Help customers develop their stories and acceptance tests. Push the “whole team” attitude, and ask the team to work on testing problems. If your team is having trouble adapting to agile development, suggest experimenting with some new ideas for an iteration or two. Propose adopting the “Power of Three” rule to promote good communication. Use the information in this book to show that testers can help agile teams succeed beyond their wildest expectations.
 
-\subsection{Dez princípios para testadores ágeis}
+\subsubsection{Dez princípios para testadores ágeis}
 % location 973 kindle - agile testing
 % location 1239 kindle - more agile testing
 \begin{enumerate}
@@ -919,31 +925,31 @@ Help customers develop their stories and acceptance tests. Push the “whole tea
     \item Enjoy.
 \end{enumerate}
 
-\subsection{Barreiras para adoção de times de teste/QA ágeis}
+% \subsection{Barreiras para adoção de times de teste/QA ágeis}
 % esta seção me parece mais um guia para uma pessoa que vai implementar um método ágil
 % location 1426 kindle - agile testing
-- perda de identidade: onde os testadores desejam manter independencia da equipe de desenvolvimento
+% - perda de identidade: onde os testadores desejam manter independencia da equipe de desenvolvimento
 
-- funções adicionais: um novo especialista pode ser necessário para sobrepor um obstáculo, portanto é necessário que todos saibam quais suas funções % achei este item estranho
+% - funções adicionais: um novo especialista pode ser necessário para sobrepor um obstáculo, portanto é necessário que todos saibam quais suas funções % achei este item estranho
 
-- falta de treinamento: testadores incorporados em equipes 
+% - falta de treinamento: testadores incorporados em equipes 
 
-- falta de compreensão de conceitos ágeis: nem todas as equipes ágeis são iguais. Existem diversas abordagens (XP, Scrum, Crystal Clear, Feature Driven Development - FDD, etc), abordagens customizadas, normalmente uma mistura das já citadas, ou até mesmo abordagens totalmente novas. O importante é que a equipe chegue a um consenso sobre como proceder e que trabalhe de forma coesa. Mas é importante notar que a simples adoção de iterações e ausência de documentação tradicional não resulta em uma abordagem ágil. % não sei se vou manter este trecho sobre mini-cascata - location 1458 kindle - agile testing
+% - falta de compreensão de conceitos ágeis: nem todas as equipes ágeis são iguais. Existem diversas abordagens (XP, Scrum, Crystal Clear, Feature Driven Development - FDD, etc), abordagens customizadas, normalmente uma mistura das já citadas, ou até mesmo abordagens totalmente novas. O importante é que a equipe chegue a um consenso sobre como proceder e que trabalhe de forma coesa. Mas é importante notar que a simples adoção de iterações e ausência de documentação tradicional não resulta em uma abordagem ágil. % não sei se vou manter este trecho sobre mini-cascata - location 1458 kindle - agile testing
 
-\begin{figure}[H]
-    \centering
-    \caption{Processo mini-cascata}
-    \graphicspath{ {./graphics/agile/} }
-    \includegraphics[scale=1.0]{mini-waterfall}
-    \label{fig:mini-waterfall}
-    \legend{Fonte: \citeonline{crispin2009}}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \caption{Processo mini-cascata}
+%     \graphicspath{ {./graphics/agile/} }
+%     \includegraphics[scale=1.0]{mini-waterfall}
+%     \label{fig:mini-waterfall}
+%     \legend{Fonte: \citeonline{crispin2009}}
+% \end{figure}
 
-- experiências passadas negativas: as pessoas podem acabar desistindo de adotar o processo, caso não sejam treinadas, acompanhadas e que tenham tempo para se ajustar
+% - experiências passadas negativas: as pessoas podem acabar desistindo de adotar o processo, caso não sejam treinadas, acompanhadas e que tenham tempo para se ajustar
 
-- diferenças culturais entre funções: cada pessoa está acostumada com um método de trabalho próprio, focado apenas em sua atividade.
+% - diferenças culturais entre funções: cada pessoa está acostumada com um método de trabalho próprio, focado apenas em sua atividade.
 
-\subsection{Logística da Equipe}
+\subsubsection{Logística da Equipe}
 % locatlion 1726 kindle - agile testing
 Algumas empresas acreditam ser importante que a equipe de QA seja independente para ter uma visão objetiva sobre a qualidade do produto.
 
@@ -968,15 +974,40 @@ Eis alguns motivos para a separação:
 \end{figure}
 
 
+\subsubsection{Hipótese da qualidade negociável}
+\citeonline{fowler2011} relata que uma situação bastante comum é a crença em algo chamado \emph{hipótese da qualidade negociável}, que diz que é possível realizar uma trocar entre recursos: "é melhor para o produto adicionar um recurso visível para o usuário (qualidade externa) do que refatorar código (qualidade interna)".
 
+Se ela lógica for considerada válida, então quando valerá a pena investir recurso na qualidade interna? O objetivo, muitas vezes não compreendido, da qualidade interna é acelerar a velocidade do projeto ao evitar que código ruim e problemático seja gerado, evitando perdas futuras de tempo, facilitando sua compreensão, etc. Portanto, deve-se primeiro analisar se uma refatoração trará estes benefícios, e apenas no caso dele não ser vantajoso que ele deve ser evitado.
 
 
 
 
 %%%%%%
 
+\subsection{Quadrantes de teste ágil}
+\begin{figure}[H]
+    \centering
+    \caption{Quatro quadrantes de teste ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=0.6]{Quadrante-Teste-Agil}
+    \label{fig:quatro-quadrantes}
+    \legend{Fonte: \citeonline{nogueira2013}}
+\end{figure}
+
+blablabla
+
 \subsection{Pilares da qualidade ágil}
 Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Três Pilares do Teste e Qualidade Ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=0.6]{three-pillars}
+    \label{fig:three-pillars}
+    \legend{Fonte: \citeonline{crispin2009}}
+\end{figure}
+
 
 \subsubsection{Automação e Ferramentas de Teste}
 % location 316-318 kindle - three pillars
@@ -984,157 +1015,71 @@ This pillar is the technology-side of quality and testing and is not simply focu
 
 Normalmente é o que mais atrai as empresas/desenvolvedores, devido à atratividade do uso de ferramentas e da tecnologia para a resolução dos problemas.
 
+% location 492 kindle - three pillars
+Pillar 1 is the technically focused pillar and the one that agile organizations are usually quite comfortable discussing – at least at a high level. It's where automation, in general, is located. Terms like Continuous Integration, Continuous Deployment, Cucumber, TDD, ATDD, BDD5, virtualization, and DevOps are actively discussed and implemented here.
+
+% location 566 kindle - three pillars
+The first change is to take a whole-team view. Instead of the testers being responsible for testing and writing all of the test automation, it becomes a whole-team responsibility. The developers take most of the ownership for unit-level automation at the base of the pyramid, but testers can operate there as well.
+
+For example, as of this writing, these are common tools leveraged at each of the three tiers:
+\begin{enumerate}
+    \item UI tier: Selenium, Watir, or traditional UFT
+    \item Middle tier: FitNesse, Robot Framework, JBehave, and Cucumber
+    \item Unit tier: xUnit family variants for example JUnit or NUnit for Java and. Net respectively
+\end{enumerate}
+
+The other consideration is that there are extensions to several of these. For example, both Robot Framework and Cucumber have Selenium plug-ins so that they can drive the UI, as well as, the middle tier. This implies that the middle tier tooling, and automated tests for that matter, can extend or blend into the lower and upper tiers.
+
+% importancia do trabalho em par
+I've found it surprising, but true, that many developers don't really understand how to write effective unit tests – especially when you expect those tests to be part of a cohesive automation whole. Partnering with testers can help immensely when designing unit tests, even if the testers can't program in the language du jour. I've also found that training can really be a force multiplier here.
+
+And a final caution – don't try to automate everything! The strategy or business case for 100\% automation is nonsense. I'm usually against setting any sort of "magic number" when establishing goals for automation levels of coverage. Rather, ask the team to look at each user story and determine the appropriate level of unit, middle-tier, and UI tests in order to adequately cover it compared to its complexity and value.
+
+\begin{figure}[H]
+    \centering
+    \caption{Pirâmide de teste automatizado tradicional}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{testing-pyramid-traditional}
+    \label{fig:testing-pyramid-traditional}
+    \legend{Fonte: \citeonline{galen2015}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Pirâmide de teste automatizado ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{testing-pyramid-agile}
+    \label{fig:testing-pyramid-agile}
+    \legend{Fonte: \citeonline{galen2015}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Software de automatização iContact (2012)}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{icontact-automation-pyramid}
+    \label{fig:icontact-automation-pyramid}
+    \legend{Fonte: \citeonline{galen2015}}
+\end{figure}
+
 \subsubsection{Teste de Software}
 % location 327-330 kindle - three pillars
 This pillar is focused towards the profession of testing. Towards solid testing practices, not simply agile testing practices, but leveraging the teams' past testing experience, skills, techniques, and tools. This is the place where agile teams move from a trivial view to software testing, which only looks at TDD, ATDD, and developer-based testing, towards a more holistic view of agile quality and testing.
 
+% location 833 kindle - three pillars
+Many agile teams consider agile testing to only include:
+\begin{itemize}
+    \item Unit-level testing; including perhaps automating the unit tests;
+    \item Functional level testing at a User Story level;
+    \item Story Acceptance-level testing; and
+    \item On-the-fly Continuous Integration leveraging common CI tooling.
+\end{itemize}
+
+Testing often stops after these steps are accomplished within each team and sprint. Now, in certain contexts, for example, small web based products that are relatively new, this may well be all that is needed. But in many, many more contexts, there is a lot more testing activity that is required. Repetitive testing of previously delivered functionality is also a consideration that is often lost in the frenzy of delivering "done" software within each sprint.
+
 \subsubsection{Práticas da Equipe}
 % location 337-340 kindle - three pillars
 Finally, this pillar is focused towards cross-team collaboration, team-based standards, quality attitudes, agile mindsets, and, most importantly, towards building things right. Consider this the soft skills area of the Three Pillars, where direction is provided for how each team will operate. You could also consider them "rules of engagement".
-
-% \subsection{TDD - Test Driven Development}
-
-% ==========================================================
-% CAPITULO
-% ==========================================================
-\chapter{Testes}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Definição}
-
-\begin{citacao}
-Por melhores que sejam as técnicas de modelagem e especificação de software, por mais disciplinada e experiente que seja a equipe de desenvolvimento, sempre haverá um fator que faz que o teste de software seja necessário: o erro humano. É um mito pensar que bons desenvolvedores, bem concentrados e com boas ferramentas serão capazes de desenvolver software sem erros \apud{beizer1990}{WAZLAWICK2013}. % origem: página 287 do pdf
-\end{citacao}
-
-
-% % ----------------------------------------------------------
-% % Seção
-% % ----------------------------------------------------------
-% \section{Verificação e Validação}
-
-% Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-% tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-% quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-% consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-% cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-% proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-% \subsection{Análise estática}
-
-% Definição lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-% tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-% quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-% consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-% cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-% proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-% \subsection{Inspeções}
-
-
-% \subsection{Revisões}
-
-
-% \subsection{Caso de teste}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Tipos de Problemas}
-
-% FIXME: página 32 de Software Product Quality Control
-
-\begin{itemize}
-    \item Falha (\emph{Failure / problem})
-    \item Defeito (\emph{Fault / defect / bug})
-    \item Erro (\emph{Error / mistake})
-\end{itemize}
-
-\begin{figure}[h]
-    \centering
-    \graphicspath{ {./graphics/} }
-    \includegraphics[scale=0.8]{defeito_falha_erro}
-    \caption{Visão geral de tipos de problemas}
-    \label{fig:tipos_problemas}
-    \legend{Fonte: \citeonline{wagner2013}}
-\end{figure}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Categorias}
-* em desenvolvimento *
-
-\subsection{Estrutural}
-
-\subsection{Funcional}
-
-
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Técnicas}
-* em desenvolvimento *
-
-\subsection{White-box}
-
-\subsection{Black-box}
-
-\subsection{Grey-box}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Níveis}
-* em desenvolvimento *
-
-\subsection{Unitário / componente}
-
-\subsection{Integração / operação do sistema / funcional}
-
-\subsection{Validação}
-
-\subsection{Sistema}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Foco do teste}
-* em desenvolvimento *
-
-\subsection{Conformidade}
-
-\subsection{Configuração}
-
-\subsection{Recuperação}
-
-\subsection{Regressão}
-
-\subsection{Estresse}
-
-\subsection{Desempenho}
-
-\subsection{Usabilidade}
-
-\subsection{Acessibilidade}
-
-\subsection{Internacionalização}
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Ferramentas}
-* em desenvolvimento *
-
-% ----------------------------------------------------------
-% Seção
-% ----------------------------------------------------------
-\section{Fluxo de Teste em Diferentes Metodologias}
-* em desenvolvimento *
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz

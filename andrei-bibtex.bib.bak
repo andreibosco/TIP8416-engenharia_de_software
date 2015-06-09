@@ -107,16 +107,6 @@
   Year                     = {2011}
 }
 
-@Book{,
-  Title                    = {Agile Testing: A Practical Guide for Testers and Agile Teams},
-  Author                   = {Lisa Crispin and Janet Gregory},
-  Publisher                = {Addison-Wesley Professional},
-  Year                     = {2009},
-
-  Owner                    = {Andrei},
-  Timestamp                = {2015.06.05}
-}
-
 @InProceedings{Deissenboeck2009,
   Title                    = {Software quality models: Purposes, usage scenarios and requirements},
   Author                   = {Deissenboeck, F. and Juergens, E. and Lochmann, K. and Wagner, S.},
@@ -171,6 +161,18 @@
   Timestamp                = {2015.04.26}
 }
 
+@Misc{fowler2011,
+  Title                    = {Tradable Quality Hypothesis},
+
+  Author                   = {Martin Fowler},
+  Year                     = {2011},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.07},
+  Url                      = {http://martinfowler.com/bliki/TradableQualityHypothesis.html},
+  Urlaccessdate            = {07.06.2015}
+}
+
 @Book{galen2015,
   Title                    = {Three Pillars of Agile Quality \& Testing: Achieving Balanced Results in your Journey Towards Agile Quality},
   Author                   = {Robert Galen},
@@ -193,6 +195,26 @@
   Owner                    = {Andrei},
   Timestamp                = {2015.04.12},
   Url                      = {https://hbr.org/1987/11/competing-on-the-eight-dimensions-of-quality}
+}
+
+@Book{crispin2014,
+  Title                    = {More Agile Testing: Learning Journeys for the Whole Team},
+  Author                   = {Janet Gregory and Lisa Crispin},
+  Publisher                = {Addison-Wesley Pro},
+  Year                     = {2014},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.05}
+}
+
+@Book{crispin2009,
+  Title                    = {Agile Testing: A Practical Guide for Testers and Agile Teams},
+  Author                   = {Janet Gregory and Lisa Crispin},
+  Publisher                = {Addison-Wesley Professional},
+  Year                     = {2009},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.05}
 }
 
 @Book{HIRAMA2011,
@@ -324,6 +346,19 @@
   ISBN                     = {9781118211632},
   Owner                    = {Andrei},
   Timestamp                = {2015.04.28}
+}
+
+@Misc{nogueira2013,
+  Title                    = {Introduç{\~a}o do quadrante de teste {\'A}gil},
+
+  Author                   = {Elias Nogueira},
+  Month                    = {Novembro},
+  Year                     = {2013},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.08},
+  Url                      = {http://blog.adaptworks.com.br/2013/11/introducao-do-quadrante-de-teste-agil/},
+  Urlaccessdate            = {08.06.2015}
 }
 
 @Book{PFLEEGER2010,
