@@ -744,23 +744,23 @@ A visão formal sobre o processo de QA é que ela pode ser efetuada pelo gerente
 
 A função de QA é prover a gerência e equipe técnica com dados sobre a qualidade do produto que está sendo gerado \cite{SOMMERVILLE2011}, e no caso de uma equipe ágil o testador (\emph{tester}) deve garantir que as técnicas de teste (criação dos testes, automatização, histórias do usuário, etc) estejam sendo seguidas corretamente.
 
-\subsection{Verificação e Validação (V\&V)}
-Conforme vimos na \autoref{tipos_qualidades}, podemos dividir a qualidade em dois tipos: \textbf{qualidade de conformação} (conformidade com as especificações), e \textbf{qualidade de projeto} (atender as necessidades do cliente), e considerando estas duas noções existem dois tipos de atividades de QA, também conhecidas como V\&V \cite{tsui2013, PRESSMAN2010}:
+\section{Verificação e Validação (V\&V)}
+Conforme vimos na \autoref{tipos_qualidades}, podemos dividir a qualidade em dois tipos: \textbf{qualidade de conformação} (conformidade com as especificações), e \textbf{qualidade de projeto} (atender as necessidades do cliente), e considerando estas duas noções existem duas atividades de QA, também conhecidas como V\&V \cite{tsui2013, PRESSMAN2010}:
 \begin{itemize}
-    \item \textbf{Verificação}: o ato de verificar a conformidade com os requisitos e especificações (você está construindo o produto corretamente?);
+    \item \textbf{Verificação}: o ato de verificar a conformidade com os requisitos e especificações (você está construindo corretamente o produto?);
     \item \textbf{Validação}: o ato de conferir se o produto concluído atinge os requisitos, especificações e necessidades do usuário (você está construindo o produto correto?).
 \end{itemize}
 
-Apesar do teste ser crucial para as atividades de V\&V, \citeonline{PRESSMAN2010} lembra outras atividades de QA também são necessárias: revisões técnicas, auditorias de qualidade e configuração, monitoramento de performance, simulações, revisões de bancos de dados, dentre muitas outras. Outro fator importante: o teste não pode adicionar qualidade onde não existe, ela deve fazer parte de todo o fluxo de desenvolvimento.
-
-As atividades de QA podem ser categorizadas em dois grupos \cite{Huo:2004:SQA:1025117.1025549,Naik2011}\footnote{Para maiores detalhes sobre cada uma das atividades de QA confira o anexo bla}: % FIXME: inserir anexo
+Já as técnicas utilizadas no processo de QA podem ser categorizadas em dois grupos \cite{Huo:2004:SQA:1025117.1025549,Naik2011}\footnote{Para maiores detalhes sobre cada uma das técnicas de QA confira o anexo bla}: % FIXME: inserir anexo
 
 % PPT: ooad-final-researchpaper, slide 12
 % parece ser baseado no artigo 2004_Huo,M
 \begin{itemize}
-    \item \textbf{Estáticas}: não envolvem a execução de código, baseia-se na verificação de documentos, requisitos, do código-fonte. Análises estáticas tradicionais incluem revisão, inspeção, \emph{walk-through}, análise do algoritmo, etc.
-    \item \textbf{Dinâmicas}: envolvem a execução do programa para verificar a existência de possíveis falhas e observar o comportamento e performance. Testes (unitários, integração, regressão, etc), verificações automáticas e simulações são exemplos de análises dinâmicas.
+    \item \textbf{Estáticas}: não envolvem a execução de código, baseia-se na verificação de documentos, requisitos, do código-fonte. Técnicas estáticas tradicionais incluem revisão, inspeção, \emph{walk-through}, análise do algoritmo, etc.
+    \item \textbf{Dinâmicas}: envolvem a execução do programa para verificar a existência de possíveis falhas e observar o comportamento e performance. Testes (unitários, integração, regressão, etc), verificações automáticas e simulações são exemplos de técnicas dinâmicas.
 \end{itemize}
+
+Apesar do teste ser crucial para as atividades de V\&V, \citeonline{PRESSMAN2010} lembra que as outras atividades de QA também são necessárias (revisões técnicas, auditorias de qualidade e configuração, monitoramento de performance, simulações, revisões de bancos de dados, dentre muitas outras). Outro fator importante: o teste não pode adicionar qualidade onde não existe, ela deve fazer parte de todo o fluxo de desenvolvimento.
 
 % pag 213 - essentials of software engineering, tsui
 % \citeonline{tsui2013} diz que todo software é composto por duas partes: uma estrutura estática (o código fonte) e um comportamento dinâmico (o software em execução). Alguns produtos intermediários do projeto (documentação de requisitos) só possuem uma estrutura estática.
@@ -784,36 +784,41 @@ Modelos de projeto formais utilizam métodos de análise estáticas e dinâmicas
 
 % Para realizar a verificação da qualidade são utilizadas técnicas como \emph{revisões, inspeções} e \emph{testes sistemáticos}. Revisões e inspeções baseiam-se na revisão sistemática do produto por terceiros, para detectar defeitos, enquanto os testes sistemáticos são testes dinâmicos executados com o código produzido (ex.: testes unitários, testes de integração, testes de regressão, etc). \cite{WAZLAWICK2013}. % FIXME: inserir anexo ou nota de rodapé sobre onde ler mais detalhadamente sobre testes
 
-\citeonline{SOMMERVILLE2011} reforça que o objetivo das revisões e inspeções não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa.
+\citeonline{crispin2009} aponta que nos modelos de projeto formais a equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de QA não possui controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento. Outro fator importante a ser levado em consideração é que os times de desenvolvimento não influenciam as particularidades de um recurso, ou o seu funcionamento. Cada um tende a se especializar em uma área do código enquanto a equipe de QA estuda os documentos de requisitos para escrever os testes e aguardar o código ser concluído e entregue para poder iniciar os testes.
 
-\subsection{Equipes formais/tradicionais de testes}
-A equipe de testes trabalha de maneira totalmente independente dos desenvolvedores, e não acompanha o projeto desde o início. A equipe de garantia de qualidade não possui controle sobre o código era escrito, ou se os programadores testavam o código mas mesmo assim existe a expectativa de que consigam melhorar a qualidade do código após longos ciclos de desenvolvimento.
+\citeonline{SOMMERVILLE2011} reforça que o objetivo das atividades de QA não é avaliar a performance da equipe de desenvolvimento, mas detectar erros, que inevitavelmente ocorrerão. A \textbf{equipe responsável de QA} deve ser sensível às questões individuais dos desenvolvedores, e deve criar uma cultura de suporte à descoberta de erros sem implicação de culpa. Ele também cita alguns conceitos \textbf{errados} comuns envolvendo QA e testes:
 
-% location 832 kindle - agile testing
-Traditional teams are focused on making sure all the specified requirements are delivered in the final product. If everything isn’t ready by the original target release date, the release is usually postponed. The development teams don’t usually have input about what features are in the release, or how they should work. Individual programmers tend to specialize in a particular area of the code. Testers study the requirements documents to write their test plans, and then they wait for work to be delivered to them for testing.
+\begin{itemize}
+    \item desenvolvedores não precisam realizar testes;
+    \item o software deve ser \emph{jogado} para estranhos o testem sem piedade; e
+    \item que os testadores só devem se envolver com o projeto durante a fase de testes.
+\end{itemize}
+
+Os desenvolvedores devem se responsabilizar pela execução e corretude dos testes unitários, e podem até mesmo realizar os testes de integração, e somente após a arquitetura do software estar concluída que uma equipe independente de testes deve participar \cite{SOMMERVILLE2011}.
 
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
 \section{QA nos Modelos Ágeis}
-
 % http://www.infoq.com/news/2014/08/quality-velocity-agile
+%http://www.velocitypartners.net/blog/2014/05/06/read-my-lips-agile-isnt-fast/
+\begin{citacao}
+Ágil é uma ``Jogada de Qualidade'' e se você jogar com integridade, compromisso e equilíbrio ele pode se tornar uma ótima ``Jogada de Velocidade''. Porém a velocidade não vem de graça...\cite{galen2014}
+\end{citacao}
 
-Curioso notar que vários autores, seja em livro ou em artigos online, indicam que os Métodos Ágeis são mal compreendidos e o foco deles não são em velocidade e aumento de produtividade, mas em aumento de qualidade do projeto, e que caso seja bem aplicado e adotado, ele pode resultar em um aumento de velocidade, porém, caso contrário o uso de um Método Ágil pode resultar em um processo mais lento do que um modelo formal. \cite{galen2015} % http://www.velocitypartners.net/blog/2014/05/06/read-my-lips-agile-isnt-fast/ % Bob Galen é o mesmo que escreve o livro dos tres pilares
+Curioso notar que vários autores, seja em livro ou em artigos online, indicam que os Métodos Ágeis são mal compreendidos e o foco deles não são em velocidade e aumento de produtividade, mas em aumento de qualidade do projeto, e que caso seja bem aplicado e adotado, ele pode resultar em um aumento de velocidade, porém, caso contrário \citeonline{galen2015} afirma que o uso de um método ágil pode resultar em um processo mais lento do que um modelo formal.
 
 % location 863 kindle - more agile testing
-\citeonline{crispin2014} declaram que a pressão para atingir prazos irreais faz com que os desenvolvedores tomem decisões para entregar o produto e não para agradar ao cliente, sacrificando a qualidade final. Tempo é um fator importante, e a equipe precisa de tempo para pensar, para aprender nova técnicas e para realizar pequenos experimentos que podem ser úteis na resolução de problemas.
-% ver se apresento/adoto o termo technical debt - dívida/débito técnico: http://www.infoq.com/br/news/2009/10/dissecting-technical-debt
+\citeonline{crispin2014} declaram que a pressão para atingir prazos irreais faz com que os desenvolvedores tomem decisões para entregar o produto e não para agradar ao cliente, sacrificando a qualidade final e gerando uma \emph{dívida técnica}. Eis a definição de \citeonline{fowler2003} para a dívida técnica:
+% http://www.infoq.com/br/news/2009/10/dissecting-technical-debt
 % http://www.infoq.com/br/news/2010/12/how-to-pay-down-technical-debt
-% http://en.wikipedia.org/wiki/Technical_debt
+\begin{citacao}
+A dívida técnica é similar à dívida financeira. Assim como a dívida financeira, a dívida técnica exige o pagamento de juros. Estes vem na forma de esforço extra, que devem ser pagos em desenvolvimentos futuros por conta da escolha de um design mais rápido e de baixa qualidade. Nós podemos optar por continuar pagando estes juros ou quitar de uma vez a dívida fazendo uma refatoração, transformando um design de baixa qualidade em um design melhor. Apesar dos custos para saldar a dívida, ganhamos reduzindo os juros no futuro.
+\end{citacao}
 
-Utilizando os cinco estágios maturidade de Crosby, apresentado na seção \autoref{qa-modelos-formais}, podemos interpretar que os projetos ágeis já iniciam no terceiro estágio, alinhamento, tendo em vista a preocupação constante com os testes e o gerenciamento da qualidade de cada iteração. Mas a simples existência dos testes não garante a qualidade, é necessário que haja consciência da importância de cada etapa do processo e do objetivo a ser alcançado em cada iteração.
+Ou seja, tempo é um fator extremamente importante, e a equipe precisa de tempo para pensar, para aprender nova técnicas e para realizar pequenos experimentos que podem ser úteis na resolução de problemas \cite{crispin2014}.
 
-% location 280 kindle - three pillars
-Exemplo de problema encontrado por \citeonline{galen2015}: falta de conhecimento ou conhecimento superficial das técnicas. Ex.: empresa adotava a criação de testes automatizados e integração contínua, porém não sabiam criar \emph{user stories} e não sabiam indicar como uma tarefa estava concluída (\emph{Definition of Done - DoD}).
-
-% location 804 kindle - more agile testing
-Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
+Utilizando os cinco estágios maturidade de Crosby, apresentado na seção \autoref{qa-modelos-formais}, podemos interpretar que os projetos ágeis já iniciam no terceiro estágio, alinhamento, tendo em vista a preocupação constante com os testes e o gerenciamento da qualidade de cada iteração. Mas a simples existência dos testes não garante a qualidade, é necessário que haja consciência da importância de cada etapa do processo e do objetivo a ser alcançado em cada iteração. \citeonline{galen2015} lista alguns problema encontrado por falta de conhecimento ou conhecimento superficial das técnicas: uma empresa adotava a criação de testes automatizados e integração contínua, porém não sabiam criar \emph{user stories} e não sabiam indicar quando uma tarefa estava concluída (\emph{Definition of Done - DoD}). % location 280 kindle - three pillars
 
 % location 834 kindle - more agile testing
 \citeonline{crispin2014} indica que métodos ágeis já são adotados por grande empresas, equipes distribuídas e que elas estão encontrando maneiras de gerar Produtos Minimamente Viáveis (\emph{minimum viable products - MVPs}), através de uso de entregas iterativas e rápidos processos de feedback e aprendizado.
@@ -823,53 +828,58 @@ Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e 
 % spotify não possui equipes de testes, pois na cultura de desenvolvimento deles não funcionou/não foi visto vantagem
 
 % anotação minha
-Curioso notar como ainda persiste a separação entre equipe de teste e de desenvolvimento, enquanto a visão difundida sobre a aplicação de metodologias ágeis é a existência de uma pequena equipe.
+%Curioso notar como ainda persiste a separação entre equipe de teste e de desenvolvimento, enquanto a visão difundida sobre a aplicação de metodologias ágeis é a existência de uma pequena equipe.
 
 % location 744 kindle - agile testing
 \citeonline{crispin2009} lembram que todos os membros de uma equipe ágil devem focar em entregar um produto de alta qualidade que provenha valor à um negócio, e a função dos testadores é garantir que o produto entregue tenha a qualidade que o cliente precisa. Todos devem se sentir responsáveis por entregar um produto com a melhor qualidade possível, e desfrutar de suas atividades. Lembrem do Manifesto Ágil\footnote{Manifesto Ágil: http://agilemanifesto.org/iso/ptbr/}, onde o foco nos indivíduos é maior que o foco no processo.% no livro dos pilares também tem algo sobre isso, é bom complementar
 
 % location 792 kindle - agile testing
-Agile principles encourage team members to take on multiple activities; any team member can take on any type of task. Many agile practitioners discourage specialized roles on teams and encourage all team members to transfer their skills to others as much as possible. Nevertheless, each team needs to decide what expertise their projects require. Programmers, system administrators, architects, database administrators, technical writers, security specialists, and people who wear more than one of these hats might be part of the team, physically or virtually. Testers are also on the developer team, because testing is a central component of agile software development. Testers advocate for quality on behalf of the customer and assist the development team in delivering the maximum business value.
+Os princípios ágeis encorajam os membros de uma equipe a participar de múltiplas atividades e de realizar qualquer tipo de tarefa. Muitos praticantes dos princípios ágeis desencorajam papéis especializados, no entanto cada equipe deve decidir de quais especialidades serão necessárias: arquitetos, desenvolvedores, especialistas de segurança, dentre outras (\autoref{fig:agile-development-team}). Testadores também fazem parte da equipe de desenvolvimento pois o teste é um componente central do desenvolvimento de software ágil e são eles que garantem que o produto atende às expectativas de qualidade do cliente \cite{crispin2009}.
+
+\begin{figure}[H]
+    \centering
+    \caption{Equipe de desenvolvimento ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{agile-development-team}
+    \label{fig:agile-development-team}
+    \legend{Fonte: \citeonline{rasmusson2010}}
+\end{figure}
 
 % location 812 kindle - agile testing
-Some agile teams don’t have any members who define themselves as “testers.” However, they all need someone to help the customer team write business-facing tests for the iteration’s stories, make sure the tests pass, and make sure that adequate regression tests are automated. Even if a team does have testers, the entire agile team is responsible for these testing tasks. Our experience with agile teams has shown that testing skills and experience are vital to project success and that testers do add value to agile teams.
+\citeonline{crispin2009} também afirma que em algumas equipes não existe nenhum membro que se identifique como ``testador'', porém ele julga necessário que exista alguém que interaja diretamente com o cliente para a criação das histórias das iterações, para garantir que os testes sejam automatizados e que os testes estejam passando. É um membro com tais conhecimentos é vital para o sucesso do projeto.
 
-\subsection{Equipe ágil de teste}
+\section{Transição de método formal para método ágil}
 %location 811 kindle - agile testing
 
 O processo de transição de equipes tradicionais para adotar métodos ágeis normalmente é um choque, principalmente quanto à ideia de gerar código funcional dentro de uma ou duas semanas. Dúvidas comuns são: como programar e testar tão rapidamente? Como ter tempo para automatizar os testes? Como controlar código problemático que será entregue para produção? \cite{crispin2009}.
 
 \citeonline{crispin2009} citam uma experiência própria, onde Lisa teve seu primeiro contato com uma equipe ágil (que adotava \emph{Extreme Programming - XP}), trabalhando como a única testadora em uma equipe de oito programadores, e ficou chocada ao ver que o produto da primeira iteração facilmente travava quando dois usuários logavam ao mesmo tempo. Seu \emph{coach} lhe explicou que naquele momento a necessidade do cliente era exibir o sistema à potenciais compradores, e confiabilidade e robustez não eram o foco. Nesse momento ela percebeu que quem determina os critérios de qualidade são as necessidades do cliente a cada iteração, e sua função seria escrever os testes que garantissem essa qualidade.
 
-Uma outra experiência curiosa é contada por Jonathan Rasmusson \cite{crispin2009}, que trabalhava em uma equipe que adotava XP e um novo membro foi adicionado: uma testadora. Ele não viu sentido nessa contratação, pois por adotarem XP os desenvolvedores escreviam todos os testes, porém dentro de seis meses ele percebeu a importância. Por não ter que focar nos testes de baixo nível, que estavam automatizados, ela pode focar em usabilidade, realizar testes exploratórios ao pensar de maneiras que os desenvolvedores não haviam antecipado, trabalhar em conjunto com o cliente para escrever casos de testes para as próximas funcionalidades, e participar de desenvolvimento em par com os programadores.
+Uma outra experiência curiosa é contada por Jonathan Rasmusson \cite{crispin2009}, que trabalhava em uma equipe que adotava XP e um novo membro foi adicionado: uma testadora. Ele não viu sentido nessa contratação, pois por adotarem XP os desenvolvedores escreviam todos os testes, porém dentro de seis meses ele percebeu a importância. Por não ter que focar nos testes de baixo nível, que estavam automatizados, ela pode focar em usabilidade, realizar testes exploratórios ao pensar de maneiras que os desenvolvedores não haviam antecipado, trabalhar em conjunto com o cliente para escrever casos de testes para as próximas funcionalidades, e participar de desenvolvimento em par com os programadores. Testadores ágeis não ficam aguardando trabalho, eles procuram maneiras de contribuir com o ciclo de desenvolvimento.
 
-Agile teams work closely with the business and have a detailed understanding of the requirements. They’re focused on the value they can deliver, and they might have a great deal of input into prioritizing features. Testers don’t sit and wait for work; they get up and look for ways to contribute throughout the development cycle and beyond.
+\subsection{Logística da Equipe}
+% localion 1726 kindle - agile testing
+Algumas empresas acreditam ser importante que a equipe de QA seja independente para ter uma visão objetiva sobre a qualidade do produto. 
 
-\subsection{Teste tradicional vs teste ágil}
-%location 894-901 kindle - agile testing
+Eis alguns motivos para a separação:
+
+\begin{itemize}
+    \item It is important to have that independent check and audit role.
+    \item The team can provide an unbiased and outside view relating to the quality of the product.
+    \item If testers work too closely with developers, they will start to think like developers and lose their customer viewpoint.
+    \item If the testers and developers report to the same person, there is a danger that the priority becomes delivering any code rather than delivering tested code.
+\end{itemize}
+
+% continuar leitura sobre este tópico
 
 \begin{figure}[H]
     \centering
-    \caption{Comparativo de fases de um método tradicional (cascata) e método ágil}
+    \caption{Equipe tradicional e equipe ágil}
     \graphicspath{ {./graphics/agile/} }
-    \includegraphics[scale=1.0]{waterfall-vs-agile}
-    \label{fig:waterfall-vs-agile}
+    \includegraphics[scale=1.0]{functional-and-agile-teams}
+    \label{fig:functional-and-agile-teams}
     \legend{Fonte: \citeonline{crispin2009}}
 \end{figure}
-
-In the phased approach diagram, it is clear that testing happens at the end, right before release. The diagram is idealistic, because it gives the impression there is as much time for testing as there is for coding. In many projects, this is not the case. The testing gets “squished” because coding takes longer than expected, and because teams get into a code-and-fix cycle at the end.
-
-Agile is iterative and incremental. This means that the testers test each increment of coding as soon as it is finished. An iteration might be as short as one week, or as long as a month. The team builds and tests a little bit of code, making sure it works correctly, and then moves on to next piece that needs to be built. Programmers never get ahead of the testers, because a story is not “done” until it has been tested. We’ll talk much more about this throughout the book.
-
-Every project, every team, and sometimes every iteration is different. How your team solves problems should depend on the problem, the people, and the tools you have available. As an agile team member, you will need to be adaptive to the team’s needs.
-
-Rather than creating tests from a requirements document that was created by business analysts before anyone ever thought of writing a line of code, someone will need to write tests that illustrate the requirements for each story days or hours before coding begins. This is often a collaborative effort between a business or domain expert and a tester, analyst, or some other development team member. Detailed functional test cases, ideally based on examples provided by business experts, flesh out the requirements. Testers will conduct manual exploratory testing to find important bugs that defined test cases might miss. Testers might pair with other developers to automate and execute test cases as coding on each story proceeds. Automated functional tests are added to the regression test suite. When tests demonstrating minimum functionality are complete, the team can consider the story finished.
-
-Whatever flavor of development you’re using, pretty much the same elements of a software development life cycle need to happen. The difference with agile is that time frames are greatly shortened, and activities happen concurrently. Participants, tests, and tools need to be adaptive.
-
-The most critical difference for testers in an agile project is the quick feedback from testing. It drives the project forward, and there are no gatekeepers ready to block project progress if certain milestones aren’t met.
-
-While some teams do seem to use the “agile” buzzword to justify simply doing whatever they want, true agile teams are all about repeatable quality as well as efficiency. In our experience, an agile team is a wonderful place to be a tester.
 
 \subsection{Abordagem time coeso (\emph{whole-team approach})}
 % isso tambem é explorado no XP: http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_extrema
@@ -897,6 +907,32 @@ If this is your situation, your team is at risk. Hidden assumptions are likely t
 How can you avoid this peril? See if you can arrange to be located near the developers. If you can’t, at least come to their area to talk and pair test. Ask them to show you what they’re working on. Ask them to look at the test cases you’ve written. Invite yourself to meetings if nobody else has invited you. Make yourself useful by testing and providing feedback, and become a necessity to the team.
 
 Help customers develop their stories and acceptance tests. Push the “whole team” attitude, and ask the team to work on testing problems. If your team is having trouble adapting to agile development, suggest experimenting with some new ideas for an iteration or two. Propose adopting the “Power of Three” rule to promote good communication. Use the information in this book to show that testers can help agile teams succeed beyond their wildest expectations.
+
+\subsection{Teste tradicional VS teste ágil}
+%location 894-901 kindle - agile testing
+
+\begin{figure}[H]
+    \centering
+    \caption{Comparativo de fases de um método tradicional (cascata) e método ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{waterfall-vs-agile}
+    \label{fig:waterfall-vs-agile}
+    \legend{Fonte: \citeonline{crispin2009}}
+\end{figure}
+
+In the phased approach diagram, it is clear that testing happens at the end, right before release. The diagram is idealistic, because it gives the impression there is as much time for testing as there is for coding. In many projects, this is not the case. The testing gets “squished” because coding takes longer than expected, and because teams get into a code-and-fix cycle at the end.
+
+Agile is iterative and incremental. This means that the testers test each increment of coding as soon as it is finished. An iteration might be as short as one week, or as long as a month. The team builds and tests a little bit of code, making sure it works correctly, and then moves on to next piece that needs to be built. Programmers never get ahead of the testers, because a story is not “done” until it has been tested. We’ll talk much more about this throughout the book.
+
+Every project, every team, and sometimes every iteration is different. How your team solves problems should depend on the problem, the people, and the tools you have available. As an agile team member, you will need to be adaptive to the team’s needs.
+
+Rather than creating tests from a requirements document that was created by business analysts before anyone ever thought of writing a line of code, someone will need to write tests that illustrate the requirements for each story days or hours before coding begins. This is often a collaborative effort between a business or domain expert and a tester, analyst, or some other development team member. Detailed functional test cases, ideally based on examples provided by business experts, flesh out the requirements. Testers will conduct manual exploratory testing to find important bugs that defined test cases might miss. Testers might pair with other developers to automate and execute test cases as coding on each story proceeds. Automated functional tests are added to the regression test suite. When tests demonstrating minimum functionality are complete, the team can consider the story finished.
+
+Whatever flavor of development you’re using, pretty much the same elements of a software development life cycle need to happen. The difference with agile is that time frames are greatly shortened, and activities happen concurrently. Participants, tests, and tools need to be adaptive.
+
+The most critical difference for testers in an agile project is the quick feedback from testing. It drives the project forward, and there are no gatekeepers ready to block project progress if certain milestones aren’t met.
+
+While some teams do seem to use the “agile” buzzword to justify simply doing whatever they want, true agile teams are all about repeatable quality as well as efficiency. In our experience, an agile team is a wonderful place to be a tester.
 
 \subsubsection{Dez princípios para testadores ágeis}
 % location 973 kindle - agile testing
@@ -938,31 +974,6 @@ Help customers develop their stories and acceptance tests. Push the “whole tea
 
 % - diferenças culturais entre funções: cada pessoa está acostumada com um método de trabalho próprio, focado apenas em sua atividade.
 
-\subsubsection{Logística da Equipe}
-% locatlion 1726 kindle - agile testing
-Algumas empresas acreditam ser importante que a equipe de QA seja independente para ter uma visão objetiva sobre a qualidade do produto.
-
-Eis alguns motivos para a separação:
-
-\begin{itemize}
-    \item It is important to have that independent check and audit role.
-    \item The team can provide an unbiased and outside view relating to the quality of the product.
-    \item If testers work too closely with developers, they will start to think like developers and lose their customer viewpoint.
-    \item If the testers and developers report to the same person, there is a danger that the priority becomes delivering any code rather than delivering tested code.
-\end{itemize}
-
-% continuar leitura sobre este tópico
-
-\begin{figure}[H]
-    \centering
-    \caption{Equipe tradicional e equipe ágil}
-    \graphicspath{ {./graphics/agile/} }
-    \includegraphics[scale=1.0]{functional-and-agile-teams}
-    \label{fig:functional-and-agile-teams}
-    \legend{Fonte: \citeonline{crispin2009}}
-\end{figure}
-
-
 \subsubsection{Hipótese da qualidade negociável}
 \citeonline{fowler2011} relata que uma situação bastante comum é a crença em algo chamado \emph{hipótese da qualidade negociável}, que diz que é possível realizar uma trocar entre recursos: "é melhor para o produto adicionar um recurso visível para o usuário (qualidade externa) do que refatorar código (qualidade interna)".
 
@@ -984,6 +995,10 @@ Se ela lógica for considerada válida, então quando valerá a pena investir re
 \end{figure}
 
 blablabla
+
+% location 804 kindle - more agile testing
+% FIXME: mover este trecho para um local mais adequado
+Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
 
 \subsection{Pilares da qualidade ágil}
 Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}.

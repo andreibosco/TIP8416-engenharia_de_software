@@ -8,7 +8,7 @@
   Year                     = {2008},
   Series                   = {Normas SQuaRE},
 
-  __markedentry            = {[Andrei:6]},
+  __markedentry            = {[Andrei:]},
   ISBN                     = {9788507005971},
   Owner                    = {Andrei},
   Timestamp                = {2015.04.28}
@@ -173,6 +173,19 @@
   Urlaccessdate            = {07.06.2015}
 }
 
+@Misc{fowler2003,
+  Title                    = {Technical Debt},
+
+  Author                   = {Martin Fowler},
+  Month                    = {October},
+  Year                     = {2003},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.09},
+  Url                      = {http://martinfowler.com/bliki/TechnicalDebt.html},
+  Urlaccessdate            = {2015.06.07}
+}
+
 @Book{galen2015,
   Title                    = {Three Pillars of Agile Quality \& Testing: Achieving Balanced Results in your Journey Towards Agile Quality},
   Author                   = {Robert Galen},
@@ -181,6 +194,19 @@
 
   Owner                    = {Andrei},
   Timestamp                = {2015.06.05}
+}
+
+@Misc{galen2014,
+  Title                    = {Read my Lips - Agile isn't Fast!},
+
+  Author                   = {Robert Galen},
+  Month                    = {May},
+  Year                     = {2014},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.09},
+  Url                      = {http://www.velocitypartners.net/blog/2014/05/06/read-my-lips-agile-isnt-fast/},
+  Urlaccessdate            = {07.06.2015}
 }
 
 @Article{GARVIN1987,
@@ -341,15 +367,13 @@
   Author                   = {Naik, K. and Tripathy, P.},
   Publisher                = {Wiley},
   Year                     = {2011},
-
-  __markedentry            = {[Andrei:]},
   ISBN                     = {9781118211632},
   Owner                    = {Andrei},
   Timestamp                = {2015.04.28}
 }
 
 @Misc{nogueira2013,
-  Title                    = {Introduç{\~a}o do quadrante de teste {\'A}gil},
+  Title                    = {Introduç{\~a}o do Quadrante de Teste {\'A}gil},
 
   Author                   = {Elias Nogueira},
   Month                    = {Novembro},
@@ -401,6 +425,19 @@
   Author                   = {Suryn, Witold},
   Publisher                = {Wiley},
   Year                     = {2014}
+}
+
+@Book{tsui2013,
+  Title                    = {Essentials of Software Engineering},
+  Author                   = {Tsui, F.F. and Karam, O. and Bernal, B.},
+  Publisher                = {Jones \& Bartlett Learning},
+  Year                     = {2013},
+
+  __markedentry            = {[Andrei:6]},
+  ISBN                     = {9781449691998},
+  Lccn                     = {2012029913},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.08}
 }
 
 @Article{Turk2014,
