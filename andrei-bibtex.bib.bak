@@ -118,6 +118,19 @@
   Urlaccessdate            = {2015.06.10}
 }
 
+@Book{cohn2009,
+  Title                    = {Succeeding with Agile: Software Development Using Scrum},
+  Author                   = {Cohn, M.},
+  Publisher                = {Pearson Education},
+  Year                     = {2009},
+
+  __markedentry            = {[Andrei:6]},
+  ISBN                     = {9780321660565},
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.16},
+  Url                      = {https://books.google.com.br/books?id=8IglA6i\_JwAC}
+}
+
 @InProceedings{Deissenboeck2009,
   Title                    = {Software quality models: Purposes, usage scenarios and requirements},
   Author                   = {Deissenboeck, F. and Juergens, E. and Lochmann, K. and Wagner, S.},
@@ -377,7 +390,7 @@
 }
 
 @Article{malik2014,
-  Title                    = {Article: An Efficient Objective Quality Model for Agile Application Development},
+  Title                    = {An Efficient Objective Quality Model for Agile Application Development},
   Author                   = {M. Usman Malik and Haseeb Nasir and Ali Javed},
   Journal                  = {International Journal of Computer Applications},
   Year                     = {2014},
@@ -446,7 +459,7 @@
   Year                     = {2010},
   Series                   = {Pragmatic Bookshelf Series},
 
-  __markedentry            = {[Andrei:6]},
+  __markedentry            = {[Andrei:]},
   ISBN                     = {9781934356586},
   Lccn                     = {2012419297},
   Owner                    = {Andrei},
@@ -486,8 +499,6 @@
   Author                   = {Tsui, F.F. and Karam, O. and Bernal, B.},
   Publisher                = {Jones \& Bartlett Learning},
   Year                     = {2013},
-
-  __markedentry            = {[Andrei:]},
   ISBN                     = {9781449691998},
   Lccn                     = {2012029913},
   Owner                    = {Andrei},

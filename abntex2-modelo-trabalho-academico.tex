@@ -1000,6 +1000,8 @@ Todos os membros da equipe devem ser capaz de realizar qualquer tarefa do projet
 \emph{* em desenvolvimento *}
 
 \subsection{Quadrantes de teste ágil}
+\label{quatro-quadrantes}
+
 \begin{figure}[H]
     \centering
     \caption{Quatro quadrantes de teste ágil}
@@ -1024,9 +1026,7 @@ Todos os membros da equipe devem ser capaz de realizar qualquer tarefa do projet
 % Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
 
 \subsection{Pilares da qualidade ágil}
-Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}.
-
-\emph{* em desenvolvimento *}
+Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas, como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}, apresentando na \autoref{quatro-quadrantes}. Galen o criou ao perceber que apesar de equipes terem ``vestido a camisa'' de testes, e estarem criando testes automatizados e realizando integração contínua, elas tinham grande dificuldade em definir as histórias do usuários e definir claramente quando uma funcionalidade estava concluída. Ou seja, a proposta do modelo é balancear o lado técnico (primeiro pilar), o lado da prática de teste (segundo pilar), e o lado das práticas inter-funcionais de equipe (terceiro pilar), com os três pilares se apoiando em valores gerais, como o da equipe coesa, apresentado anteriormente na \autoref{time-coeso}. Veja a \autoref{fig:three-pillars} para ter uma visão geral do modelo.
 
 \begin{figure}[h]
     \centering
@@ -1039,6 +1039,31 @@ Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreens�
 
 
 \subsubsection{Primeiro Pilar: Automação e Ferramentas de Teste}
+Este pilar foca no aspecto técnico, das ferramentas e execução da pirâmide de teste, da integração contínuo e de outras práticas. Normalmente é o lado que mais atrai os desenvolvedores e empresas pois apresenta ferramentas e tecnologias para auxiliar na resolução dos problemas.
+
+As pirâmides de testes apresentadas na \autoref{fig:testing-pyramid-combined} são baseadas no conceito criado por \citeonline{cohn2009}, e a ideia principal é indicar que devem existir mais testes de baixo nível (unitários) do que testes de alto nível (interface). \citeonline{fowler2012} acredita que se uma falha for detectada em um teste de alto nível então além de um \emph{bug} no código também foi detectada uma deficiência nos testes unitários.
+
+\begin{figure}[H]
+    \centering
+    \caption{Pirâmides de testes automatizados: ágil e tradicional}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=0.65]{testing-pyramid-combined}
+    \label{fig:testing-pyramid-combined}
+    \legend{Fonte: \citeonline{galen2015}}
+\end{figure}
+
+% FIXME: falar sobre os níveis
+Eis algumas ferramentas de testes comumente utilizadas em cada nível:
+\begin{itemize}
+    \item Nível da interface: Selenium\footnote{Ferramenta de automação de navegador: \url{http://www.seleniumhq.org/}}, Watir\footnote{Ferramenta em Ruby para testes de aplicações web: \url{http://watir.com/}}, \emph{Unified Functional Testing} (UFC)\footnote{Teste automatizado de interfaces em geral: \url{http://www8.hp.com/us/en/software-solutions/unified-functional-automated-testing/}};
+    \item Nível de serviço ou intermediário: FitNesse\footnote{Testes de aceitação: \url{http://www.fitnesse.org/}}, Robot Framework\footnote{Framework em Python para testes de aceitação: \url{http://robotframework.org/}}, JBehave\footnote{Framework em Java para Desenvolvimento focado em Comportamento (\emph{Behaviour-Driven Development} - BDD: \url{http://jbehave.org/}}, Cucumber\footnote{Outro sistema de BDD escrito em Ruby e compatível com diversas linguagens e frameworks: \url{https://cucumber.io/}};
+    \item Nível unitário: variantes da família xUnit\footnote{Para mais informações: \url{http://www.martinfowler.com/bliki/Xunit.html}} (JUnit para Java e NUnit para .Net, por exemplo).
+\end{itemize}
+
+É importante notar que as ferramentas são intercambiáveis e se complementam, onde o \emph{Robot Framework} e \emph{Cucumber} ambos possuem plugins para o Selenium, onde eles podem controlar e testar a interface da aplicação.
+
+\citeonline{galen2015} faz um aviso importante: não tentem automatizar 100\% dos testes. Isso é um objetivo fútil, e o que determinará o número ideal de testes é a análise das histórias do usuário para que exista uma cobertura adequada em todos os níveis, não podendo de levar em consideração o valor e complexidade na criação de cada um.
+
 % location 316-318 kindle - three pillars
 % This pillar is the technology-side of quality and testing and is not simply focused towards testing and testers. It includes tooling, execution of the Automation Test Pyramid, Continuous Integration, deep use of Extreme Programming technical practices, and support for ALM distributed collaboration tools.
 
