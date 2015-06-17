@@ -204,8 +204,10 @@ O foco deste trabalho é abordar sobre qualidade de software e todo o processo e
 \begin{siglas}
     \item[ABNT] Associação Brasileira de Normas Técnicas
     % \item[COQUAMO] \emph{Constructive Quality Model} - Modelo de Qualidade Construtivo
+    \item[ATDD] \emph{Acceptance Test-Driven Development} - Prática ativa de Desenvolvimento Orientado a Testes de Aceitação
+    \item[BDD] \emph{Behaviour-Driven Development} - Desenvolvimento Guiado por Comportamento
     \item[DoD] \emph{Definition of Done} - Definição de Conclusão
-    \item[FDD] \emph{Feature Driven Development} - Desenvolvimento Focado em Funcionalidades
+    \item[FDD] \emph{Feature Driven Development} - Desenvolvimento Guiado por Funcionalidades
     \item[IEC] \emph{International Electrotechnical Commission} - Comissão Eletrotécnica Internacional
     \item[IEEE] \emph{Institute of Electrical and Electronics Engineers} - Instituto de Engenheiros Eletricistas e Eletrônicos
     \item[ISO] \emph{International Organization for Standardization} - Organização Internacional para Padronização
@@ -603,7 +605,7 @@ Em comparação ao modelo de qualidades internas e externas do padrão ISO 9126,
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\subsection{Análise dos modelos hierárquicos}
+\subsection{Análise dos Modelos Hierárquicos}
 
 Os modelos apresentados são úteis para auxiliar na análise da qualidade do software desenvolvido, porém nenhum dos modelos explica a lógica de porque algumas características foram consideradas e outras não, porque um atributo está em uma posição da hierarquia, porque nenhum dos modelos aborda segurança, dentre outras questões \cite{PFLEEGER2010}.
 
@@ -656,7 +658,7 @@ A \autoref{tab:modelos_comparacao} apresenta uma comparação entre os modelos h
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Meta-modelos}
+\section{Meta-Modelos}
 \subsection{Modelo Dromey (1995)}
 % três princípios fundamentais: atributos de qualidade, propriedades do produto, e as ligações entre eles
 
@@ -715,8 +717,8 @@ Contudo, \citeonline{SURYN2014} faz uma analogia interessante: utilizar farinha,
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Modelos estatísticos}
-\subsection{Modelo de confiabilidade de crescimento}
+\section{Modelos Estatísticos}
+\subsection{Modelo de Confiabilidade de Crescimento}
 
 % ----------------------------------------------------------
 % Seção
@@ -867,7 +869,7 @@ Os princípios ágeis encorajam os membros de uma equipe a participar de múltip
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Teste tradicional VS teste ágil}
+\section{Teste Tradicional VS Teste Ágil}
 %location 894-901 kindle - agile testing
 
 Em métodos tradicionais, como o modelo cascata apresentado na \autoref{fig:waterfall-vs-agile}, a fase de testes é relegada para o final do processo, e ainda assim o gráfico não representa a realidade, pois passa a impressão de que o tempo dedicado aos testes é equivalente ao de programação, o que não ocorre na realidade \cite{crispin2009}.
@@ -894,7 +896,7 @@ Nos métodos ágeis o processo é iterativo e incremental\footnote{\citeonline{a
 % ----------------------------------------------------------
 % Seção
 % ----------------------------------------------------------
-\section{Transição de método formal para método ágil}
+\section{Transição de Método Formal para Método Ágil}
 %location 811 kindle - agile testing
 
 O processo de transição de equipes tradicionais para adotar métodos ágeis normalmente é um choque, principalmente quanto à ideia de gerar código funcional dentro de uma ou duas semanas. Dúvidas comuns são: como programar e testar tão rapidamente? Como ter tempo para automatizar os testes? Como controlar código problemático que será entregue para produção?. \cite{crispin2009} citam dois casos de experiência própria que ilustram bem essa situação:
@@ -951,7 +953,7 @@ Porém tal separação é contrária ao pensamento ágil, onde deve haver união
 
 Uma questão importante é o dimensionamento do grupo de testes. Qual a proporção correta? Para \citeonline{crispin2009} não existe valor fixo, ele irá variar com as necessidades da equipe, as habilidades dos membros, complexidade do projeto, etc. Elas já trabalharam em equipes onde a proporção testador-desenvolvedor foi de 1:20 até 1:1.
 
-\subsection{Abordagem time coeso (\emph{whole-team approach})}
+\subsection{Abordagem de Time Coeso (\emph{whole-team approach})}
 \label{time-coeso}
 % isso tambem é explorado no XP: http://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_extrema
 % location 934 kindle - agile testing
@@ -973,7 +975,7 @@ Todos os membros da equipe devem ser capaz de realizar qualquer tarefa do projet
 
 % Help customers develop their stories and acceptance tests. Push the “whole team” attitude, and ask the team to work on testing problems. If your team is having trouble adapting to agile development, suggest experimenting with some new ideas for an iteration or two. Propose adopting the “Power of Three” rule to promote good communication. Use the information in this book to show that testers can help agile teams succeed beyond their wildest expectations.
 
-\subsection{Barreiras para adoção de times de teste/QA ágeis}
+\subsection{Barreiras para Adoção de Times de Teste/QA Ágeis}
 % esta seção me parece mais um guia para uma pessoa que vai implementar um método ágil
 % location 1426 kindle - agile testing
 \begin{itemize}
@@ -999,36 +1001,15 @@ Todos os membros da equipe devem ser capaz de realizar qualquer tarefa do projet
 \subsection{Automação}
 \emph{* em desenvolvimento *}
 
-\subsection{Quadrantes de teste ágil}
-\label{quatro-quadrantes}
+% ----------------------------------------------------------
+% Seção
+% ----------------------------------------------------------
+\section{Modelos de Teste e Qualidade Ágil}
+
+\subsection{Pilares da Qualidade Ágil}
+Este modelo foi proposto por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas, como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}, apresentando na \autoref{quatro-quadrantes}. Galen o criou ao perceber que apesar de equipes terem ``vestido a camisa'' de testes, e estarem criando testes automatizados e realizando integração contínua, elas tinham grande dificuldade em definir as histórias do usuários e definir claramente quando uma funcionalidade estava concluída. Ou seja, a proposta do modelo é balancear o lado técnico (primeiro pilar), o lado da prática de teste (segundo pilar), e o lado das práticas inter-funcionais de equipe (terceiro pilar), com os três pilares se apoiando em valores gerais, como o da equipe coesa, apresentado anteriormente na \autoref{time-coeso}. Veja a \autoref{fig:three-pillars} para ter uma visão geral do modelo.
 
 \begin{figure}[H]
-    \centering
-    \caption{Quatro quadrantes de teste ágil}
-    \graphicspath{ {./graphics/agile/} }
-    \includegraphics[scale=0.6]{Quadrante-Teste-Agil}
-    \label{fig:quatro-quadrantes}
-    \legend{Fonte: \citeonline{nogueira2013}}
-\end{figure}
-
-\emph{* em desenvolvimento *}
-
-\subsubsection{Quadrante 1}
-
-\subsubsection{Quadrante 2}
-
-\subsubsection{Quadrante 3}
-
-\subsubsection{Quadrante 4}
-
-% location 804 kindle - more agile testing
-% FIXME: mover este trecho para um local mais adequado
-% Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
-
-\subsection{Pilares da qualidade ágil}
-Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas, como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}, apresentando na \autoref{quatro-quadrantes}. Galen o criou ao perceber que apesar de equipes terem ``vestido a camisa'' de testes, e estarem criando testes automatizados e realizando integração contínua, elas tinham grande dificuldade em definir as histórias do usuários e definir claramente quando uma funcionalidade estava concluída. Ou seja, a proposta do modelo é balancear o lado técnico (primeiro pilar), o lado da prática de teste (segundo pilar), e o lado das práticas inter-funcionais de equipe (terceiro pilar), com os três pilares se apoiando em valores gerais, como o da equipe coesa, apresentado anteriormente na \autoref{time-coeso}. Veja a \autoref{fig:three-pillars} para ter uma visão geral do modelo.
-
-\begin{figure}[h]
     \centering
     \caption{Três Pilares do Teste e Qualidade Ágil}
     \graphicspath{ {./graphics/agile/} }
@@ -1039,16 +1020,45 @@ Proposta de modelo criado por \citeonline{galen2015} para auxiliar na compreens�
 
 
 \subsubsection{Primeiro Pilar: Automação e Ferramentas de Teste}
-Este pilar foca no aspecto técnico, das ferramentas e execução da pirâmide de teste, da integração contínuo e de outras práticas. Normalmente é o lado que mais atrai os desenvolvedores e empresas pois apresenta ferramentas e tecnologias para auxiliar na resolução dos problemas.
+Este pilar foca no aspecto técnico, das ferramentas e execução da pirâmide de teste, da integração contínuo e de outras práticas. Normalmente é o lado que mais atrai os desenvolvedores e empresas pois apresenta ferramentas e tecnologias para auxiliar na resolução dos problemas. Ele aborda os seguintes pontos:
+\begin{itemize}
+    \item Estratégia baseada em pirâmide
+    \item Integração contínua
+    \item Ataque da infraestrutura técnica no backlog % FIXME: não entendi esse ponto
+    \item \emph{Feedback} visual
+    \item Prática ativa de Desenvolvimento Orientado a Testes de Aceitação (\emph{Acceptance Test-Driven Development} - ATDD) e Desenvolvimento Guiado por Comportamento (\emph{Behaviour-Driven Development} - BDD) % FIXME: significado das siglas
+\end{itemize}
 
-As pirâmides de testes apresentadas na \autoref{fig:testing-pyramid-combined} são baseadas no conceito criado por \citeonline{cohn2009}, e a ideia principal é indicar que devem existir mais testes de baixo nível (unitários) do que testes de alto nível (interface). \citeonline{fowler2012} acredita que se uma falha for detectada em um teste de alto nível então além de um \emph{bug} no código também foi detectada uma deficiência nos testes unitários.
+As pirâmides de testes apresentadas nas figuras \ref{fig:testing-pyramid-traditional} e \ref{fig:testing-pyramid-agile} são baseadas no conceito criado por \citeonline{cohn2009}, onde a ideia principal é indicar que devem existir mais testes de baixo nível (unitários) do que testes de alto nível (interface). \citeonline{fowler2012} acredita que se uma falha for detectada em um teste de alto nível então além de um \emph{bug} no código também foi detectada uma deficiência nos testes unitários.
+
+A situação apresentada na \autoref{fig:testing-pyramid-traditional} é considerada por \citeonline{scott2012} um anti-padrão (conceito abordado por \citeonline{nidia2015}), chamado jocosamente por ele de ``cone de sorvete de testes''. \citeonline{galen2015} considera este problema comum nos métodos tradicionais de desenvolvimento, onde os testadores ficam dentro de sua área de conforto escrevendo testes de interfaces e os desenvolvedores veem pouco valor em investir tempo na criação dos testes unitários, principalmente se estiverem sobre pressão para entregar código e funcionalidades dentro do prazo.
+
+Os métodos ágeis tentam corrigir esta situação ao aplicar o conceito de time coeso apresentando anteriormente, tornando a responsabilidade de criação dos testes algo compartilhado por todos.
+
+% \begin{figure}[H]
+%     \centering
+%     \caption{Pirâmides de testes automatizados: ágil e tradicional}
+%     \graphicspath{ {./graphics/agile/} }
+%     \includegraphics[scale=0.65]{testing-pyramid-combined}
+%     \label{fig:testing-pyramid-combined}
+%     \legend{Fonte: \citeonline{galen2015}}
+% \end{figure}
 
 \begin{figure}[H]
     \centering
-    \caption{Pirâmides de testes automatizados: ágil e tradicional}
+    \caption{Pirâmide de teste automatizado ágil}
     \graphicspath{ {./graphics/agile/} }
-    \includegraphics[scale=0.65]{testing-pyramid-combined}
-    \label{fig:testing-pyramid-combined}
+    \includegraphics[scale=1.0]{testing-pyramid-agile}
+    \label{fig:testing-pyramid-agile}
+    \legend{Fonte: \citeonline{galen2015}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Pirâmide invertida de teste automatizado}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=1.0]{testing-pyramid-traditional}
+    \label{fig:testing-pyramid-traditional}
     \legend{Fonte: \citeonline{galen2015}}
 \end{figure}
 
@@ -1056,56 +1066,16 @@ As pirâmides de testes apresentadas na \autoref{fig:testing-pyramid-combined} s
 Eis algumas ferramentas de testes comumente utilizadas em cada nível:
 \begin{itemize}
     \item Nível da interface: Selenium\footnote{Ferramenta de automação de navegador: \url{http://www.seleniumhq.org/}}, Watir\footnote{Ferramenta em Ruby para testes de aplicações web: \url{http://watir.com/}}, \emph{Unified Functional Testing} (UFC)\footnote{Teste automatizado de interfaces em geral: \url{http://www8.hp.com/us/en/software-solutions/unified-functional-automated-testing/}};
-    \item Nível de serviço ou intermediário: FitNesse\footnote{Testes de aceitação: \url{http://www.fitnesse.org/}}, Robot Framework\footnote{Framework em Python para testes de aceitação: \url{http://robotframework.org/}}, JBehave\footnote{Framework em Java para Desenvolvimento focado em Comportamento (\emph{Behaviour-Driven Development} - BDD: \url{http://jbehave.org/}}, Cucumber\footnote{Outro sistema de BDD escrito em Ruby e compatível com diversas linguagens e frameworks: \url{https://cucumber.io/}};
+    \item Nível de serviço ou intermediário: FitNesse\footnote{Testes de aceitação: \url{http://www.fitnesse.org/}}, Robot Framework\footnote{Framework em Python para testes de aceitação: \url{http://robotframework.org/}}, JBehave\footnote{Framework em Java para Desenvolvimento Guiado por Comportamento (\emph{Behaviour-Driven Development} - BDD: \url{http://jbehave.org/}}, Cucumber\footnote{Outro sistema de BDD escrito em Ruby e compatível com diversas linguagens e frameworks: \url{https://cucumber.io/}};
     \item Nível unitário: variantes da família xUnit\footnote{Para mais informações: \url{http://www.martinfowler.com/bliki/Xunit.html}} (JUnit para Java e NUnit para .Net, por exemplo).
 \end{itemize}
 
 É importante notar que as ferramentas são intercambiáveis e se complementam, onde o \emph{Robot Framework} e \emph{Cucumber} ambos possuem plugins para o Selenium, onde eles podem controlar e testar a interface da aplicação.
 
-\citeonline{galen2015} faz um aviso importante: não tentem automatizar 100\% dos testes. Isso é um objetivo fútil, e o que determinará o número ideal de testes é a análise das histórias do usuário para que exista uma cobertura adequada em todos os níveis, não podendo de levar em consideração o valor e complexidade na criação de cada um.
-
-% location 316-318 kindle - three pillars
-% This pillar is the technology-side of quality and testing and is not simply focused towards testing and testers. It includes tooling, execution of the Automation Test Pyramid, Continuous Integration, deep use of Extreme Programming technical practices, and support for ALM distributed collaboration tools.
-
-% Normalmente é o que mais atrai as empresas/desenvolvedores, devido à atratividade do uso de ferramentas e da tecnologia para a resolução dos problemas.
-
-% location 492 kindle - three pillars
-% Pillar 1 is the technically focused pillar and the one that agile organizations are usually quite comfortable discussing – at least at a high level. It's where automation, in general, is located. Terms like Continuous Integration, Continuous Deployment, Cucumber, TDD, ATDD, BDD5, virtualization, and DevOps are actively discussed and implemented here.
-
-% location 566 kindle - three pillars
-% The first change is to take a whole-team view. Instead of the testers being responsible for testing and writing all of the test automation, it becomes a whole-team responsibility. The developers take most of the ownership for unit-level automation at the base of the pyramid, but testers can operate there as well.
-
-% For example, as of this writing, these are common tools leveraged at each of the three tiers:
-% \begin{enumerate}
-%     \item UI tier: Selenium, Watir, or traditional UFT
-%     \item Middle tier: FitNesse, Robot Framework, JBehave, and Cucumber
-%     \item Unit tier: xUnit family variants for example JUnit or NUnit for Java and. Net respectively
-% \end{enumerate}
-
-% The other consideration is that there are extensions to several of these. For example, both Robot Framework and Cucumber have Selenium plug-ins so that they can drive the UI, as well as, the middle tier. This implies that the middle tier tooling, and automated tests for that matter, can extend or blend into the lower and upper tiers.
+\citeonline{galen2015} faz um aviso importante: não deve-se automatizar 100\% dos testes. Isso é um objetivo fútil, e o que determinará o número ideal de testes é a análise das histórias do usuário para que exista uma cobertura adequada em todos os níveis, não podendo de levar em consideração o valor e complexidade na criação de cada um.
 
 % importancia do trabalho em par
 % I've found it surprising, but true, that many developers don't really understand how to write effective unit tests – especially when you expect those tests to be part of a cohesive automation whole. Partnering with testers can help immensely when designing unit tests, even if the testers can't program in the language du jour. I've also found that training can really be a force multiplier here.
-
-% And a final caution – don't try to automate everything! The strategy or business case for 100\% automation is nonsense. I'm usually against setting any sort of "magic number" when establishing goals for automation levels of coverage. Rather, ask the team to look at each user story and determine the appropriate level of unit, middle-tier, and UI tests in order to adequately cover it compared to its complexity and value.
-
-% \begin{figure}[H]
-%     \centering
-%     \caption{Pirâmide de teste automatizado tradicional}
-%     \graphicspath{ {./graphics/agile/} }
-%     \includegraphics[scale=1.0]{testing-pyramid-traditional}
-%     \label{fig:testing-pyramid-traditional}
-%     \legend{Fonte: \citeonline{galen2015}}
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \caption{Pirâmide de teste automatizado ágil}
-%     \graphicspath{ {./graphics/agile/} }
-%     \includegraphics[scale=1.0]{testing-pyramid-agile}
-%     \label{fig:testing-pyramid-agile}
-%     \legend{Fonte: \citeonline{galen2015}}
-% \end{figure}
 
 % \begin{figure}[H]
 %     \centering
@@ -1117,6 +1087,15 @@ Eis algumas ferramentas de testes comumente utilizadas em cada nível:
 % \end{figure}
 
 \subsubsection{Segundo Pilar: Teste de Software}
+O segundo pilar é focado na ``arte'' do teste de software
+Ele aborda os seguintes pontos:
+\begin{itemize}
+    \item Teste baseado em riscos: funcional e não funcional
+    \item Planejamento de testes @ \emph{release} e níveis de sprint % FIXME: não entendi esse ponto
+    \item Teste exploratório
+    \item Padrões (\emph{checklists}, \emph{templates}, repositórios)
+    \item Equilíbrio entre testes manuais, exploratórios e automatizados
+\end{itemize}
 % location 327-330 kindle - three pillars
 % This pillar is focused towards the profession of testing. Towards solid testing practices, not simply agile testing practices, but leveraging the teams' past testing experience, skills, techniques, and tools. This is the place where agile teams move from a trivial view to software testing, which only looks at TDD, ATDD, and developer-based testing, towards a more holistic view of agile quality and testing.
 
@@ -1132,8 +1111,44 @@ Eis algumas ferramentas de testes comumente utilizadas em cada nível:
 % Testing often stops after these steps are accomplished within each team and sprint. Now, in certain contexts, for example, small web based products that are relatively new, this may well be all that is needed. But in many, many more contexts, there is a lot more testing activity that is required. Repetitive testing of previously delivered functionality is also a consideration that is often lost in the frenzy of delivering "done" software within each sprint.
 
 \subsubsection{Terceiro Pilar: Práticas da Equipe}
+Ele aborda os seguintes pontos:
+\begin{itemize}
+    \item Pareamento da equipe
+    \item Stop-the-line mindset % FIXME: não entendi esse ponto
+    \item Revisão de código e padrões
+    \item Active done-ness % FIXME
+    \item Refatoramento agressivo da dívida técnica
+    \item História do Usuário baseada em conversas
+\end{itemize}
 % location 337-340 kindle - three pillars
 % Finally, this pillar is focused towards cross-team collaboration, team-based standards, quality attitudes, agile mindsets, and, most importantly, towards building things right. Consider this the soft skills area of the Three Pillars, where direction is provided for how each team will operate. You could also consider them "rules of engagement".
+
+\subsection{Quadrantes de Teste Ágil}
+\label{quatro-quadrantes}
+
+\begin{figure}[H]
+    \centering
+    \caption{Quatro quadrantes de teste ágil}
+    \graphicspath{ {./graphics/agile/} }
+    \includegraphics[scale=0.6]{Quadrante-Teste-Agil}
+    \label{fig:quatro-quadrantes}
+    \legend{Fonte: \citeonline{nogueira2013}}
+\end{figure}
+
+\emph{* em desenvolvimento *}
+
+\subsubsection{Quadrante 1}
+
+
+\subsubsection{Quadrante 2}
+
+\subsubsection{Quadrante 3}
+
+\subsubsection{Quadrante 4}
+
+% location 804 kindle - more agile testing
+% FIXME: mover este trecho para um local mais adequado
+% Power of Three - Three Amigos, George Dinwiddie: onde um cliente, programador e testador colaboram quando existir um questionamento sobre como uma funcionalidade deve agir.
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
