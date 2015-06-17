@@ -416,6 +416,19 @@
   Url                      = {http://www.ijcaonline.org/archives/volume85/number8/14861-3234}
 }
 
+@Misc{marick2003,
+  Title                    = {My agile testing project},
+
+  Author                   = {Brian Marick},
+  Month                    = {August},
+  Year                     = {2003},
+
+  Owner                    = {Andrei},
+  Timestamp                = {2015.06.17},
+  Url                      = {http://www.exampler.com/old-blog/2003/08/21/\#agile-testing-project-1},
+  Urlaccessdate            = {2015.06.16}
+}
+
 @Book{general1977factors,
   Title                    = {Factors in Software Quality},
   Author                   = {McCall, J.A. and General Electric Company and Richards, P.K. and Walters, G.F. and Rome Air Development Center and United States. Air Force. Systems Command. Electronic Systems Division},
@@ -492,7 +505,7 @@
 }
 
 @Unpublished{nidia2015,
-  Title                    = {Padrões de Projetos para Comunicação na Internet das Coisas},
+  Title                    = {Padr{\~o}es de Projetos para ComunicaÃ§{\~a}o na Internet das Coisas},
   Author                   = {Nidia Maria da Silva Campos},
 
   Month                    = {maio},
@@ -535,6 +548,7 @@
   Author                   = {Tsui, F.F. and Karam, O. and Bernal, B.},
   Publisher                = {Jones \& Bartlett Learning},
   Year                     = {2013},
+
   ISBN                     = {9781449691998},
   Lccn                     = {2012029913},
   Owner                    = {Andrei},

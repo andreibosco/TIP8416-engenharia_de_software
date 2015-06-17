@@ -1006,8 +1006,10 @@ Todos os membros da equipe devem ser capaz de realizar qualquer tarefa do projet
 % ----------------------------------------------------------
 \section{Modelos de Teste e Qualidade Ágil}
 
-\subsection{Pilares da Qualidade Ágil}
-Este modelo foi proposto por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas, como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}, apresentando na \autoref{quatro-quadrantes}. Galen o criou ao perceber que apesar de equipes terem ``vestido a camisa'' de testes, e estarem criando testes automatizados e realizando integração contínua, elas tinham grande dificuldade em definir as histórias do usuários e definir claramente quando uma funcionalidade estava concluída. Ou seja, a proposta do modelo é balancear o lado técnico (primeiro pilar), o lado da prática de teste (segundo pilar), e o lado das práticas inter-funcionais de equipe (terceiro pilar), com os três pilares se apoiando em valores gerais, como o da equipe coesa, apresentado anteriormente na \autoref{time-coeso}. Veja a \autoref{fig:three-pillars} para ter uma visão geral do modelo.
+\subsection{Três Pilares da Qualidade Ágil}
+Modelo criado por \citeonline{galen2015} para auxiliar na compreensão e aplicação de testes e obtenção de um software de qualidade. A intenção é ser um guia e não um modelo rígido e nem uma visão definitiva sobre teste ágil, existindo outras propostas, como os Quatro Quadrantes do Teste Ágil (\emph{4 Quadrants of Agile Testing}) de \citeonline{crispin2009}, apresentando na \autoref{quatro-quadrantes}.
+
+Galen o criou ao perceber que apesar de equipes terem ``vestido a camisa'' de testes, e estarem criando testes automatizados e realizando integração contínua, elas tinham grande dificuldade em definir as histórias do usuários e definir claramente quando uma funcionalidade estava concluída. Ou seja, a proposta do modelo é balancear o lado técnico (primeiro pilar), o lado da prática de teste (segundo pilar), e o lado das práticas inter-funcionais de equipe (terceiro pilar), com os três pilares se apoiando em valores gerais, como o da equipe coesa, apresentado anteriormente na \autoref{time-coeso}. Veja a \autoref{fig:three-pillars} para ter uma visão geral do modelo.
 
 \begin{figure}[H]
     \centering
@@ -1015,9 +1017,31 @@ Este modelo foi proposto por \citeonline{galen2015} para auxiliar na compreensã
     \graphicspath{ {./graphics/agile/} }
     \includegraphics[scale=0.6]{three-pillars}
     \label{fig:three-pillars}
-    \legend{Fonte: \citeonline{crispin2009}}
+    \legend{Fonte: \citeonline{galen2015}}
 \end{figure}
 
+\subsubsection{O Alicerce dos Pilares}
+\citeonline{galen2015} apresenta alguns conceitos que considera como a base de toda equipe, que permeiam o modelo e devem ser continuamente utilizados durante um projeto.
+% \begin{itemize}
+%     \item Posse de toda a equipe
+%     \item Saber construir a coisa certa do jeito certo
+%     \item Métricas ágeis saudáveis
+%     \item Governança % FIXME: steering via center of excellence of community of practice
+%     \item Equilíbrio entre os 3 pilares: avaliação, recalibragem e melhoria contínua
+% \end{itemize}
+
+\begin{description}
+    \item[Posse de toda a equipe] \hfill \\
+        Apesar dos métodos ágeis pregarem a derrubada da divisão entre desenvolvedores e testadores, essa barreira ainda se mantém, então é essencial que haja ênfase constante no engajamento de todos os membros do time. Caso exista um problema na qualidade do produto, a culpa não é dos testadores, mas de todo o time.
+    \item[Saber construir a coisa certa do jeito certo] \hfill \\
+        Se engajar com os clientes para garantir que as histórias de usuário realmente reflitam as funcionalidades desejadas, ter tarefas que sigam a definição de conclusão (DoD) acordada pelo time e de maneira consistente são algumas das maneiras de tentar criar um produto de qualidade que irá agradar ao cliente.
+    \item[Métricas ágeis saudáveis] \hfill \\
+        \citeonline{galen2015} defente a migração de métricas funcionais para métricas baseadas em equipe, pois as métricas ágeis são fundamentalmente diferentes, e cada equipe deve utilizar métricas diferentes.
+    \item[Governança] \hfill \\
+        A aplicação dos princípios ágeis não deve se ater apenas à equipe de desenvolvimento e testes, mas também à liderança. A posse, responsabilidade, e direção do projeto é compartilhada por todos.
+    \item[Equilíbrio entre os 3 pilares: avaliação, recalibragem e melhoria contínua] \hfill \\
+        Para gerenciar e efetivamente produzir um produto de qualidade é necessário realizar a conexão e alcançar um equilíbrio entre os três pilares.
+\end{description}
 
 \subsubsection{Primeiro Pilar: Automação e Ferramentas de Teste}
 Este pilar foca no aspecto técnico, das ferramentas e execução da pirâmide de teste, da integração contínuo e de outras práticas. Normalmente é o lado que mais atrai os desenvolvedores e empresas pois apresenta ferramentas e tecnologias para auxiliar na resolução dos problemas. Ele aborda os seguintes pontos:
@@ -1029,7 +1053,7 @@ Este pilar foca no aspecto técnico, das ferramentas e execução da pirâmide d
     \item Prática ativa de Desenvolvimento Orientado a Testes de Aceitação (\emph{Acceptance Test-Driven Development} - ATDD) e Desenvolvimento Guiado por Comportamento (\emph{Behaviour-Driven Development} - BDD) % FIXME: significado das siglas
 \end{itemize}
 
-As pirâmides de testes apresentadas nas figuras \ref{fig:testing-pyramid-traditional} e \ref{fig:testing-pyramid-agile} são baseadas no conceito criado por \citeonline{cohn2009}, onde a ideia principal é indicar que devem existir mais testes de baixo nível (unitários) do que testes de alto nível (interface). \citeonline{fowler2012} acredita que se uma falha for detectada em um teste de alto nível então além de um \emph{bug} no código também foi detectada uma deficiência nos testes unitários.
+A estratégia baseada em pirâmides (apresentadas nas figuras \ref{fig:testing-pyramid-traditional} e \ref{fig:testing-pyramid-agile}) são baseadas no conceito criado por \citeonline{cohn2009}, onde a ideia principal é indicar que devem existir mais testes de baixo nível (unitários) do que testes de alto nível (interface). \citeonline{fowler2012} acredita que se uma falha for detectada em um teste de alto nível então além de um \emph{bug} no código também foi detectada uma deficiência nos testes unitários.
 
 A situação apresentada na \autoref{fig:testing-pyramid-traditional} é considerada por \citeonline{scott2012} um anti-padrão (conceito abordado por \citeonline{nidia2015}), chamado jocosamente por ele de ``cone de sorvete de testes''. \citeonline{galen2015} considera este problema comum nos métodos tradicionais de desenvolvimento, onde os testadores ficam dentro de sua área de conforto escrevendo testes de interfaces e os desenvolvedores veem pouco valor em investir tempo na criação dos testes unitários, principalmente se estiverem sobre pressão para entregar código e funcionalidades dentro do prazo.
 
@@ -1126,6 +1150,23 @@ Ele aborda os seguintes pontos:
 \subsection{Quadrantes de Teste Ágil}
 \label{quatro-quadrantes}
 
+Este modelo foi criado por \citeonline{marick2003} para deixar clara a função de cada teste no projeto, gerando uma matriz 2x2 e resultando na seguinte divisão:
+\begin{itemize}
+    \item Eixo X
+    \begin{itemize}
+        \item \textbf{Testes que apoiam o time}: programadores utilizam estes testes como parte integral do desenvolvimento e para garantir que seu código funciona corretamente;
+        \item \textbf{Testes que criticam o produto}: testes que não focam no desenvolvimento do produto, mas o produto final com o objetivo de encontrar falhas;
+    \end{itemize}
+    \item Eixo Y
+    \begin{itemize}
+        \item \textbf{Testes focados no negócio}: são testes que você descreveria para um especialista em negócio e que lhe despertaria interesse;
+        \item \textbf{Testes focados na tecnologia}: testes que fazem parte do domínio da programação e desenvolvimento;
+    \end{itemize}
+\end{itemize}
+% onde em um eixo estão os testes que apoiam a equipe (quadrantes 1 e 2) e os testes que criticam o produto (quadrantes 3 e 4), e no outro eixo são representados os testes focados no negócio (quadrantes 2 e 3) e os testes focados na tecnologia (quadrantes 1 e 4).
+
+A numeração dos quadrantes não indica uma ordem a ser seguida, sendo apenas uma numeração arbitrária para facilitar a indicação de cada um (é mais fácil falar Q1 do que ``testes com foco em tecnologia que apoiam o time'').
+
 \begin{figure}[H]
     \centering
     \caption{Quatro quadrantes de teste ágil}
@@ -1135,16 +1176,38 @@ Ele aborda os seguintes pontos:
     \legend{Fonte: \citeonline{nogueira2013}}
 \end{figure}
 
-\emph{* em desenvolvimento *}
+% \emph{* em desenvolvimento *}
 
-\subsubsection{Quadrante 1}
+% \subsubsection{Quadrante 1}
+% \begin{itemize}
+%     \item Testes unitários
+%     \item Testes de componentes
+% \end{itemize}
 
+% \subsubsection{Quadrante 2}
+% \begin{itemize}
+%     \item Testes funcionais
+%     \item Exemplos
+%     \item Testes de histórias
+%     \item Protótipos
+%     \item Simulações
+% \end{itemize}
 
-\subsubsection{Quadrante 2}
+% \subsubsection{Quadrante 3}
+% \begin{itemize}
+%     \item Testes exploratórios
+%     \item Cenários
+%     \item Testes de usabilidade
+%     \item Testes de aceitação do usuário
+%     \item Alpha/beta
+% \end{itemize}
 
-\subsubsection{Quadrante 3}
-
-\subsubsection{Quadrante 4}
+% \subsubsection{Quadrante 4}
+% \begin{itemize}
+%     \item Testes de performance e carga
+%     \item Teste de segurança
+%     \item Testes de ``-ilidade''
+% \end{itemize}
 
 % location 804 kindle - more agile testing
 % FIXME: mover este trecho para um local mais adequado
